@@ -276,7 +276,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
         
         # --- RENDER OUTPUT ---
         output$contents <- renderUI({
-          tags$h4(paste0("Predicted Price: ", round(pred, 2)))
+          tags$h4(paste0("Predicted Price: ", round(pred, 2), " €"))
         })
         
         output$tabledata <- renderTable({

@@ -7,7 +7,8 @@ library(plotly)
 library(readr)
 library(bslib) 
 library(shinyjs)
-
+library(rlang)
+library(dplyr)
 
 source("modules/mod_dynamic_plot.R")
 source("modules/mod_prediction_panel.R")
