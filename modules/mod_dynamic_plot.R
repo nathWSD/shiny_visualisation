@@ -1,41 +1,79 @@
 
 
+labelWithTooltip <- function(labelText, tooltipText) {
+  tags$label(
+    labelText,
+    tags$span(
+      class = "tooltip-container",
+      shiny::icon("info-circle", style = "margin-left: 5px; color: #007bff; cursor: help;"),
+      tags$span(class = "tooltip-text", tooltipText)
+    )
+  )
+}
+
+
 mod_dynamic_plot_ui <- function(id) {
   ns <- NS(id)
   tagList(
     tags$head(
       tags$style(HTML(paste0("
-        /* Custom Layout Container for the Plot Panel */
+        /* --- General Layout & Panel Styling (Unchanged) --- */
         #", ns("plot_container"), " {
           height: calc(100vh - 80px); display: flex; flex-direction: row;
           align-items: stretch; padding: 20px; gap: 20px;
         }
-        /* Styling for the two transparent panels (inputs and plot) */
         #", ns("plot_sidebar"), ", #", ns("plot_main_panel"), " {
           background-color: rgba(255, 255, 255, 0.9); border-radius: 10px;
           box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 25px; overflow-y: auto;
         }
-        /* Style for the generate button */
         #", ns("generate_plot"), " { margin-top: 20px; width: 100%; }
+
+        /* --- 2. ADD THE CSS FOR THE CUSTOM TOOLTIPS --- */
+        .tooltip-container {
+          position: relative;
+          display: inline-block;
+        }
+        .tooltip-text {
+          visibility: hidden; width: 180px; background-color: #333; color: #fff;
+          text-align: center; border-radius: 6px; padding: 5px 10px;
+          position: absolute; z-index: 10; bottom: 125%; left: 50%;
+          margin-left: -90px; opacity: 0; transition: opacity 0.3s; font-weight: normal;
+        }
+        .tooltip-container:hover .tooltip-text {
+          visibility: visible;
+          opacity: 1;
+        }
       ")))
     ),
     
     div(
       id = ns("plot_container"),
       
+      # --- Input Panel Column (with updated inputs) ---
       column(
         width = 4,
         id = ns("plot_sidebar"),
         
-        selectInput(ns("plot_type"), "Select Plot Type",
-                    choices = c("Scatter Plot", "Line Plot", "Bar Chart")),
+        # --- 3. APPLY THE CHANGES TO EACH INPUT ---
+        selectInput(ns("plot_type"), 
+                    label = labelWithTooltip("Select Plot Type", "Choose the type of chart to display."),
+                    choices = c("Scatter Plot", "Line Plot", "Bar Chart"),
+                    width = "100%"), # Extend to full width
         
-        selectInput(ns("x_col"), "Select X Column (Category)", choices = NULL),
-        selectInput(ns("y_col"), "Select Y Column (Value)", choices = NULL),
+        selectInput(ns("x_col"), 
+                    label = labelWithTooltip("Select X Column (Category)", "For bar charts, this is the categorical axis. For other plots, this is the numeric x-axis."), 
+                    choices = NULL,
+                    width = "100%"), # Extend to full width
+        
+        selectInput(ns("y_col"), 
+                    label = labelWithTooltip("Select Y Column (Value)", "This is the numeric value axis for all plot types."), 
+                    choices = NULL,
+                    width = "100%"), # Extend to full width
         
         actionButton(ns("generate_plot"), "Generate Plot", class = "btn-primary")
       ),
       
+      # Plot Output Column (Unchanged)
       column(
         width = 8,
         id = ns("plot_main_panel"),
@@ -46,10 +84,10 @@ mod_dynamic_plot_ui <- function(id) {
 }
 
 
+# --- Server Function for the Dynamic Plot (No changes needed here) ---
 mod_dynamic_plot_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     
-
     observeEvent(input$plot_type, {
       df <- shared_data()
       req(df)
@@ -68,7 +106,6 @@ mod_dynamic_plot_server <- function(id, shared_data) {
     
     plot_object <- reactiveVal(NULL)
     
-
     observeEvent(input$generate_plot, {
       df <- shared_data()
       req(df, input$x_col, input$y_col, input$plot_type)
