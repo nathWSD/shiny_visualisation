@@ -1,15 +1,16 @@
 
-#install.packages("shinyjs")
 
 
+library(shiny)
+library(shinyjs)
 
 labelWithTooltip <- function(labelText, tooltipText) {
   tags$label(
     labelText,
-    bslib::tooltip(
-      shiny::icon("info-circle", style = "margin-left: 5px; color: #007bff;"),
-      tooltipText,
-      placement = "right"
+    tags$span(
+      class = "tooltip-container",
+      shiny::icon("info-circle", style = "margin-left: 5px; color: #007bff; cursor: help;"),
+      tags$span(class = "tooltip-text", tooltipText)
     )
   )
 }
@@ -22,55 +23,134 @@ mod_prediction_panel_ui <- function(id) {
     shinyjs::useShinyjs(),
     tags$head(
       tags$style(HTML(paste0("
-        html, body { height: 100%; width: 100%; margin: 0; padding: 0; overflow: hidden; }
+        /* --- 1. Page Foundation --- */
+        html, body {
+          height: 100%; width: 100%; margin: 0; padding: 0; overflow: hidden;
+        }
         body {
           background-size: cover; background-position: center center;
           background-repeat: no-repeat; background-attachment: fixed;
           transition: background-image 1s ease-in-out;
         }
-        .container-fluid { padding-top: 20px; padding-bottom: 20px; }
-        #", ns("sidebar"), ", #", ns("main_panel"), " {
-          background-color: rgba(255, 255, 255, 0.85); border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;
+
+        /* --- 2. Custom Layout Container --- */
+        #", ns("main_container"), " {
+          height: calc(100vh - 80px);
+          display: flex; flex-direction: row; align-items: stretch;
+          padding: 20px; gap: 20px;
         }
-        #", ns("main_panel"), " { min-height: 80vh; }
+        
+        /* --- 3. Panel Styling --- */
+        #", ns("sidebar"), ", #", ns("main_panel"), " {
+          background-color: rgba(255, 255, 255, 0.9);
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          padding: 25px;
+          overflow-y: auto;
+        }
+        
+        /* --- 4. Input Spacing --- */
+        #", ns("sidebar"), " .form-group {
+            margin-bottom: 20px;
+        }
+        #", ns("sidebar"), " h3 {
+            margin-top: 0; margin-bottom: 25px;
+        }
+
+        /* --- 5. Output Well Styling --- */
         #", ns("output_well"), " {
-          background-color: rgba(245, 245, 245, 0.9); border: 1px solid #e3e3e3;
+          background-color: rgba(245, 245, 245, 0.9);
+          border: 1px solid #e3e3e3;
           padding: 15px; border-radius: 8px;
         }
+        
+        /* --- 6. NEW: CUSTOM TOOLTIP CSS --- */
+        /* This is the CSS that makes our new tooltip work. */
+        .tooltip-container {
+          position: relative; /* Establishes a positioning context for the tooltip text */
+          display: inline-block;
+        }
+        .tooltip-text {
+          visibility: hidden; /* Hide the tooltip by default */
+          width: 200px;
+          background-color: #333;
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 5px 10px;
+          position: absolute; /* Position it relative to the container */
+          z-index: 10;
+          bottom: 110%; /* Place it just above the icon */
+          left: 50%;
+          margin-left: -100px; /* Center the tooltip */
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+          font-weight: normal; /* Ensure tooltip text isn't bold like the label */
+        }
+        /* Show the tooltip when hovering over the container (the icon) */
+        .tooltip-container:hover .tooltip-text {
+          visibility: visible;
+          opacity: 1;
+        }
+
       ")))
+      
     ),
     
-    sidebarLayout(
-      sidebarPanel(
+    div(
+      id = ns("main_container"),
+      
+      column(
+        width = 4,
         id = ns("sidebar"),
         HTML("<h3>Input parameters</h3>"),
         
-        selectInput(ns("Manufacturer"),
-                    label = labelWithTooltip("Manufacturer:", "Select the car manufacturer from the list."),
-                    choices = c("Ford", "Porsche", "Toyota", "VW", "BMW")),
+        fluidRow(
+          column(6, 
+                 selectInput(ns("Manufacturer"),
+                             label = labelWithTooltip("Manufacturer:", "Select the car manufacturer."),
+                             choices = c("Ford", "Porsche", "Toyota", "VW", "BMW"))
+          ),
+          column(6, 
+                 uiOutput(ns("Model_ui"))
+          )
+        ),
         
-        uiOutput(ns("Model_ui")),
+        fluidRow(
+          column(12,
+                 sliderInput(ns("engine_size"),
+                             label = labelWithTooltip("Engine size:", "Engine displacement in liters."),
+                             min = 1.0, max = 6.0, value = 1.0, step = 0.2, width = "100%")
+          )
+        ),
         
-        sliderInput(ns("engine_size"),
-                    label = labelWithTooltip("Engine size:", "Specify the engine displacement in liters."),
-                    min = 1.0, max = 6.0, value = 1.0, step = 0.2),
+        fluidRow(
+          column(7,
+                 sliderInput(ns("year_of_manufacture"),
+                             label = labelWithTooltip("Year of manufacture:", "Year the car was manufactured."),
+                             min = 1980, max = 2025, value = 2000, step = 1, sep = "", width = "100%")
+          ),
+          column(5,
+                 selectInput(ns("fuel_type"),
+                             label = labelWithTooltip("Fuel type:", "The car's fuel type."),
+                             choices = list("Petrol" = "petrol", "Diesel" = "diesel", "Hybrid" = "hybrid"))
+          )
+        ),
         
-        sliderInput(ns("year_of_manufacture"),
-                    label = labelWithTooltip("Year of manufacture:", "Choose the year the car was manufactured."),
-                    min = 1980, max = 2025, value = 2000, step = 1, sep = ""),
+        fluidRow(
+          column(12,
+                 sliderInput(ns("mileage"),
+                             label = labelWithTooltip("Mileage:", "Total distance traveled."),
+                             min = 0, max = 500000, value = 100000, step = 1, width = "100%")
+          )
+        ),
         
-        selectInput(ns("fuel_type"),
-                    label = labelWithTooltip("Fuel type:", "Select the car's fuel type."),
-                    choices = list("Petrol" = "petrol", "Diesel" = "diesel", "Hybrid" = "hybrid")),
-        
-        sliderInput(ns("mileage"),
-                    label = labelWithTooltip("Mileage:", "Enter the total distance the car has traveled."),
-                    min = 0, max = 500000, value = 100000, step = 1),
-        
+        tags$br(), 
         actionButton(ns("submitbutton"), "Submit", class = "btn btn-primary")
       ),
-      mainPanel(
+      
+      column(
+        width = 8,
         id = ns("main_panel"),
         tags$label(h3('Status/Output')),
         wellPanel(
@@ -82,6 +162,7 @@ mod_prediction_panel_ui <- function(id) {
     )
   )
 }
+
 
 mod_prediction_panel_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
