@@ -49,31 +49,28 @@ mod_dynamic_plot_ui <- function(id) {
     div(
       id = ns("plot_container"),
       
-      # --- Input Panel Column (with updated inputs) ---
       column(
         width = 4,
         id = ns("plot_sidebar"),
         
-        # --- 3. APPLY THE CHANGES TO EACH INPUT ---
         selectInput(ns("plot_type"), 
                     label = labelWithTooltip("Select Plot Type", "Choose the type of chart to display."),
                     choices = c("Scatter Plot", "Line Plot", "Bar Chart"),
-                    width = "100%"), # Extend to full width
+                    width = "100%"), 
         
         selectInput(ns("x_col"), 
                     label = labelWithTooltip("Select X Column (Category)", "For bar charts, this is the categorical axis. For other plots, this is the numeric x-axis."), 
                     choices = NULL,
-                    width = "100%"), # Extend to full width
+                    width = "100%"), 
         
         selectInput(ns("y_col"), 
                     label = labelWithTooltip("Select Y Column (Value)", "This is the numeric value axis for all plot types."), 
                     choices = NULL,
-                    width = "100%"), # Extend to full width
+                    width = "100%"), 
         
         actionButton(ns("generate_plot"), "Generate Plot", class = "btn-primary")
       ),
       
-      # Plot Output Column (Unchanged)
       column(
         width = 8,
         id = ns("plot_main_panel"),
@@ -84,7 +81,6 @@ mod_dynamic_plot_ui <- function(id) {
 }
 
 
-# --- Server Function for the Dynamic Plot (No changes needed here) ---
 mod_dynamic_plot_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     
