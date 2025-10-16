@@ -168,6 +168,10 @@ mod_prediction_panel_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
     
+    shinyjs::runjs(
+      "$('body').css('background-image', \"url('images/Ford/Fiesta.jpg')\")"
+    )
+    
     manufacturer_models <- list(
       "Ford" = c("Fiesta", "Mondeo", "Focus"),
       "Porsche" = c("718 Cayman", "911", "Cayenne"),
