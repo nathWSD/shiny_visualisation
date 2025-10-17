@@ -1,9 +1,5 @@
 
 
-
-library(shiny)
-library(shinyjs)
-
 labelWithTooltip <- function(labelText, tooltipText) {
   tags$label(
     labelText,
@@ -23,7 +19,7 @@ mod_prediction_panel_ui <- function(id) {
     shinyjs::useShinyjs(),
     tags$head(
       tags$style(HTML(paste0("
-        /* --- 1. Page Foundation --- */
+        /* --- Page Foundation --- */
         html, body {
           height: 100%; width: 100%; margin: 0; padding: 0; overflow: hidden;
         }
@@ -33,14 +29,14 @@ mod_prediction_panel_ui <- function(id) {
           transition: background-image 1s ease-in-out;
         }
 
-        /* --- 2. Custom Layout Container --- */
+        /* ---  Custom Layout Container --- */
         #", ns("main_container"), " {
           height: calc(100vh - 80px);
           display: flex; flex-direction: row; align-items: stretch;
           padding: 20px; gap: 20px;
         }
         
-        /* --- 3. Panel Styling --- */
+        /* --- Panel Styling --- */
         #", ns("sidebar"), ", #", ns("main_panel"), " {
           background-color: rgba(255, 255, 255, 0.9);
           border-radius: 10px;
@@ -49,7 +45,7 @@ mod_prediction_panel_ui <- function(id) {
           overflow-y: auto;
         }
         
-        /* --- 4. Input Spacing --- */
+        /* --- Input Spacing --- */
         #", ns("sidebar"), " .form-group {
             margin-bottom: 20px;
         }
@@ -57,7 +53,7 @@ mod_prediction_panel_ui <- function(id) {
             margin-top: 0; margin-bottom: 25px;
         }
 
-        /* --- 5. Output Well Styling --- */
+        /* --- Output Well Styling --- */
         #", ns("output_well"), " {
           background-color: rgba(245, 245, 245, 0.9);
           border: 1px solid #e3e3e3;
@@ -100,68 +96,51 @@ mod_prediction_panel_ui <- function(id) {
     div(
       id = ns("main_container"),
       
+      # --- Input Panel Column ---
       column(
         width = 4,
         id = ns("sidebar"),
         HTML("<h3>Input parameters</h3>"),
-        
         fluidRow(
-          column(6, 
-                 selectInput(ns("Manufacturer"),
-                             label = labelWithTooltip("Manufacturer:", "Select the car manufacturer."),
-                             choices = c("Ford", "Porsche", "Toyota", "VW", "BMW"))
-          ),
-          column(6, 
-                 uiOutput(ns("Model_ui"))
-          )
+          column(6, selectInput(ns("Manufacturer"), label = labelWithTooltip("Manufacturer:", "Select the car manufacturer."), choices = c("Ford", "Porsche", "Toyota", "VW", "BMW"))),
+          column(6, uiOutput(ns("Model_ui")))
         ),
-        
+        fluidRow(column(12, sliderInput(ns("engine_size"), label = labelWithTooltip("Engine size:", "Engine displacement in liters."), min = 1.0, max = 6.0, value = 1.0, step = 0.2, width = "100%"))),
         fluidRow(
-          column(12,
-                 sliderInput(ns("engine_size"),
-                             label = labelWithTooltip("Engine size:", "Engine displacement in liters."),
-                             min = 1.0, max = 6.0, value = 1.0, step = 0.2, width = "100%")
-          )
+          column(7, sliderInput(ns("year_of_manufacture"), label = labelWithTooltip("Year of manufacture:", "Year the car was manufactured."), min = 1980, max = 2025, value = 2000, step = 1, sep = "", width = "100%")),
+          column(5, selectInput(ns("fuel_type"), label = labelWithTooltip("Fuel type:", "The car's fuel type."), choices = list("Petrol" = "petrol", "Diesel" = "diesel", "Hybrid" = "hybrid")))
         ),
-        
-        fluidRow(
-          column(7,
-                 sliderInput(ns("year_of_manufacture"),
-                             label = labelWithTooltip("Year of manufacture:", "Year the car was manufactured."),
-                             min = 1980, max = 2025, value = 2000, step = 1, sep = "", width = "100%")
-          ),
-          column(5,
-                 selectInput(ns("fuel_type"),
-                             label = labelWithTooltip("Fuel type:", "The car's fuel type."),
-                             choices = list("Petrol" = "petrol", "Diesel" = "diesel", "Hybrid" = "hybrid"))
-          )
-        ),
-        
-        fluidRow(
-          column(12,
-                 sliderInput(ns("mileage"),
-                             label = labelWithTooltip("Mileage:", "Total distance traveled."),
-                             min = 0, max = 500000, value = 100000, step = 1, width = "100%")
-          )
-        ),
-        
+        fluidRow(column(12, sliderInput(ns("mileage"), label = labelWithTooltip("Mileage:", "Total distance traveled."), min = 0, max = 500000, value = 100000, step = 1, width = "100%"))),
         tags$br(), 
         actionButton(ns("submitbutton"), "Submit", class = "btn btn-primary")
       ),
       
+      # --- Output Panel Column  ---
       column(
         width = 8,
         id = ns("main_panel"),
-        tags$label(h3('Status/Output')),
-        wellPanel(
-          id = ns("output_well"),
-          uiOutput(ns("contents")),
-          tableOutput(ns("tabledata"))
+        tags$label(h3('Output panel')),
+        
+        # Top section for the predicted price
+        div(
+          style = "flex: 0 0 auto; padding: 10px; border-radius: 8px; background-color: rgba(245, 245, 245, 0.9); border: 1px solid #e3e3e3;",
+          uiOutput(ns("contents"))
+        ),
+        
+        # A horizontal line to act as a separator
+        hr(style = "border-top: 1px solid #ccc; margin-top: 20px; margin-bottom: 20px;"),
+        
+        # Bottom section for the feature importance plot
+        div(
+          style = "flex: 1 1 auto; position: relative;",
+          h4("Feature Importance", style = "text-align: center; color: #555;"),
+          plotlyOutput(ns("importance_plot"), height = "95%")
         )
       )
     )
   )
 }
+
 
 
 mod_prediction_panel_server <- function(id, shared_data) {
@@ -188,6 +167,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
     
     
     trained_model <- reactiveVal(NULL)
+    importance_plot_obj <- reactiveVal(NULL)
     
     observe({
       req(input$Manufacturer, input$Model)
@@ -202,11 +182,12 @@ mod_prediction_panel_server <- function(id, shared_data) {
     
     observeEvent(input$submitbutton, {
       output$contents <- renderUI({ NULL })
-      output$tabledata <- renderTable({ NULL })
+      #output$tabledata <- renderTable({ NULL })
+      importance_plot_obj(NULL)
       
       withProgress(message = 'Processing', style = "old", value = 0, {
         
-        # --- MODEL LOADING AND TRAINING LOGIC (RESTORED) ---
+        # --- MODEL LOADING AND TRAINING LOGIC  ---
         setProgress(value = 0.1, detail = "Locating model...")
         Sys.sleep(0.5)
         
@@ -249,40 +230,63 @@ mod_prediction_panel_server <- function(id, shared_data) {
           Sys.sleep(1)
         }
         
-        # --- PREDICTION STEP (uses the loaded or newly trained model) ---
+        # --- PREDICTION STEP (Unchanged) ---
         setProgress(value = 0.7, detail = "Preparing prediction...")
-        
-        # Clean and prepare user inputs
-        manufacturer_input <- tolower(trimws(input$Manufacturer))
-        model_input <- tolower(trimws(input$Model))
-        fuel_input <- tolower(trimws(input$fuel_type))
-        
         levels <- trained_model()$factor_levels
         newdata <- data.frame(
-          manufacturer = factor(manufacturer_input, levels = levels$manufacturer),
-          model = factor(model_input, levels = levels$model),
+          manufacturer = factor(tolower(trimws(input$Manufacturer)), levels = levels$manufacturer),
+          model = factor(tolower(trimws(input$Model)), levels = levels$model),
           engine_size = as.numeric(input$engine_size),
           year_of_manufacture = as.integer(input$year_of_manufacture),
-          fuel_type = factor(fuel_input, levels = levels$fuel_type),
+          fuel_type = factor(tolower(trimws(input$fuel_type)), levels = levels$fuel_type),
           mileage = as.integer(input$mileage)
         )
         
-        # Run prediction
         setProgress(value = 0.9, detail = "Predicting...")
         pred <- predict(trained_model()$model, newdata)
-        
-        setProgress(value = 1, detail = "Done!")
         Sys.sleep(0.5)
         
-        # --- RENDER OUTPUT ---
-        output$contents <- renderUI({
-          tags$h4(paste0("Predicted Price: ", round(pred, 2), " €"))
-        })
+        # --- NEW: GENERATE FEATURE IMPORTANCE PLOT ---
+        setProgress(value = 0.95, detail = "Analyzing model...")
         
-        output$tabledata <- renderTable({
-          data.frame(Predicted_Price = round(pred, 2))
+        # Extract importance data from the model object
+        imp_data <- as.data.frame(randomForest::importance(trained_model()$model))
+        imp_data$Feature <- rownames(imp_data)
+        
+        # Create the plot
+        p <- plot_ly(
+          data = imp_data %>% arrange(`%IncMSE`), # Arrange ascending for horizontal plot
+          x = ~`%IncMSE`,
+          y = ~factor(Feature, levels = Feature), # Use factor to preserve order
+          type = 'bar',
+          orientation = 'h',
+          marker = list(color = 'rgba(0, 123, 255, 0.7)', line = list(color = 'rgba(0, 123, 255, 1)', width = 1))
+        ) %>% layout(
+          title = "",
+          paper_bgcolor = 'rgba(0,0,0,0)',
+          plot_bgcolor = 'rgba(0,0,0,0)',
+          xaxis = list(title = "Importance (% Increase in MSE)", color = '#333', gridcolor = 'rgba(128, 128, 128, 0.5)'),
+          yaxis = list(title = "", color = '#333'), 
+          font = list(color = '#333')
+        )
+        
+        # Store the plot object
+        importance_plot_obj(p)
+        
+        setProgress(value = 1, detail = "Done!")
+        
+        # --- RENDER OUTPUT  ---
+        output$contents <- renderUI({
+          tags$h4(style = "text-align: center; font-weight: bold;", 
+                  paste0("Predicted Price: ", format(round(pred, 2), nsmall = 2, big.mark = ","), " €"))
         })
       })
-    }) 
+    })
+    
+    output$importance_plot <- renderPlotly({
+      if (is.null(importance_plot_obj())) { return() }
+      importance_plot_obj()
+    })
+    
   })
 }

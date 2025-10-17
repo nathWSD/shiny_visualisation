@@ -18,7 +18,7 @@ shiny::addResourcePath(prefix = 'images', directoryPath = 'images')
 
 ui <- fluidPage(
   theme = shinytheme("cerulean"),
-  navbarPage("Modular App",
+  navbarPage("Auto Market",
              selected = "Dynamic Plot", 
              tabPanel("Dynamic Plot", mod_dynamic_plot_ui("plot")),
              tabPanel("Prediction Panel", mod_prediction_panel_ui("predict"))
