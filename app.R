@@ -10,16 +10,24 @@ library(shinyjs)
 library(rlang)
 library(dplyr)
 
+library(xgboost)
+library(Matrix)
+library(caret)
+library(jsonlite)
+
+
+# --- Source Modules ---
 source("modules/mod_dynamic_plot.R")
 source("modules/mod_prediction_panel.R")
 
-shiny::addResourcePath(prefix = 'images', directoryPath = 'images')
+# --- CORRECTED: Resource path now correctly points to your image folder ---
+shiny::addResourcePath(prefix = 'detailed_images', directoryPath = 'detailed_images')
 
 
 ui <- fluidPage(
   theme = shinytheme("cerulean"),
   navbarPage("Auto Market",
-             selected = "Dynamic Plot", 
+             selected = "Prediction Panel", # Start on the prediction panel for easier testing
              tabPanel("Dynamic Plot", mod_dynamic_plot_ui("plot")),
              tabPanel("Prediction Panel", mod_prediction_panel_ui("predict"))
   )
@@ -28,7 +36,7 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
   
-  data_file_path <- "car_sales_data.csv"
+  data_file_path <- "detailed_car_sales_data_train.csv"
   
   if (!file.exists(data_file_path)) {
     stop(paste("Error: The data file was not found.",

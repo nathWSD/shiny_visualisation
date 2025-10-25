@@ -1,5 +1,4 @@
-
-
+# Helper function for UI tooltips (no changes)
 labelWithTooltip <- function(labelText, tooltipText) {
   tags$label(
     labelText,
@@ -12,281 +11,326 @@ labelWithTooltip <- function(labelText, tooltipText) {
 }
 
 
+# --- mod_prediction_panel_ui Function (Corrected for Uniform Width) ---
+
 mod_prediction_panel_ui <- function(id) {
   ns <- NS(id)
+  
+  config_path <- "ui_config.json"
+  if (file.exists(config_path)) {
+    ui_config <- fromJSON(config_path)
+    color_css_map <- ui_config$color_map
+  } else {
+    # Dummy data to prevent crashing if file is missing
+    ui_config <- list(manufacturer_models = list("ERROR" = c("ui_config.json not found")), body_type = "SUV", transmission = "Automatic", drivetrain = "AWD", exterior_colour = "black", interior_colour = "black", fuel_type = "gasoline", engine_type = "Inline")
+    color_css_map <- list("black" = "#000000")
+  }
+  
+  prepare_color_data <- function(color_names) {
+    codes <- sapply(color_names, function(name) {
+      code <- color_css_map[[name]]
+      if (is.null(code)) "#777777" else code
+    }, USE.NAMES = FALSE)
+    mapply(function(name, code) {
+      list(value = name, label = name, color_code = code)
+    }, color_names, codes, SIMPLIFY = FALSE, USE.NAMES = FALSE)
+  }
+  
+  exterior_color_data <- prepare_color_data(ui_config$exterior_colour)
+  interior_color_data <- prepare_color_data(ui_config$interior_colour)
+  
+  render_js <- I(
+    "{
+      item: function(item, escape) { return '<div><span class=\"color-swatch\" style=\"background-color: ' + item.color_code + ';\"></span>' + escape(item.label) + '</div>'; },
+      option: function(item, escape) { return '<div><span class=\"color-swatch\" style=\"background-color: ' + item.color_code + ';\"></span>' + escape(item.label) + '</div>'; }
+    }"
+  )
   
   tagList(
     shinyjs::useShinyjs(),
     tags$head(
       tags$style(HTML(paste0("
-        /* --- Page Foundation --- */
-        html, body {
-          height: 100%; width: 100%; margin: 0; padding: 0; overflow: hidden;
-        }
-        body {
-          background-size: cover; background-position: center center;
-          background-repeat: no-repeat; background-attachment: fixed;
-          transition: background-image 1s ease-in-out;
-        }
-
-        /* ---  Custom Layout Container --- */
-        #", ns("main_container"), " {
-          height: calc(100vh - 80px);
-          display: flex; flex-direction: row; align-items: stretch;
-          padding: 20px; gap: 20px;
-        }
-        
-        /* --- Panel Styling --- */
-        #", ns("sidebar"), ", #", ns("main_panel"), " {
-          background-color: rgba(255, 255, 255, 0.9);
-          border-radius: 10px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-          padding: 25px;
-          overflow-y: auto;
-        }
-        
-        /* --- Input Spacing --- */
-        #", ns("sidebar"), " .form-group {
-            margin-bottom: 20px;
-        }
-        #", ns("sidebar"), " h3 {
-            margin-top: 0; margin-bottom: 25px;
-        }
-
-        /* --- Output Well Styling --- */
-        #", ns("output_well"), " {
-          background-color: rgba(245, 245, 245, 0.9);
-          border: 1px solid #e3e3e3;
-          padding: 15px; border-radius: 8px;
-        }
-        
-        /* --- 6. NEW: CUSTOM TOOLTIP CSS --- */
-        /* This is the CSS that makes our new tooltip work. */
-        .tooltip-container {
-          position: relative; /* Establishes a positioning context for the tooltip text */
-          display: inline-block;
-        }
-        .tooltip-text {
-          visibility: hidden; /* Hide the tooltip by default */
-          width: 200px;
-          background-color: #333;
-          color: #fff;
-          text-align: center;
-          border-radius: 6px;
-          padding: 5px 10px;
-          position: absolute; /* Position it relative to the container */
-          z-index: 10;
-          bottom: 110%; /* Place it just above the icon */
-          left: 50%;
-          margin-left: -100px; /* Center the tooltip */
-          opacity: 0;
-          transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
-          font-weight: normal; /* Ensure tooltip text isn't bold like the label */
-        }
-        /* Show the tooltip when hovering over the container (the icon) */
-        .tooltip-container:hover .tooltip-text {
-          visibility: visible;
-          opacity: 1;
-        }
-
+        /* CSS (no changes) */
+        #", ns("main_container"), " { display: flex; flex-direction: row; height: calc(100vh - 80px); padding: 20px; gap: 20px; }
+        #", ns("sidebar"), " { width: 50%; flex: 0 0 50%; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 25px; overflow-y: auto; }
+        #", ns("main_panel"), " { width: 50%; flex: 1 1 50%; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 25px; overflow-y: auto; }
+        #", ns("sidebar"), " .form-group { margin-bottom: 20px; }
+        .color-swatch { display: inline-block; width: 15px; height: 15px; border-radius: 3px; margin-right: 8px; vertical-align: middle; border: 1px solid #ccc; }
+        .tooltip-container { position: relative; display: inline-block; }
+        .tooltip-text { visibility: hidden; width: 200px; background-color: #333; color: #fff; text-align: center; border-radius: 6px; padding: 5px 10px; position: absolute; z-index: 10; bottom: 110%; left: 50%; margin-left: -100px; opacity: 0; transition: opacity 0.3s; }
+        .tooltip-container:hover .tooltip-text { visibility: visible; opacity: 1; }
       ")))
-      
     ),
     
     div(
       id = ns("main_container"),
       
-      # --- Input Panel Column ---
-      column(
-        width = 4,
+      div(
         id = ns("sidebar"),
-        HTML("<h3>Input parameters</h3>"),
+        h3("Input Car Specifications"),
+        
         fluidRow(
-          column(6, selectInput(ns("Manufacturer"), label = labelWithTooltip("Manufacturer:", "Select the car manufacturer."), choices = c("Ford", "Porsche", "Toyota", "VW", "BMW"))),
-          column(6, uiOutput(ns("Model_ui")))
+          column(6, selectInput(ns("manufacturer"), label = labelWithTooltip("Manufacturer:", "Select car manufacturer."), choices = names(ui_config$manufacturer_models), width = "100%")),
+          column(6, uiOutput(ns("model_ui")))
         ),
-        fluidRow(column(12, sliderInput(ns("engine_size"), label = labelWithTooltip("Engine size:", "Engine displacement in liters."), min = 1.0, max = 6.0, value = 1.0, step = 0.2, width = "100%"))),
         fluidRow(
-          column(7, sliderInput(ns("year_of_manufacture"), label = labelWithTooltip("Year of manufacture:", "Year the car was manufactured."), min = 1980, max = 2025, value = 2000, step = 1, sep = "", width = "100%")),
-          column(5, selectInput(ns("fuel_type"), label = labelWithTooltip("Fuel type:", "The car's fuel type."), choices = list("Petrol" = "petrol", "Diesel" = "diesel", "Hybrid" = "hybrid")))
+          column(6, sliderInput(ns("year_of_manufacture"), label = labelWithTooltip("Year:", "Year manufactured."), min = 1940, max = 2025, value = 2018, step = 1, sep = "", width = "100%")),
+          column(6, sliderInput(ns("mileage"), label = labelWithTooltip("Mileage (km):", "Total distance traveled."), min = 0, max = 800000, value = 80000, step = 500, width = "100%"))
         ),
-        fluidRow(column(12, sliderInput(ns("mileage"), label = labelWithTooltip("Mileage:", "Total distance traveled."), min = 0, max = 500000, value = 100000, step = 1, width = "100%"))),
-        tags$br(), 
-        actionButton(ns("submitbutton"), "Submit", class = "btn btn-primary")
+        fluidRow(
+          column(6, selectInput(ns("body_type"), label = labelWithTooltip("Body Type:", "Select car's body style."), choices = ui_config$body_type, width = "100%")),
+          column(6, selectInput(ns("transmission"), label = labelWithTooltip("Transmission:", "Select transmission type."), choices = ui_config$transmission, width = "100%"))
+        ),
+        fluidRow(
+          column(6, selectInput(ns("drivetrain"), label = labelWithTooltip("Drivetrain:", "Select drivetrain type."), choices = ui_config$drivetrain, width = "100%")),
+          column(6, selectInput(ns("fuel_type"), label = labelWithTooltip("Fuel Type:", "Select fuel type."), choices = ui_config$fuel_type, width = "100%"))
+        ),
+        fluidRow(
+          # --- CORRECTED: Added width = "100%" to both selectizeInput calls ---
+          column(6, selectizeInput(ns("exterior_colour"), label = labelWithTooltip("Exterior Colour:", "Select exterior colour."), choices = ui_config$exterior_colour, width = "100%", options = list(options = exterior_color_data, valueField = 'value', labelField = 'label', searchField = 'label', render = render_js))),
+          column(6, selectizeInput(ns("interior_colour"), label = labelWithTooltip("Interior Colour:", "Select interior colour."), choices = ui_config$interior_colour, width = "100%", options = list(options = interior_color_data, valueField = 'value', labelField = 'label', searchField = 'label', render = render_js)))
+        ),
+        fluidRow(
+          column(6, sliderInput(ns("passengers"), label = labelWithTooltip("Passengers:", "Number of seats."), min = 2, max = 14, value = 5, step = 1, width = "100%")),
+          column(6, sliderInput(ns("doors"), label = labelWithTooltip("Doors:", "Number of doors."), min = 2, max = 5, value = 4, step = 1, width = "100%"))
+        ),
+        fluidRow(
+          column(6, sliderInput(ns("engine_displacement_L"), label = labelWithTooltip("Displacement (L):", "Engine displacement."), min = 0.6, max = 8.0, value = 2.0, step = 0.1, width = "100%")),
+          column(6, sliderInput(ns("engine_cylinders"), label = labelWithTooltip("Cylinders:", "Number of cylinders."), min = 0, max = 16, value = 4, step = 1, width = "100%"))
+        ),
+        fluidRow(
+          column(6, sliderInput(ns("city_consumption"), label = labelWithTooltip("City L/100km:", "Fuel consumption in the city."), min = 2, max = 25, value = 11.0, step = 0.1, width = "100%")),
+          column(6, sliderInput(ns("highway_consumption"), label = labelWithTooltip("Highway L/100km:", "Fuel consumption on highway."), min = 0, max = 20, value = 8.5, step = 0.1, width = "100%"))
+        ),
+        fluidRow(
+          column(6, selectInput(ns("engine_type"), label = labelWithTooltip("Engine Type:", "Select engine configuration."), choices = ui_config$engine_type, width = "100%"))
+        ),
+        
+        tags$br(),
+        actionButton(ns("submitbutton"), "Predict Price", class = "btn btn-primary btn-lg btn-block")
       ),
       
-      # --- Output Panel Column  ---
-      column(
-        width = 8,
+      div(
         id = ns("main_panel"),
-        tags$label(h3('Output panel')),
-        
-        # Top section for the predicted price
-        div(
-          style = "flex: 0 0 auto; padding: 10px; border-radius: 8px; background-color: rgba(245, 245, 245, 0.9); border: 1px solid #e3e3e3;",
-          uiOutput(ns("contents"))
-        ),
-        
-        # A horizontal line to act as a separator
-        hr(style = "border-top: 1px solid #ccc; margin-top: 20px; margin-bottom: 20px;"),
-        
-        # Bottom section for the feature importance plot
-        div(
-          style = "flex: 1 1 auto; position: relative;",
-          h4("Feature Importance", style = "text-align: center; color: #555;"),
-          plotlyOutput(ns("importance_plot"), height = "95%")
-        )
+        h3('Prediction Output'),
+        div(style = "flex: 0 0 auto; padding: 10px; border-radius: 8px; background-color: rgba(245, 245, 245, 0.9);", uiOutput(ns("contents"))),
+        hr(),
+        div(style = "flex: 1 1 auto; position: relative;", h4("Model Feature Importance", style = "text-align: center;"), plotlyOutput(ns("importance_plot"), height = "95%"))
       )
     )
   )
 }
 
 
+# --- Server Function (Corrected for All Issues) ---
 
 mod_prediction_panel_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
     
-    shinyjs::runjs(
-      "$('body').css('background-image', \"url('images/Ford/Fiesta.jpg')\")"
-    )
-    
-    manufacturer_models <- list(
-      "Ford" = c("Fiesta", "Mondeo", "Focus"),
-      "Porsche" = c("718 Cayman", "911", "Cayenne"),
-      "Toyota" = c("RAV4", "Prius", "Yaris"),
-      "VW" = c("Polo", "Golf", "Passat"),
-      "BMW" = c("Z4", "M5", "X3")
-    )
-    
-    output$Model_ui <- renderUI({
-      selectInput(ns("Model"),
-                  label = labelWithTooltip("Model:", "Select the specific car model for the chosen manufacturer."),
-                  choices = manufacturer_models[[input$Manufacturer]])
-    })
-    
-    
-    trained_model <- reactiveVal(NULL)
-    importance_plot_obj <- reactiveVal(NULL)
-    
+    # --- Load config from JSON once in the server ---
+    config_data <- reactiveVal(NULL)
     observe({
-      req(input$Manufacturer, input$Model)
-      image_path <- paste0("images/", input$Manufacturer, "/", input$Model, ".jpg")
-      css_background_url <- paste0("url('", image_path, "')")
-      
-      shinyjs::runjs(sprintf(
-        "$('body').css('background-image', \"%s\")",
-        css_background_url
-      ))
+      req(file.exists("ui_config.json"))
+      config_data(fromJSON("ui_config.json"))
     })
+    
+    # --- CORRECTED: Background image logic ---
+    autoInvalidate <- reactiveTimer(5000)
+    observe({
+      autoInvalidate()
+      # Path now points inside the 'www' directory
+      images_path <- "detailed_images" 
+      if (dir.exists(images_path)) {
+        # Get just the filenames, not the full path
+        all_images <- list.files(images_path, recursive = TRUE, pattern = "\\.(jpg|jpeg|png)$")
+        if (length(all_images) > 0) {
+          # Construct a web-accessible relative path
+          random_image <- sample(all_images, 1)
+          js_path <- file.path("detailed_images", random_image)
+          # Ensure forward slashes for the URL
+          js_path <- gsub("\\\\", "/", js_path)
+          shinyjs::runjs(sprintf("$('body').css('background-image', \"url('%s')\")", js_path))
+        }
+      }
+    })
+    
+    # Dynamic model UI (no changes needed here)
+    output$model_ui <- renderUI({
+      req(input$manufacturer, config_data())
+      models <- config_data()$manufacturer_models[[input$manufacturer]]
+      selectInput(ns("model"), label = labelWithTooltip("Model:", "Select the car model."), choices = models, width = "100%")
+    })
+    
+    trained_model_bundle <- reactiveVal(NULL)
+    importance_plot_obj <- reactiveVal(NULL)
+    quantile_loss_obj <- function(alpha) { function(preds, dtrain) { labels <- getinfo(dtrain, "label"); grad <- ifelse(labels - preds > 0, -alpha, (1 - alpha)); hess <- rep(1, length(labels)); list(grad = grad, hess = hess) } }
     
     observeEvent(input$submitbutton, {
-      output$contents <- renderUI({ NULL })
-      #output$tabledata <- renderTable({ NULL })
-      importance_plot_obj(NULL)
+      # --- FIX: Wait until input$model is available ---
+      # This prevents the app from crashing or giving bad predictions
+      # if the user clicks the button too quickly after changing the manufacturer.
+      req(input$model, cancelOutput = TRUE)
       
-      withProgress(message = 'Processing', style = "old", value = 0, {
+      withProgress(message = 'Processing Request', style = "old", value = 0, {
         
-        # --- MODEL LOADING AND TRAINING LOGIC  ---
-        setProgress(value = 0.1, detail = "Locating model...")
-        Sys.sleep(0.5)
+        model_paths <- list(lower = "models/xgb_lower.xgb", median = "models/xgb_median.xgb", upper = "models/xgb_upper.xgb", preproc = "models/xgb_preproc_info.rds")
         
-        model_path <- "models/rf_model.rds"
-        
-        if (file.exists(model_path)) {
-          if (is.null(trained_model())) { 
-            setProgress(value = 0.2, detail = "Loading existing model...")
-            model_bundle <- readRDS(model_path)
-            trained_model(model_bundle)
-            Sys.sleep(0.5)
+        if (all(sapply(model_paths, file.exists))) {
+          if(is.null(trained_model_bundle())) {
+            bundle <- list(models = lapply(model_paths[c("lower", "median", "upper")], xgb.load), preproc_info = readRDS(model_paths$preproc))
+            trained_model_bundle(bundle)
           }
         } else {
-          setProgress(value = 0.2, detail = "No model found. Training new model...")
-          req(shared_data()) 
+          setProgress(value = 0.2, detail = "Models not found. Training...")
+          req(shared_data(), config_data()) 
           df <- shared_data()
           
-          # Prepare data for training 
-          all_factor_levels <- list(
-            manufacturer = tolower(names(manufacturer_models)),
-            model = tolower(unlist(manufacturer_models, use.names = FALSE)),
-            fuel_type = c("petrol", "diesel", "hybrid")
-          )
-          df$manufacturer <- factor(tolower(trimws(df$manufacturer)), levels = all_factor_levels$manufacturer)
-          df$model <- factor(tolower(trimws(df$model)), levels = all_factor_levels$model)
-          df$fuel_type <- factor(tolower(trimws(df$fuel_type)), levels = all_factor_levels$fuel_type)
+          preproc_config <- config_data()
+          all_factor_levels <- preproc_config
+          all_factor_levels$manufacturer_models <- NULL
+          all_factor_levels$color_map <- NULL 
           
-          # Train the Random Forest model
-          rf <- randomForest(price ~ ., data = df, ntree = 500, importance = TRUE, na.action = na.omit)
+          all_factor_levels$manufacturer <- names(preproc_config$manufacturer_models)
+          all_factor_levels$model <- unique(unlist(preproc_config$manufacturer_models))
           
-          model_bundle <- list(model = rf, factor_levels = all_factor_levels)
+          df_processed <- df %>%
+            mutate(across(all_of(names(all_factor_levels)), ~factor(., levels = all_factor_levels[[cur_column()]]))) %>%
+            na.omit()
           
-          # Save the new model to disk
-          dir.create("models", showWarnings = FALSE) 
-          saveRDS(model_bundle, model_path)
+          train_indices <- createDataPartition(df_processed$price, p = 0.8, list = FALSE)
+          train_data <- df_processed[train_indices, ]
+          validation_data <- df_processed[-train_indices, ]
           
-          # Store the newly trained model 
-          trained_model(model_bundle)
-          setProgress(value = 0.6, detail = "Model trained and saved.")
-          Sys.sleep(1)
+          train_matrix <- sparse.model.matrix(price ~ . -1, data = train_data)
+          dtrain <- xgb.DMatrix(data = train_matrix, label = train_data$price)
+          
+          validation_matrix <- sparse.model.matrix(price ~ . -1, data = validation_data)
+          dvalid <- xgb.DMatrix(data = validation_matrix, label = validation_data$price)
+          
+          watchlist <- list(train = dtrain, validation = dvalid)
+          xgb_params <- list(booster = "gbtree", eta = 0.05, max_depth = 10, eval_metric = "mae")
+          
+          models_list <- list()
+          quantiles_to_train <- c(lower = 0.05, median = 0.50, upper = 0.95)
+          dir.create("models", showWarnings = FALSE)
+          
+          for (i in seq_along(quantiles_to_train)) {
+            q_name <- names(quantiles_to_train)[i]; q_val <- quantiles_to_train[[i]]
+            model <- xgb.train(params = xgb_params, data = dtrain, nrounds = 5000, objective = quantile_loss_obj(q_val), watchlist = watchlist, early_stopping_rounds = 50, verbose = 0)
+            xgb.save(model, model_paths[[q_name]])
+            models_list[[q_name]] <- model
+          }
+          
+          preproc_info_to_save <- list(feature_names = colnames(train_matrix), all_levels = all_factor_levels)
+          saveRDS(preproc_info_to_save, model_paths$preproc)
+          trained_model_bundle(list(models = models_list, preproc_info = preproc_info_to_save))
         }
         
-        # --- PREDICTION STEP (Unchanged) ---
-        setProgress(value = 0.7, detail = "Preparing prediction...")
-        levels <- trained_model()$factor_levels
+        setProgress(value = 0.9, detail = "Preparing new data for prediction...")
+        
+        current_bundle <- trained_model_bundle()
+        preproc_info <- current_bundle$preproc_info
+        
         newdata <- data.frame(
-          manufacturer = factor(tolower(trimws(input$Manufacturer)), levels = levels$manufacturer),
-          model = factor(tolower(trimws(input$Model)), levels = levels$model),
-          engine_size = as.numeric(input$engine_size),
           year_of_manufacture = as.integer(input$year_of_manufacture),
-          fuel_type = factor(tolower(trimws(input$fuel_type)), levels = levels$fuel_type),
-          mileage = as.integer(input$mileage)
+          manufacturer = input$manufacturer,
+          model = input$model,
+          mileage = as.numeric(input$mileage),
+          body_type = input$body_type,
+          transmission = input$transmission,
+          drivetrain = input$drivetrain,
+          exterior_colour = input$exterior_colour,
+          interior_colour = input$interior_colour,
+          passengers = as.integer(input$passengers),
+          doors = as.integer(input$doors),
+          fuel_type = input$fuel_type,
+          city_consumption = as.numeric(input$city_consumption),
+          highway_consumption = as.numeric(input$highway_consumption),
+          engine_displacement_L = as.numeric(input$engine_displacement_L),
+          engine_cylinders = as.integer(input$engine_cylinders),
+          engine_type = input$engine_type,
+          price = 0
         )
         
-        setProgress(value = 0.9, detail = "Predicting...")
-        pred <- predict(trained_model()$model, newdata)
-        Sys.sleep(0.5)
+        for (col in names(preproc_info$all_levels)) {
+          if (col %in% names(newdata)) {
+            newdata[[col]] <- factor(newdata[[col]], levels = preproc_info$all_levels[[col]])
+          }
+        }
         
-        # --- NEW: GENERATE FEATURE IMPORTANCE PLOT ---
-        setProgress(value = 0.95, detail = "Analyzing model...")
+        pred_matrix_small <- sparse.model.matrix(price ~ . -1, data = newdata)
         
-        # Extract importance data from the model object
-        imp_data <- as.data.frame(randomForest::importance(trained_model()$model))
-        imp_data$Feature <- rownames(imp_data)
+        missing_cols <- setdiff(preproc_info$feature_names, colnames(pred_matrix_small))
+        if (length(missing_cols) > 0) {
+          missing_matrix <- Matrix(0, nrow = 1, ncol = length(missing_cols), dimnames = list(NULL, missing_cols), sparse = TRUE)
+          pred_matrix_full <- cbind(pred_matrix_small, missing_matrix)
+          pred_matrix_final <- pred_matrix_full[, preproc_info$feature_names, drop = FALSE]
+        } else {
+          pred_matrix_final <- pred_matrix_small[, preproc_info$feature_names, drop = FALSE]
+        }
         
-        # Create the plot
-        p <- plot_ly(
-          data = imp_data %>% arrange(`%IncMSE`), # Arrange ascending for horizontal plot
-          x = ~`%IncMSE`,
-          y = ~factor(Feature, levels = Feature), # Use factor to preserve order
-          type = 'bar',
-          orientation = 'h',
-          marker = list(color = 'rgba(0, 123, 255, 0.7)', line = list(color = 'rgba(0, 123, 255, 1)', width = 1))
-        ) %>% layout(
-          title = "",
-          paper_bgcolor = 'rgba(0,0,0,0)',
-          plot_bgcolor = 'rgba(0,0,0,0)',
-          xaxis = list(title = "Importance (% Increase in MSE)", color = '#333', gridcolor = 'rgba(128, 128, 128, 0.5)'),
-          yaxis = list(title = "", color = '#333'), 
-          font = list(color = '#333')
-        )
+        dtest <- xgb.DMatrix(data = pred_matrix_final)
+        predictions <- lapply(current_bundle$models, predict, dtest)
         
-        # Store the plot object
-        importance_plot_obj(p)
+        imp_data <- xgb.importance(model = current_bundle$models$median)
+        if (nrow(imp_data) > 0) {
+          p <- plot_ly(data = imp_data %>% head(15) %>% arrange(Gain), x = ~Gain, y = ~factor(Feature, levels = Feature), type = 'bar', orientation = 'h') %>%
+            layout(title = "", yaxis = list(title = ""), xaxis = list(title = "Feature Importance (Gain)"), paper_bgcolor = 'rgba(0,0,0,0)', plot_bgcolor = 'rgba(0,0,0,0)')
+          importance_plot_obj(p)
+        }
         
-        setProgress(value = 1, detail = "Done!")
-        
-        # --- RENDER OUTPUT  ---
+        # --- NEW: Detailed prediction output table ---
         output$contents <- renderUI({
-          tags$h4(style = "text-align: center; font-weight: bold;", 
-                  paste0("Predicted Price: ", format(round(pred, 2), nsmall = 2, big.mark = ","), " €"))
+          
+          pred_median <- round(predictions$median)
+          pred_lower <- round(predictions$lower)
+          pred_upper <- round(predictions$upper)
+          
+          # Helper for formatting currency
+          format_euro <- function(amount) {
+            paste0(format(amount, nsmall = 0, big.mark = ","), " €")
+          }
+          
+          tags$div(
+            tags$style(HTML("
+              .pred-table { width: 100%; border-collapse: collapse; }
+              .pred-table td { padding: 8px; border: 1px solid #ddd; text-align: right; }
+              .pred-table td:first-child { text-align: left; font-weight: bold; }
+            ")),
+            tags$table(class = "pred-table",
+                       tags$tr(
+                         tags$td("Predicted Price (Median)"),
+                         tags$td(format_euro(pred_median))
+                       ),
+                       tags$tr(
+                         tags$td("90% Confidence Lower Bound"),
+                         tags$td(format_euro(pred_lower))
+                       ),
+                       tags$tr(
+                         tags$td("90% Confidence Upper Bound"),
+                         tags$td(format_euro(pred_upper))
+                       ),
+                       tags$tr(
+                         tags$td("Uncertainty Range"),
+                         tags$td(paste0("± ", format_euro((pred_upper - pred_lower) / 2)))
+                       )
+            ),
+            tags$br(),
+            tags$p(style = "text-align: center;",
+                   "Based on the provided specifications, the model predicts the car's price to be around ",
+                   tags$b(format_euro(pred_median)),
+                   ", with a 90% confidence that the true price falls between ",
+                   tags$b(format_euro(pred_lower)), " and ", tags$b(format_euro(pred_upper)), "."
+            )
+          )
         })
       })
     })
     
-    output$importance_plot <- renderPlotly({
-      if (is.null(importance_plot_obj())) { return() }
-      importance_plot_obj()
-    })
-    
+    output$importance_plot <- renderPlotly({ req(importance_plot_obj()); importance_plot_obj() })
   })
 }
+
+
+
