@@ -122,7 +122,7 @@ mod_prediction_panel_ui <- function(id) {
 }
 
 
-# --- Server Function (Corrected for All Issues) ---
+# --- Server Function (Corrected for Background Image and Empty Plot) ---
 
 mod_prediction_panel_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
@@ -139,14 +139,13 @@ mod_prediction_panel_server <- function(id, shared_data) {
     autoInvalidate <- reactiveTimer(5000)
     observe({
       autoInvalidate()
-      # Path now points inside the 'www' directory
-      images_path <- "detailed_images" 
+      # Path now points to the correct local directory at the app's root
+      images_path <- "detailed_images"
       if (dir.exists(images_path)) {
-        # Get just the filenames, not the full path
         all_images <- list.files(images_path, recursive = TRUE, pattern = "\\.(jpg|jpeg|png)$")
         if (length(all_images) > 0) {
-          # Construct a web-accessible relative path
           random_image <- sample(all_images, 1)
+          # The URL path must match the prefix from addResourcePath in app.R
           js_path <- file.path("detailed_images", random_image)
           # Ensure forward slashes for the URL
           js_path <- gsub("\\\\", "/", js_path)
@@ -155,7 +154,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
       }
     })
     
-    # Dynamic model UI (no changes needed here)
+    # Dynamic model UI
     output$model_ui <- renderUI({
       req(input$manufacturer, config_data())
       models <- config_data()$manufacturer_models[[input$manufacturer]]
@@ -167,9 +166,6 @@ mod_prediction_panel_server <- function(id, shared_data) {
     quantile_loss_obj <- function(alpha) { function(preds, dtrain) { labels <- getinfo(dtrain, "label"); grad <- ifelse(labels - preds > 0, -alpha, (1 - alpha)); hess <- rep(1, length(labels)); list(grad = grad, hess = hess) } }
     
     observeEvent(input$submitbutton, {
-      # --- FIX: Wait until input$model is available ---
-      # This prevents the app from crashing or giving bad predictions
-      # if the user clicks the button too quickly after changing the manufacturer.
       req(input$model, cancelOutput = TRUE)
       
       withProgress(message = 'Processing Request', style = "old", value = 0, {
@@ -189,7 +185,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
           preproc_config <- config_data()
           all_factor_levels <- preproc_config
           all_factor_levels$manufacturer_models <- NULL
-          all_factor_levels$color_map <- NULL 
+          all_factor_levels$color_map <- NULL
           
           all_factor_levels$manufacturer <- names(preproc_config$manufacturer_models)
           all_factor_levels$model <- unique(unlist(preproc_config$manufacturer_models))
@@ -273,21 +269,24 @@ mod_prediction_panel_server <- function(id, shared_data) {
         dtest <- xgb.DMatrix(data = pred_matrix_final)
         predictions <- lapply(current_bundle$models, predict, dtest)
         
+        # --- CORRECTED: Plotting logic is now more robust ---
         imp_data <- xgb.importance(model = current_bundle$models$median)
         if (nrow(imp_data) > 0) {
           p <- plot_ly(data = imp_data %>% head(15) %>% arrange(Gain), x = ~Gain, y = ~factor(Feature, levels = Feature), type = 'bar', orientation = 'h') %>%
             layout(title = "", yaxis = list(title = ""), xaxis = list(title = "Feature Importance (Gain)"), paper_bgcolor = 'rgba(0,0,0,0)', plot_bgcolor = 'rgba(0,0,0,0)')
           importance_plot_obj(p)
+        } else {
+          # If no importance data, set plot to NULL to clear the output
+          importance_plot_obj(NULL)
         }
         
-        # --- NEW: Detailed prediction output table ---
+        # Detailed prediction output table
         output$contents <- renderUI({
           
           pred_median <- round(predictions$median)
           pred_lower <- round(predictions$lower)
           pred_upper <- round(predictions$upper)
           
-          # Helper for formatting currency
           format_euro <- function(amount) {
             paste0(format(amount, nsmall = 0, big.mark = ","), " €")
           }
@@ -328,7 +327,11 @@ mod_prediction_panel_server <- function(id, shared_data) {
       })
     })
     
-    output$importance_plot <- renderPlotly({ req(importance_plot_obj()); importance_plot_obj() })
+    output$importance_plot <- renderPlotly({
+      # req will prevent rendering if the plot object is NULL
+      req(importance_plot_obj())
+      importance_plot_obj()
+    })
   })
 }
 

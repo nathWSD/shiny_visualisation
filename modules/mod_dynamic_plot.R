@@ -80,13 +80,13 @@ mod_dynamic_plot_ui <- function(id) {
   )
 }
 
-
 mod_dynamic_plot_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     
-    observeEvent(input$plot_type, {
+    # This observer for updating dropdowns is correct and does not cause the issue.
+    observe({
       df <- shared_data()
-      req(df)
+      req(df, input$plot_type)
       
       numeric_cols <- names(df)[sapply(df, is.numeric)]
       categorical_cols <- names(df)[sapply(df, function(x) is.character(x) || is.factor(x))]
@@ -100,53 +100,70 @@ mod_dynamic_plot_server <- function(id, shared_data) {
       }
     })
     
-    plot_object <- reactiveVal(NULL)
+    # 1. This reactiveVal will store our final plot. It starts NULL.
+    plot_to_render <- reactiveVal(NULL)
     
+    # 2. This observeEvent listens ONLY to the button click. This is the sole trigger.
     observeEvent(input$generate_plot, {
-      df <- shared_data()
-      req(df, input$x_col, input$y_col, input$plot_type)
       
+      # 3. Immediately isolate all required input values into local variables.
+      # This is the most crucial step. The rest of the code will only use
+      # these non-reactive variables, completely breaking the reactive link.
+      current_plot_type <- isolate(input$plot_type)
+      current_x_col <- isolate(input$x_col)
+      current_y_col <- isolate(input$y_col)
+      df <- isolate(shared_data())
+      
+      # Ensure we actually have valid values before proceeding.
+      req(df, current_x_col, current_y_col, current_plot_type)
+      
+      # 4. Perform all plotting logic using ONLY the local variables.
       p <- switch(
-        input$plot_type,
-        
+        current_plot_type,
         "Scatter Plot" = {
-          plot_ly(df, x = ~get(input$x_col), y = ~get(input$y_col),
+          plot_ly(df, x = ~get(current_x_col), y = ~get(current_y_col),
                   type = 'scatter', mode = 'markers',
                   marker = list(color = '#007bff', size = 8))
         },
-        
         "Line Plot" = {
-          df_sorted <- df %>% arrange(!!sym(input$x_col))
-          plot_ly(df_sorted, x = ~get(input$x_col), y = ~get(input$y_col),
+          df_sorted <- df %>% arrange(!!sym(current_x_col))
+          plot_ly(df_sorted, x = ~get(current_x_col), y = ~get(current_y_col),
                   type = 'scatter', mode = 'lines+markers',
                   line = list(color = '#007bff'),
                   marker = list(color = '#007bff', size = 8))
         },
-        
         "Bar Chart" = {
           df_agg <- df %>%
-            group_by(!!sym(input$x_col)) %>%
-            summarise(agg_y = mean(!!sym(input$y_col), na.rm = TRUE), .groups = 'drop') %>%
-            rename(y_val = agg_y, x_cat = !!sym(input$x_col))
+            group_by(!!sym(current_x_col)) %>%
+            summarise(agg_y = mean(!!sym(current_y_col), na.rm = TRUE), .groups = 'drop') %>%
+            rename(y_val = agg_y, x_cat = !!sym(current_x_col))
           
           plot_ly(df_agg, x = ~x_cat, y = ~y_val,
                   type = 'bar', marker = list(color = '#007bff'))
         }
       )
       
+      # Also use the local, non-reactive variables for the layout.
       p <- p %>% layout(
         paper_bgcolor = 'rgba(0,0,0,0)',
         plot_bgcolor = 'rgba(0,0,0,0)',
-        xaxis = list(title = input$x_col, color = '#333333', gridcolor = 'rgba(128, 128, 128, 0.5)'),
-        yaxis = list(title = input$y_col, color = '#333333', gridcolor = 'rgba(128, 128, 128, 0.5)'),
+        xaxis = list(title = current_x_col, color = '#333333', gridcolor = 'rgba(128, 128, 128, 0.5)'),
+        yaxis = list(title = current_y_col, color = '#333333', gridcolor = 'rgba(128, 128, 128, 0.5)'),
         font = list(color = '#333333')
       )
       
-      plot_object(p)
-    })
+      # 5. Store the resulting "sanitized" plot in our reactiveVal.
+      plot_to_render(p)
+      
+    }, ignoreInit = TRUE) # End of observeEvent
     
+    
+    # 6. The output rendering logic ONLY depends on our reactiveVal.
+    # It has no knowledge of the input dropdowns or the button.
     output$dynamic_plot <- renderPlotly({
-      if (is.null(plot_object())) {
+      
+      # If the reactiveVal is NULL (button never clicked), show the placeholder.
+      if (is.null(plot_to_render())) {
         return(
           plot_ly() %>%
             layout(
@@ -162,7 +179,9 @@ mod_dynamic_plot_server <- function(id, shared_data) {
             )
         )
       }
-      plot_object()
+      
+      # Otherwise, render the plot that is stored inside the reactiveVal.
+      plot_to_render()
     })
     
   })
