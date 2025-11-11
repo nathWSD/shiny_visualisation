@@ -21,7 +21,6 @@ mod_prediction_panel_ui <- function(id) {
     ui_config <- fromJSON(config_path)
     color_css_map <- ui_config$color_map
   } else {
-    # Dummy data to prevent crashing if file is missing
     ui_config <- list(manufacturer_models = list("ERROR" = c("ui_config.json not found")), body_type = "SUV", transmission = "Automatic", drivetrain = "AWD", exterior_colour = "black", interior_colour = "black", fuel_type = "gasoline", engine_type = "Inline")
     color_css_map <- list("black" = "#000000")
   }
@@ -50,7 +49,6 @@ mod_prediction_panel_ui <- function(id) {
     shinyjs::useShinyjs(),
     tags$head(
       tags$style(HTML(paste0("
-        /* CSS (no changes) */
         #", ns("main_container"), " { display: flex; flex-direction: row; height: calc(100vh - 80px); padding: 20px; gap: 20px; }
         #", ns("sidebar"), " { width: 50%; flex: 0 0 50%; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 25px; overflow-y: auto; }
         #", ns("main_panel"), " { width: 50%; flex: 1 1 50%; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 25px; overflow-y: auto; }
@@ -86,7 +84,6 @@ mod_prediction_panel_ui <- function(id) {
           column(6, selectInput(ns("fuel_type"), label = labelWithTooltip("Fuel Type:", "Select fuel type."), choices = ui_config$fuel_type, width = "100%"))
         ),
         fluidRow(
-          # --- CORRECTED: Added width = "100%" to both selectizeInput calls ---
           column(6, selectizeInput(ns("exterior_colour"), label = labelWithTooltip("Exterior Colour:", "Select exterior colour."), choices = ui_config$exterior_colour, width = "100%", options = list(options = exterior_color_data, valueField = 'value', labelField = 'label', searchField = 'label', render = render_js))),
           column(6, selectizeInput(ns("interior_colour"), label = labelWithTooltip("Interior Colour:", "Select interior colour."), choices = ui_config$interior_colour, width = "100%", options = list(options = interior_color_data, valueField = 'value', labelField = 'label', searchField = 'label', render = render_js)))
         ),
@@ -99,7 +96,7 @@ mod_prediction_panel_ui <- function(id) {
           column(6, sliderInput(ns("engine_cylinders"), label = labelWithTooltip("Cylinders:", "Number of cylinders."), min = 0, max = 16, value = 4, step = 1, width = "100%"))
         ),
         fluidRow(
-          column(6, sliderInput(ns("city_consumption"), label = labelWithTooltip("City L/100km:", "Fuel consumption in the city."), min = 2, max = 25, value = 11.0, step = 0.1, width = "100%")),
+          column(6, sliderInput(ns("city_consumption"), label = labelWithTooltip("City L/100km:", "Fuel consumption in the city."), min = 0, max = 25, value = 11.0, step = 0.1, width = "100%")),
           column(6, sliderInput(ns("highway_consumption"), label = labelWithTooltip("Highway L/100km:", "Fuel consumption on highway."), min = 0, max = 20, value = 8.5, step = 0.1, width = "100%"))
         ),
         fluidRow(
@@ -122,39 +119,33 @@ mod_prediction_panel_ui <- function(id) {
 }
 
 
-# --- Server Function (Corrected for Background Image and Empty Plot) ---
-
+# --- Server Function ---
 mod_prediction_panel_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-    
-    # --- Load config from JSON once in the server ---
+
     config_data <- reactiveVal(NULL)
     observe({
       req(file.exists("ui_config.json"))
       config_data(fromJSON("ui_config.json"))
     })
     
-    # --- CORRECTED: Background image logic ---
     autoInvalidate <- reactiveTimer(5000)
     observe({
       autoInvalidate()
-      # Path now points to the correct local directory at the app's root
       images_path <- "detailed_images"
       if (dir.exists(images_path)) {
         all_images <- list.files(images_path, recursive = TRUE, pattern = "\\.(jpg|jpeg|png)$")
         if (length(all_images) > 0) {
           random_image <- sample(all_images, 1)
-          # The URL path must match the prefix from addResourcePath in app.R
           js_path <- file.path("detailed_images", random_image)
-          # Ensure forward slashes for the URL
           js_path <- gsub("\\\\", "/", js_path)
           shinyjs::runjs(sprintf("$('body').css('background-image', \"url('%s')\")", js_path))
         }
       }
     })
     
-    # Dynamic model UI
+    # Dynamic model UI (UNCHANGED)
     output$model_ui <- renderUI({
       req(input$manufacturer, config_data())
       models <- config_data()$manufacturer_models[[input$manufacturer]]
@@ -163,71 +154,42 @@ mod_prediction_panel_server <- function(id, shared_data) {
     
     trained_model_bundle <- reactiveVal(NULL)
     importance_plot_obj <- reactiveVal(NULL)
-    quantile_loss_obj <- function(alpha) { function(preds, dtrain) { labels <- getinfo(dtrain, "label"); grad <- ifelse(labels - preds > 0, -alpha, (1 - alpha)); hess <- rep(1, length(labels)); list(grad = grad, hess = hess) } }
     
     observeEvent(input$submitbutton, {
       req(input$model, cancelOutput = TRUE)
       
       withProgress(message = 'Processing Request', style = "old", value = 0, {
         
-        model_paths <- list(lower = "models/xgb_lower.xgb", median = "models/xgb_median.xgb", upper = "models/xgb_upper.xgb", preproc = "models/xgb_preproc_info.rds")
+        model_paths <- list(
+          lower = "models/xgb_lower.xgb", 
+          median = "models/xgb_median.xgb", 
+          upper = "models/xgb_upper.xgb", 
+          preproc = "models/xgb_preproc_info.rds"
+        )
         
-        if (all(sapply(model_paths, file.exists))) {
-          if(is.null(trained_model_bundle())) {
-            bundle <- list(models = lapply(model_paths[c("lower", "median", "upper")], xgb.load), preproc_info = readRDS(model_paths$preproc))
-            trained_model_bundle(bundle)
-          }
-        } else {
-          setProgress(value = 0.2, detail = "Models not found. Training...")
-          req(shared_data(), config_data()) 
-          df <- shared_data()
-          
-          preproc_config <- config_data()
-          all_factor_levels <- preproc_config
-          all_factor_levels$manufacturer_models <- NULL
-          all_factor_levels$color_map <- NULL
-          
-          all_factor_levels$manufacturer <- names(preproc_config$manufacturer_models)
-          all_factor_levels$model <- unique(unlist(preproc_config$manufacturer_models))
-          
-          df_processed <- df %>%
-            mutate(across(all_of(names(all_factor_levels)), ~factor(., levels = all_factor_levels[[cur_column()]]))) %>%
-            na.omit()
-          
-          train_indices <- createDataPartition(df_processed$price, p = 0.8, list = FALSE)
-          train_data <- df_processed[train_indices, ]
-          validation_data <- df_processed[-train_indices, ]
-          
-          train_matrix <- sparse.model.matrix(price ~ . -1, data = train_data)
-          dtrain <- xgb.DMatrix(data = train_matrix, label = train_data$price)
-          
-          validation_matrix <- sparse.model.matrix(price ~ . -1, data = validation_data)
-          dvalid <- xgb.DMatrix(data = validation_matrix, label = validation_data$price)
-          
-          watchlist <- list(train = dtrain, validation = dvalid)
-          xgb_params <- list(booster = "gbtree", eta = 0.05, max_depth = 10, eval_metric = "mae")
-          
-          models_list <- list()
-          quantiles_to_train <- c(lower = 0.05, median = 0.50, upper = 0.95)
-          dir.create("models", showWarnings = FALSE)
-          
-          for (i in seq_along(quantiles_to_train)) {
-            q_name <- names(quantiles_to_train)[i]; q_val <- quantiles_to_train[[i]]
-            model <- xgb.train(params = xgb_params, data = dtrain, nrounds = 5000, objective = quantile_loss_obj(q_val), watchlist = watchlist, early_stopping_rounds = 50, verbose = 0)
-            xgb.save(model, model_paths[[q_name]])
-            models_list[[q_name]] <- model
+        # --- MODEL LOADING CHECK ---
+        if (is.null(trained_model_bundle())) {
+          if (!all(sapply(model_paths, file.exists))) {
+            # Since training is external, we throw a clear error if files are missing
+            stop("FATAL ERROR: Trained model files not found in the 'models/' directory. Please run the run_training.R script first.")
           }
           
-          preproc_info_to_save <- list(feature_names = colnames(train_matrix), all_levels = all_factor_levels)
-          saveRDS(preproc_info_to_save, model_paths$preproc)
-          trained_model_bundle(list(models = models_list, preproc_info = preproc_info_to_save))
+          setProgress(value = 0.1, detail = "Loading trained models...")
+          # Load models and preprocessing info
+          bundle <- list(
+            models = lapply(model_paths[c("lower", "median", "upper")], xgb.load), 
+            preproc_info = readRDS(model_paths$preproc)
+          )
+          trained_model_bundle(bundle)
         }
+        # --- END OF MODEL LOADING CHECK ---
         
         setProgress(value = 0.9, detail = "Preparing new data for prediction...")
         
         current_bundle <- trained_model_bundle()
         preproc_info <- current_bundle$preproc_info
         
+        # --- PREDICTION DATA PREPARATION (UNCHANGED) ---
         newdata <- data.frame(
           year_of_manufacture = as.integer(input$year_of_manufacture),
           manufacturer = input$manufacturer,
@@ -246,37 +208,44 @@ mod_prediction_panel_server <- function(id, shared_data) {
           engine_displacement_L = as.numeric(input$engine_displacement_L),
           engine_cylinders = as.integer(input$engine_cylinders),
           engine_type = input$engine_type,
-          price = 0
+          price = 0 # Dummy value needed for sparse.model.matrix formula
         )
         
+        # Apply factor levels from training data
         for (col in names(preproc_info$all_levels)) {
           if (col %in% names(newdata)) {
             newdata[[col]] <- factor(newdata[[col]], levels = preproc_info$all_levels[[col]])
           }
         }
         
+        # Create sparse matrix for prediction
         pred_matrix_small <- sparse.model.matrix(price ~ . -1, data = newdata)
         
+        # Align prediction matrix columns with training features
         missing_cols <- setdiff(preproc_info$feature_names, colnames(pred_matrix_small))
         if (length(missing_cols) > 0) {
+          # Add missing dummy variables (features not present in the single row)
           missing_matrix <- Matrix(0, nrow = 1, ncol = length(missing_cols), dimnames = list(NULL, missing_cols), sparse = TRUE)
           pred_matrix_full <- cbind(pred_matrix_small, missing_matrix)
-          pred_matrix_final <- pred_matrix_full[, preproc_info$feature_names, drop = FALSE]
+          pred_matrix_final <- pred_matrix_full[, preproc_info$feature_names, drop = FALSE] # Ensure correct order
         } else {
+          # Ensure correct order even if no columns are missing
           pred_matrix_final <- pred_matrix_small[, preproc_info$feature_names, drop = FALSE]
         }
         
         dtest <- xgb.DMatrix(data = pred_matrix_final)
+        
+        # --- PREDICTION MAKING ---
         predictions <- lapply(current_bundle$models, predict, dtest)
         
-        # --- CORRECTED: Plotting logic is now more robust ---
+        # --- PLOTTING LOGIC (Feature Importance) ---
         imp_data <- xgb.importance(model = current_bundle$models$median)
         if (nrow(imp_data) > 0) {
+          # Plot top 15 features
           p <- plot_ly(data = imp_data %>% head(15) %>% arrange(Gain), x = ~Gain, y = ~factor(Feature, levels = Feature), type = 'bar', orientation = 'h') %>%
             layout(title = "", yaxis = list(title = ""), xaxis = list(title = "Feature Importance (Gain)"), paper_bgcolor = 'rgba(0,0,0,0)', plot_bgcolor = 'rgba(0,0,0,0)')
           importance_plot_obj(p)
         } else {
-          # If no importance data, set plot to NULL to clear the output
           importance_plot_obj(NULL)
         }
         
@@ -328,12 +297,10 @@ mod_prediction_panel_server <- function(id, shared_data) {
     })
     
     output$importance_plot <- renderPlotly({
-      # req will prevent rendering if the plot object is NULL
       req(importance_plot_obj())
       importance_plot_obj()
     })
   })
 }
-
 
 
