@@ -766,7 +766,6 @@
         "Manual"
     ],
     "drivetrain": [
-        "2WD",
         "4X4",
         "FWD",
         "RWD"
@@ -788,30 +787,20 @@
         "yellow"
     ],
     "interior_colour": [
-        "Beige",
-        "Black",
-        "Blue",
-        "Brown",
-        "Burgundy",
-        "Charcoal",
-        "Cream",
-        "Dark Grey",
-        "Grey",
-        "Light Grey",
-        "Orange",
-        "Red",
-        "Stone",
-        "Tan",
-        "Taupe",
-        "White"
+        "beige",
+        "black",
+        "blue",
+        "brown",
+        "gray",
+        "orange",
+        "red",
+        "white"
     ],
     "fuel_type": [
         "diesel",
         "electric",
-        "flex_fuel",
         "gasoline",
-        "hybrid",
-        "other"
+        "hybrid"
     ],
     "engine_type": [
         "Boxer",
@@ -1623,22 +1612,7 @@
         ]
     },
     "color_map": {
-        "Beige": "#f5f5dc",
-        "Black": "#000000",
-        "Blue": "#0000ff",
-        "Brown": "#a52a2a",
-        "Burgundy": "#777777",
-        "Charcoal": "#777777",
-        "Cream": "#777777",
-        "Dark Grey": "#777777",
-        "Grey": "#808080",
-        "Light Grey": "#777777",
-        "Orange": "#ffa500",
-        "Red": "#ff0000",
-        "Stone": "#777777",
-        "Tan": "#d2b48c",
-        "Taupe": "#777777",
-        "White": "#ffffff",
+        "beige": "#f5f5dc",
         "black": "#000000",
         "blue": "#0000ff",
         "brown": "#a52a2a",
