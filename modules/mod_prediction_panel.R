@@ -100,16 +100,31 @@ mod_prediction_panel_ui <- function(id) {
           column(6, sliderInput(ns("highway_consumption"), label = labelWithTooltip("Highway L/100km:", "Fuel consumption on highway."), min = 0, max = 20, value = 8.5, step = 0.1, width = "100%"))
         ),
         fluidRow(
-          column(6, selectInput(ns("engine_type"), label = labelWithTooltip("Engine Type:", "Select engine configuration."), choices = ui_config$engine_type, width = "100%"))
+          column(6, selectInput(ns("engine_type"), label = labelWithTooltip("Engine Type:", "Select engine configuration."), choices = ui_config$engine_type, width = "100%")),
+          column(6,
+                 h4("Physical Condition assessment"), # A smaller header works better here
+                 fileInput(
+                   ns("car_images"),
+                   label = labelWithTooltip(HTML("Upload Images <strong style='color:red;'>*</strong>"), "Upload one or more photos. This is required."),
+                   multiple = TRUE, 
+                   accept = c("image/jpeg", "image/png", "image/jpg")
+                 )
+          )
         ),
+        
+        # --- END OF NEW SEGMENT ---
         
         tags$br(),
         actionButton(ns("submitbutton"), "Predict Price", class = "btn btn-primary btn-lg btn-block")
+        
       ),
       
       div(
         id = ns("main_panel"),
         h3('Prediction Output'),
+        div(style = "padding: 10px; border-radius: 8px; background-color: rgba(230, 240, 255, 0.9); margin-bottom: 15px;", 
+            uiOutput(ns("image_analysis_output"))
+        ),
         div(style = "flex: 0 0 auto; padding: 10px; border-radius: 8px; background-color: rgba(245, 245, 245, 0.9);", uiOutput(ns("contents"))),
         hr(),
         div(style = "flex: 1 1 auto; position: relative;", h4("Model Feature Importance", style = "text-align: center;"), plotlyOutput(ns("importance_plot"), height = "95%"))
@@ -123,31 +138,27 @@ mod_prediction_panel_ui <- function(id) {
 mod_prediction_panel_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-
+    
+    # --- STARTUP AND REACTIVE LOGIC ---
+    
+    shinyjs::disable("submitbutton")
+    
+    observeEvent(input$car_images, {
+      if (!is.null(input$car_images) && nrow(input$car_images) > 0) {
+        shinyjs::enable("submitbutton")
+      } else {
+        shinyjs::disable("submitbutton")
+      }
+    }, ignoreNULL = FALSE)
+    
     config_data <- reactiveVal(NULL)
     observe({
       req(file.exists("ui_config.json"))
       config_data(fromJSON("ui_config.json"))
     })
     
-    autoInvalidate <- reactiveTimer(5000)
-    observe({
-      autoInvalidate()
-      images_path <- "detailed_images"
-      if (dir.exists(images_path)) {
-        all_images <- list.files(images_path, recursive = TRUE, pattern = "\\.(jpg|jpeg|png)$")
-        if (length(all_images) > 0) {
-          random_image <- sample(all_images, 1)
-          js_path <- file.path("detailed_images", random_image)
-          js_path <- gsub("\\\\", "/", js_path)
-          shinyjs::runjs(sprintf("$('body').css('background-image', \"url('%s')\")", js_path))
-        }
-      }
-    })
-    
-    # Dynamic model UI (UNCHANGED)
     output$model_ui <- renderUI({
-      req(input$manufacturer, config_data())
+      req(input$manufacturer, config_data(), cancelOutput = TRUE)
       models <- config_data()$manufacturer_models[[input$manufacturer]]
       selectInput(ns("model"), label = labelWithTooltip("Model:", "Select the car model."), choices = models, width = "100%")
     })
@@ -155,95 +166,137 @@ mod_prediction_panel_server <- function(id, shared_data) {
     trained_model_bundle <- reactiveVal(NULL)
     importance_plot_obj <- reactiveVal(NULL)
     
+    # --- Main Prediction Event ---
     observeEvent(input$submitbutton, {
-      req(input$model, cancelOutput = TRUE)
+      # Final check that all required inputs are present
+      req(input$model, input$car_images, cancelOutput = TRUE)
       
       withProgress(message = 'Processing Request', style = "old", value = 0, {
         
         model_paths <- list(
-          lower = "models/xgb_lower.xgb", 
-          median = "models/xgb_median.xgb", 
-          upper = "models/xgb_upper.xgb", 
-          preproc = "models/xgb_preproc_info.rds"
+          lower = "models/ranger_lower.rds", 
+          median = "models/ranger_median.rds", 
+          upper = "models/ranger_upper.rds", 
+          preproc = "models/ranger_preproc_info.rds",
+          image_classifier = "models/car_damage_classifier.h5"
         )
         
-        # --- MODEL LOADING CHECK ---
         if (is.null(trained_model_bundle())) {
           if (!all(sapply(model_paths, file.exists))) {
-            # Since training is external, we throw a clear error if files are missing
-            stop("FATAL ERROR: Trained model files not found in the 'models/' directory. Please run the run_training.R script first.")
+            stop("FATAL ERROR: Model files not found. Please run the training scripts first.")
           }
-          
-          setProgress(value = 0.1, detail = "Loading trained models...")
-          # Load models and preprocessing info
+          setProgress(value = 0.1, detail = "Loading models...")
           bundle <- list(
-            models = lapply(model_paths[c("lower", "median", "upper")], xgb.load), 
-            preproc_info = readRDS(model_paths$preproc)
+            models = lapply(model_paths[c("lower", "median", "upper")], readRDS), 
+            preproc_info = readRDS(model_paths$preproc),
+            image_model = load_model_hdf5(model_paths$image_classifier)
           )
           trained_model_bundle(bundle)
         }
-        # --- END OF MODEL LOADING CHECK ---
-        
-        setProgress(value = 0.9, detail = "Preparing new data for prediction...")
         
         current_bundle <- trained_model_bundle()
-        preproc_info <- current_bundle$preproc_info
         
-        # --- PREDICTION DATA PREPARATION (UNCHANGED) ---
+        # --- 2. IMAGE ANALYSIS ---
+        setProgress(value = 0.3, detail = "Analyzing car images...")
+        
+        state_description_map <- c(
+          `1` = "Very Good", `2` = "Minor Damage",
+          `3` = "Moderate Damage", `4` = "Severe Damage"
+        )
+        
+        image_paths <- input$car_images$datapath
+        
+        predicted_classes_numeric <- sapply(image_paths, function(path) {
+          img <- image_load(path, target_size = c(224, 224))
+          img_array <- image_to_array(img)
+          img_array <- array_reshape(img_array, c(1, 224, 224, 3))
+          preds <- current_bundle$image_model %>% predict(img_array)
+          predicted_class_index <- which.max(preds) 
+          return(predicted_class_index)
+        })
+        
+        avg_state <- mean(predicted_classes_numeric)
+        final_car_state <- floor(avg_state + 0.5)
+        
+        descriptive_name <- state_description_map[as.character(final_car_state)]
+        
+        image_feedback_message <- paste0(
+          "Analyzed ", length(image_paths), " image(s). ",
+          "Determined average condition: '", descriptive_name, "'."
+        )
+        
+        output$image_analysis_output <- renderUI({
+          tags$div(
+            tags$p(style = "font-weight: bold; text-align: center;", "Image Analysis Result"),
+            tags$p(style = "text-align: center;", image_feedback_message)
+          )
+        })
+        
+        # --- 3. TABULAR DATA PREPARATION ---
+        setProgress(value = 0.5, detail = "Preparing final data...")
+        
         newdata <- data.frame(
           year_of_manufacture = as.integer(input$year_of_manufacture),
           manufacturer = input$manufacturer,
           model = input$model,
-          mileage = as.numeric(input$mileage),
+          mileage = as.numeric(input$mileage), 
           body_type = input$body_type,
-          transmission = input$transmission,
+          transmission = input$transmission, 
           drivetrain = input$drivetrain,
           exterior_colour = input$exterior_colour,
-          interior_colour = input$interior_colour,
+          interior_colour = input$interior_colour, 
           passengers = as.integer(input$passengers),
           doors = as.integer(input$doors),
           fuel_type = input$fuel_type,
-          city_consumption = as.numeric(input$city_consumption),
+          city_consumption = as.numeric(input$city_consumption), 
           highway_consumption = as.numeric(input$highway_consumption),
-          engine_displacement_L = as.numeric(input$engine_displacement_L),
+          engine_displacement_L = as.numeric(input$engine_displacement_L), 
           engine_cylinders = as.integer(input$engine_cylinders),
           engine_type = input$engine_type,
-          price = 0 # Dummy value needed for sparse.model.matrix formula
+          car_state = final_car_state 
         )
         
-        # Apply factor levels from training data
+        preproc_info <- current_bundle$preproc_info
         for (col in names(preproc_info$all_levels)) {
           if (col %in% names(newdata)) {
             newdata[[col]] <- factor(newdata[[col]], levels = preproc_info$all_levels[[col]])
           }
         }
         
-        # Create sparse matrix for prediction
-        pred_matrix_small <- sparse.model.matrix(price ~ . -1, data = newdata)
+        # --- 4. RANGER PRICE PREDICTION ---
+        setProgress(value = 0.9, detail = "Generating price prediction...")
+        predictions <- list(
+          lower = predict(current_bundle$models$lower, data = newdata, type = "quantiles", quantiles = 0.05)$predictions[,1],
+          median = predict(current_bundle$models$median, data = newdata, type = "quantiles", quantiles = 0.50)$predictions[,1],
+          upper = predict(current_bundle$models$upper, data = newdata, type = "quantiles", quantiles = 0.95)$predictions[,1]
+        )
         
-        # Align prediction matrix columns with training features
-        missing_cols <- setdiff(preproc_info$feature_names, colnames(pred_matrix_small))
-        if (length(missing_cols) > 0) {
-          # Add missing dummy variables (features not present in the single row)
-          missing_matrix <- Matrix(0, nrow = 1, ncol = length(missing_cols), dimnames = list(NULL, missing_cols), sparse = TRUE)
-          pred_matrix_full <- cbind(pred_matrix_small, missing_matrix)
-          pred_matrix_final <- pred_matrix_full[, preproc_info$feature_names, drop = FALSE] # Ensure correct order
-        } else {
-          # Ensure correct order even if no columns are missing
-          pred_matrix_final <- pred_matrix_small[, preproc_info$feature_names, drop = FALSE]
-        }
+        # --- 5. RENDER OUTPUTS ---
+        imp_raw <- ranger::importance(current_bundle$models$median)
         
-        dtest <- xgb.DMatrix(data = pred_matrix_final)
-        
-        # --- PREDICTION MAKING ---
-        predictions <- lapply(current_bundle$models, predict, dtest)
-        
-        # --- PLOTTING LOGIC (Feature Importance) ---
-        imp_data <- xgb.importance(model = current_bundle$models$median)
-        if (nrow(imp_data) > 0) {
-          # Plot top 15 features
-          p <- plot_ly(data = imp_data %>% head(15) %>% arrange(Gain), x = ~Gain, y = ~factor(Feature, levels = Feature), type = 'bar', orientation = 'h') %>%
-            layout(title = "", yaxis = list(title = ""), xaxis = list(title = "Feature Importance (Gain)"), paper_bgcolor = 'rgba(0,0,0,0)', plot_bgcolor = 'rgba(0,0,0,0)')
+        if (length(imp_raw) > 0) {
+          imp_df <- data.frame(
+            Feature = names(imp_raw),
+            Importance = imp_raw,
+            row.names = NULL
+          ) %>%
+            # Arrange by importance so the plot is ordered from least to most important
+            arrange(Importance)
+          
+          p <- plot_ly(
+            data = imp_df, # Use the full imp_df data frame
+            x = ~Importance, 
+            y = ~factor(Feature, levels = Feature), # Use the sorted factor levels
+            type = 'bar', 
+            orientation = 'h'
+          ) %>%
+            layout(
+              title = "", 
+              yaxis = list(title = ""), 
+              xaxis = list(title = "Feature Importance (Impurity)"),
+              paper_bgcolor = 'rgba(0,0,0,0)', 
+              plot_bgcolor = 'rgba(0,0,0,0)'
+            )
           importance_plot_obj(p)
         } else {
           importance_plot_obj(NULL)
