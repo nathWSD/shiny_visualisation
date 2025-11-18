@@ -57,6 +57,14 @@ mod_prediction_panel_ui <- function(id) {
         .tooltip-container { position: relative; display: inline-block; }
         .tooltip-text { visibility: hidden; width: 200px; background-color: #333; color: #fff; text-align: center; border-radius: 6px; padding: 5px 10px; position: absolute; z-index: 10; bottom: 110%; left: 50%; margin-left: -100px; opacity: 0; transition: opacity 0.3s; }
         .tooltip-container:hover .tooltip-text { visibility: visible; opacity: 1; }
+        /* --- NEU: SLIDER BESCHRIFTUNGEN BEREINIGEN --- */
+        .irs-grid-text {
+          display: none; /* Erstmal alle weg */
+        }
+        .irs-grid-text:nth-of-type(3n+1) {
+          display: block !important; /* Nur jeden 3. anzeigen */
+        }
+        
       ")))
     ),
     

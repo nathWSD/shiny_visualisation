@@ -7,7 +7,6 @@
         "Autozam",
         "BMW",
         "Bentley",
-        "Bugatti",
         "Buick",
         "Cadillac",
         "Chevrolet",
@@ -664,7 +663,6 @@
         "Tribute",
         "Tucson",
         "Turbo",
-        "Unlisted",
         "Uplander",
         "Urus",
         "V40",
@@ -953,9 +951,6 @@
             "Arnage",
             "Azure"
         ],
-        "Bugatti": [
-            "Unlisted"
-        ],
         "Buick": [
             "Regal",
             "Enclave",
@@ -1116,7 +1111,6 @@
             "Focus",
             "Bronco",
             "Ranger",
-            "Unlisted",
             "Flex",
             "Expedition",
             "Super",
@@ -1124,7 +1118,6 @@
             "E",
             "Transit-350",
             "GT",
-            "Model",
             "Maverick",
             "Freestyle",
             "E-Series",
@@ -1316,7 +1309,6 @@
             "Huracan",
             "Aventador",
             "Gallardo",
-            "Unlisted",
             "Murcielago"
         ],
         "Lancia": [
@@ -1589,7 +1581,6 @@
             "Bus",
             "Civic",
             "Corrado",
-            "Unlisted",
             "GOLF",
             "Cabrio"
         ],

@@ -226,7 +226,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2009,Dodge,Grand,325000.0,Wagon,Automatic,FWD,silver,black,5,4,gasoline,3800,10.8,8.7,2.4,4.0,Inline,,
 2022,Chevrolet,Corvette,202.0,Coupe,Automatic,RWD,red,black,2,2,gasoline,145900,15.1,9.6,2.4,8.0,Inline,,
 2022,Mercedes-Benz,GLC300,13146.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,72675,11.5,8.5,2.4,4.0,Other,,
+<<<<<<< Updated upstream
 2020,GMC,Savana,62985.0,Van,Automatic,RWD,white,black,2,3,gasoline,43995,10.8,8.7,2.4,8.0,Inline,,
+=======
+2020,GMC,Savana,62985.0,Van,Automatic,RWD,white,black,2,2,gasoline,43995,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2021,Honda,Pilot,35643.0,SUV,Automatic,4X4,black,black,5,4,gasoline,53985,12.4,9.3,2.4,6.0,V-Engine,,
 2022,Kia,Sportage,11105.0,SUV,Automatic,4X4,black,blue,5,4,gasoline,30888,10.8,9.1,2.4,4.0,Inline,,
 2023,Alfa Romeo,Romeo,65.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,71304,10.8,8.3,2.4,4.0,Inline,,
@@ -324,7 +328,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2014,Dodge,Grand,139158.0,Van,Automatic,FWD,red,black,7,4,gasoline,14990,12.2,7.9,2.4,6.0,V-Engine,,
 2013,Ford,Fusion,128000.0,Sedan,Automatic,FWD,white,black,5,4,gasoline,11990,8.6,5.55,2.5,4.0,Other,,
 2019,Hyundai,Elantra,80000.0,Sedan,Automatic,FWD,blue,black,5,4,gasoline,20880,8.3,6.4,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2013,Hyundai,Veloster,155017.0,Hatchback,Manual,FWD,blue,black,5,3,gasoline,9500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2013,Hyundai,Veloster,155017.0,Hatchback,Manual,FWD,blue,black,5,2,gasoline,9500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2009,Mazda,Mazda5,149432.0,Van,Automatic,4X4,gray,black,6,4,gasoline,7399,10.8,8.7,2.3,4.0,Other,,
 2020,Ford,Escape,50975.0,SUV,Automatic,4X4,white,black,5,4,gasoline,35000,10.8,8.7,2.4,4.0,Inline,,
 2018,Infiniti,QX60,127300.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,25500,10.8,8.7,2.4,4.0,Inline,,
@@ -481,7 +489,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Ford,F-150,40.0,Truck,Automatic,4X4,black,black,5,4,gasoline,76982,14.8,10.9,5.0,8.0,V-Engine,,
 2014,Dodge,Grand,140285.0,Van,Automatic,FWD,black,black,7,4,gasoline,13990,12.2,7.9,3.6,4.0,Other,,
 2013,Subaru,Legacy,137500.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,11000,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2002,Honda,Civic,109097.0,Hatchback,Manual,FWD,black,black,5,3,gasoline,6500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2002,Honda,Civic,109097.0,Hatchback,Manual,FWD,black,black,5,2,gasoline,6500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2023,Audi,A4,90.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,63393,10.8,8.7,2.0,4.0,Inline,,
 2019,Ford,F-150,139785.0,Truck,Automatic,4X4,black,black,5,4,gasoline,39995,10.8,8.7,2.4,8.0,Inline,,
 2023,Volvo,XC90,50.0,SUV,Automatic,4X4,black,gray,5,4,gasoline,80002,10.8,8.7,2.0,4.0,Inline,,
@@ -605,7 +617,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2016,Tesla,Model,71400.0,SUV,Automatic,4X4,silver,beige,6,4,electric,81777,0.0,8.7,0.0,0.0,Electric,0.0,0.0
 2010,Mazda,Mazda6,90.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,9999,10.05,6.800000000000001,2.5,4.0,Other,,
 2020,Hyundai,Tucson,68358.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,28995,10.8,9.2,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2021,GMC,Savana,97935.0,Van,Automatic,RWD,other,black,5,3,gasoline,41995,10.8,8.7,2.4,6.0,V-Engine,,
+=======
+2021,GMC,Savana,97935.0,Van,Automatic,RWD,other,black,5,2,gasoline,41995,10.8,8.7,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2019,Audi,Q7,92088.0,SUV,Automatic,4X4,white,brown,7,4,gasoline,56550,12.6,9.4,3.0,6.0,Inline,,
 2019,Acura,TLX,119000.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,31450,11.7,7.949999999999999,2.4,6.0,V-Engine,,
 2006,Porsche,Boxster,76379.0,Convertible,Automatic,4X4,gray,beige,2,2,gasoline,29910,10.8,8.7,2.4,6.0,Inline,,
@@ -1033,7 +1049,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2020,Honda,CR-V,101588.0,SUV,CVT,4X4,black,black,5,4,gasoline,31600,8.7,7.4,2.4,4.0,Inline,,
 2023,GMC,Sierra,35.0,Truck,Automatic,4X4,red,black,5,4,gasoline,74933,14.8,11.8,5.3,8.0,Inline,,
 2023,Jeep,Grand,18.0,SUV,Automatic,4X4,metallic,black,5,4,gasoline,71425,13.0,9.4,3.6,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2022,Hyundai,Veloster,50727.0,Hatchback,Automatic,FWD,black,black,4,3,gasoline,30999,12.0,8.6,2.4,4.0,Inline,,
+=======
+2022,Hyundai,Veloster,50727.0,Hatchback,Automatic,FWD,black,black,4,2,gasoline,30999,12.0,8.6,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2023,Jeep,Wagoneer,9.0,SUV,Automatic,4X4,white,black,5,4,gasoline,110360,10.8,8.7,2.4,6.0,Inline,,
 2022,Honda,Pilot,10372.0,SUV,Automatic,4X4,black,black,5,4,gasoline,56992,12.4,9.3,3.5,6.0,V-Engine,,
 2019,Acura,MDX,102000.0,SUV,Automatic,4X4,black,black,7,4,gasoline,35480,12.2,9.0,3.5,4.0,Other,,
@@ -1388,7 +1408,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2017,GMC,Sierra,195000.0,Truck,Automatic,4X4,silver,gray,5,4,gasoline,20995,15.0,10.7,2.4,8.0,Inline,,
 2014,Dodge,Charger,190717.0,Sedan,Automatic,RWD,black,black,5,4,gasoline,11495,11.7,7.3,2.4,6.0,V-Engine,,
 2023,Jeep,Compass,90.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,52995,10.8,8.7,2.0,4.0,Inline,,
+<<<<<<< Updated upstream
 2019,GMC,Savana,63258.0,Van,Automatic,RWD,white,black,2,3,gasoline,40995,10.8,8.7,2.4,8.0,Inline,,
+=======
+2019,GMC,Savana,63258.0,Van,Automatic,RWD,white,black,2,2,gasoline,40995,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2022,Volkswagen,Atlas,9095.0,SUV,Automatic,4X4,white,black,5,4,gasoline,51210,13.1,10.0,2.4,6.0,V-Engine,,
 2017,Audi,A4,93000.0,Sedan,Automatic,4X4,gray,black,5,4,gasoline,26850,9.8,7.7,2.4,4.0,Inline,,
 2019,GMC,Canyon,98488.0,Truck,Automatic,4X4,black,black,5,4,gasoline,36900,14.0,9.9,3.6,6.0,V-Engine,,
@@ -1748,7 +1772,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2017,Volkswagen,Golf,86000.0,Wagon,Automatic,4X4,gray,black,5,4,gasoline,18998,10.6,8.0,2.4,4.0,Inline,,
 2019,Volkswagen,Tiguan,80494.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,31998,11.3,8.4,2.0,4.0,Inline,,
 2014,Mazda,CX-5,239000.0,SUV,Automatic,4X4,black,black,5,4,gasoline,10990,8.5,6.6,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2020,GMC,Savana,72000.0,Van,Automatic,RWD,white,black,2,3,gasoline,43778,10.8,8.7,2.4,6.0,Inline,,
+=======
+2020,GMC,Savana,72000.0,Van,Automatic,RWD,white,black,2,2,gasoline,43778,10.8,8.7,2.4,6.0,Inline,,
+>>>>>>> Stashed changes
 2009,Acura,MDX,223945.0,SUV,Automatic,4X4,black,black,7,4,gasoline,11999,13.8,10.0,2.4,6.0,V-Engine,,
 2018,Nissan,Sentra,18479.0,Sedan,CVT,FWD,black,black,5,4,gasoline,22872,10.8,8.7,2.4,4.0,Inline,,
 2023,Mitsubishi,RVR,89.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,35487,10.3,8.3,2.4,4.0,Inline,,
@@ -1934,7 +1962,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2020,BMW,X7,54000.0,SUV,Automatic,4X4,white,black,5,2,gasoline,87900,12.0,9.4,3.0,6.0,Inline,,
 2022,Chrysler,Pacifica,25435.0,Van,Automatic,4X4,gray,black,7,4,gasoline,58995,14.1,9.4,3.6,6.0,V-Engine,,
 2023,Volvo,XC60,1735.0,SUV,Automatic,4X4,metallic,gray,5,4,gasoline,71529,10.8,8.7,2.0,4.0,Inline,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,red,black,5,3,gasoline,71218,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,red,black,5,2,gasoline,71218,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2019,BMW,X5,67000.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,56799,11.7,9.1,3.0,4.0,Other,,
 2017,Porsche,911,53087.0,Coupe,Automatic,4X4,black,black,5,2,gasoline,129800,10.8,8.7,2.4,6.0,Inline,,
 2017,Chrysler,Pacifica,125063.0,Van,Automatic,FWD,white,gray,5,4,gasoline,31900,12.9,8.4,2.4,6.0,V-Engine,,
@@ -2010,7 +2042,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2016,BMW,X5,102417.0,SUV,Automatic,4X4,white,black,5,4,gasoline,33900,13.1,9.8,3.0,4.0,Other,,
 2017,Kia,Soul,99010.0,Hatchback,Automatic,FWD,blue,black,5,4,gasoline,19995,9.5,7.8,2.0,4.0,Inline,,
 2018,BMW,M2,46402.0,Coupe,Automatic,RWD,black,black,5,2,gasoline,53800,13.1,9.0,2.4,6.0,Inline,,
+<<<<<<< Updated upstream
 2016,Hyundai,Veloster,87333.0,Hatchback,Automatic,FWD,white,black,5,3,gasoline,15900,10.8,8.7,1.6,4.0,Other,,
+=======
+2016,Hyundai,Veloster,87333.0,Hatchback,Automatic,FWD,white,black,5,2,gasoline,15900,10.8,8.7,1.6,4.0,Other,,
+>>>>>>> Stashed changes
 2017,Subaru,WRX,159826.0,Sedan,Manual,4X4,white,black,5,4,gasoline,17995,11.3,8.5,2.4,4.0,Inline,,
 2023,Jeep,Wrangler,250.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,64402,10.8,8.7,3.6,6.0,V-Engine,,
 2019,Kia,Optima,126000.0,Sedan,Automatic,FWD,blue,black,5,4,gasoline,20950,9.5,7.1,2.4,4.0,Inline,,
@@ -2245,7 +2281,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2010,Cadillac,Escalade,113000.0,SUV,Automatic,4X4,black,black,5,4,gasoline,29995,10.8,8.7,2.4,4.0,Inline,,
 2020,Nissan,Altima,23476.0,Sedan,Automatic,4X4,blue,black,5,4,gasoline,31590,9.3,6.7,2.4,4.0,Inline,,
 2010,Acura,TSX,184000.0,Sedan,Manual,FWD,gray,black,5,4,gasoline,10000,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2021,Ford,Transit,77444.0,Van,Automatic,RWD,white,gray,5,3,gasoline,58989,10.8,8.7,2.4,6.0,V-Engine,,
+=======
+2021,Ford,Transit,77444.0,Van,Automatic,RWD,white,gray,5,2,gasoline,58989,10.8,8.7,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2019,BMW,3,64866.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,35980,10.8,8.7,2.4,4.0,Inline,,
 2019,Honda,Accord,56576.0,Sedan,CVT,FWD,black,black,5,4,gasoline,28888,7.9,6.3,1.5,4.0,Inline,,
 2022,Hyundai,Santa,9327.0,Truck,Automatic,4X4,white,black,5,4,gasoline,46000,12.1,8.6,2.5,4.0,Inline,,
@@ -2324,7 +2364,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Mazda,CX-30,100.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,35024,9.0,7.1,2.4,4.0,Inline,,
 2017,BMW,X1,79199.0,SUV,Automatic,4X4,black,black,5,4,gasoline,25825,10.5,7.4,2.4,4.0,Inline,,
 2023,Alfa Romeo,Romeo,65.0,SUV,Automatic,4X4,white,black,5,4,gasoline,71099,10.8,8.3,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2018,GMC,Savana,150000.0,Van,Automatic,RWD,white,gray,2,3,gasoline,33900,10.8,8.7,2.4,8.0,Inline,,
+=======
+2018,GMC,Savana,150000.0,Van,Automatic,RWD,white,gray,2,2,gasoline,33900,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2020,Tesla,Model,18079.0,Sedan,Automatic,4X4,white,black,5,4,electric,44998,0.0,8.7,0.0,0.0,Electric,0.0,0.0
 2023,Ford,Bronco,250.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,48623,9.3,8.4,1.5,3.0,Inline,,
 2021,Ferrari,812,5027.0,Convertible,Automatic,RWD,red,black,5,4,gasoline,829987,19.6,15.7,2.4,12.0,Inline,,
@@ -2554,7 +2598,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2022,Ford,Bronco,3575.0,SUV,Automatic,4X4,black,black,5,2,gasoline,82888,13.45,13.0,2.7,4.0,Other,,
 2015,Porsche,Cayenne,147200.0,SUV,Automatic,4X4,black,black,5,2,gasoline,38888,10.8,8.7,3.6,6.0,Inline,,
 2019,Acura,TLX,27630.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,32495,11.4,7.7,3.5,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2020,GMC,Savana,118000.0,Van,Automatic,RWD,white,black,2,3,gasoline,41988,10.8,8.7,2.4,6.0,V-Engine,,
+=======
+2020,GMC,Savana,118000.0,Van,Automatic,RWD,white,black,2,2,gasoline,41988,10.8,8.7,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2023,Hyundai,Sonata,90.0,Sedan,Automatic,FWD,red,black,5,2,hybrid,43624,5.3,4.6,2.0,4.0,Inline,,
 2023,Volvo,XC90,90.0,SUV,Automatic,4X4,black,black,7,4,gasoline,80999,10.8,8.7,2.4,4.0,Inline,,
 2016,Chevrolet,Corvette,4680.0,Convertible,Automatic,RWD,red,black,5,2,gasoline,76800,14.149999999999999,8.149999999999999,2.4,8.0,Inline,,
@@ -2940,7 +2988,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Porsche,718,19486.0,Coupe,Automatic,RWD,red,black,5,4,gasoline,109900,10.8,8.7,2.4,4.0,Inline,,
 2015,Ford,Fiesta,145170.0,Sedan,Automatic,FWD,metallic,black,5,4,gasoline,10888,8.55,6.35,1.0,3.0,Inline,,
 2021,Nissan,Altima,10000.0,Sedan,Automatic,4X4,white,gray,5,4,gasoline,28167,9.1,6.5,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2017,Hyundai,Veloster,87562.0,Coupe,Automatic,FWD,silver,black,4,3,gasoline,17999,8.55,6.800000000000001,2.4,4.0,Inline,,
+=======
+2017,Hyundai,Veloster,87562.0,Coupe,Automatic,FWD,silver,black,4,2,gasoline,17999,8.55,6.800000000000001,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2023,Kia,Carnival,125.0,Van,Automatic,FWD,white,black,7,4,gasoline,38045,10.8,8.7,2.4,6.0,Inline,,
 2012,Acura,MDX,169750.0,SUV,Automatic,4X4,white,beige,7,4,gasoline,15990,13.2,9.6,3.7,4.0,Other,,
 2021,Porsche,Cayenne,46831.0,SUV,Automatic,4X4,white,black,5,4,gasoline,134900,15.8,12.3,2.4,8.0,Inline,,
@@ -3045,7 +3097,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2020,Honda,Civic,45400.0,Sedan,CVT,FWD,black,gray,5,4,gasoline,27989,7.9,6.1,2.4,4.0,Inline,,
 2015,Chevrolet,Silverado,49256.0,Truck,Automatic,4X4,white,beige,5,2,gasoline,43713,10.8,8.7,5.3,8.0,Inline,,
 2022,Jeep,Grand,11453.0,SUV,Automatic,4X4,silver,gray,5,4,gasoline,72895,16.7,10.9,5.7,8.0,V-Engine,,
+<<<<<<< Updated upstream
 2021,Ford,Transit,76341.0,Van,Automatic,RWD,black,black,5,3,gasoline,57988,10.8,8.7,3.5,6.0,V-Engine,,
+=======
+2021,Ford,Transit,76341.0,Van,Automatic,RWD,black,black,5,2,gasoline,57988,10.8,8.7,3.5,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2016,Honda,Civic,96940.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,21984,7.6,5.5,1.5,4.0,V-Engine,,
 2007,Volvo,S40,150000.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,5000,10.8,8.7,2.4,4.0,Inline,,
 2015,Volkswagen,Golf,162603.0,Hatchback,Automatic,FWD,black,black,5,4,diesel,15798,7.5,5.5,2.0,4.0,Other,,
@@ -3176,14 +3232,22 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2016,Mazda,CX-3,74055.0,SUV,Automatic,4X4,white,black,5,4,gasoline,21990,8.5,7.0,2.4,4.0,V-Engine,,
 2019,Tesla,Model,82562.0,SUV,Automatic,4X4,black,white,7,4,electric,109999,0.0,8.7,0.0,0.0,Electric,0.0,0.0
 2020,Porsche,Macan,37790.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,69900,10.8,8.7,2.4,6.0,V-Engine,,
+<<<<<<< Updated upstream
 1998,Chevrolet,1500,500000.0,Truck,Automatic,4X4,black,black,5,3,gasoline,9000,10.8,8.7,2.4,4.0,Inline,,
+=======
+1998,Chevrolet,1500,500000.0,Truck,Automatic,4X4,black,black,5,2,gasoline,9000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2021,Honda,Civic,33704.0,Sedan,Automatic,FWD,white,black,5,4,gasoline,32490,8.2,6.5,2.0,4.0,Other,,
 2022,BMW,M235i,6742.0,Sedan,Automatic,4X4,gray,black,5,4,gasoline,56998,10.4,7.7,2.4,4.0,Inline,,
 2023,Volvo,XC90,50.0,SUV,Automatic,4X4,white,gray,5,4,gasoline,92977,10.8,8.7,2.0,4.0,Inline,,
 2023,Infiniti,QX80,90.0,SUV,Automatic,4X4,white,black,5,4,gasoline,95440,17.5,12.2,2.4,8.0,Inline,,
 2020,Porsche,Macan,17150.0,SUV,Automatic,4X4,black,red,5,4,gasoline,70999,10.8,8.7,2.4,6.0,V-Engine,,
 2019,Ford,F-150,49279.0,Truck,Automatic,4X4,gray,black,5,4,gasoline,39999,12.75,10.0,2.4,6.0,V-Engine,,
+<<<<<<< Updated upstream
 1977,Volkswagen,Bus,44554.0,SUV,Manual,4X4,green,brown,5,3,gasoline,26900,10.8,8.7,2.4,4.0,Inline,,
+=======
+1977,Volkswagen,Bus,44554.0,SUV,Manual,4X4,green,brown,5,2,gasoline,26900,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2023,Maserati,Levante,95.0,SUV,Automatic,4X4,white,red,5,2,gasoline,136942,14.7,10.7,3.0,6.0,Inline,,
 2021,Honda,CR-V,21981.0,SUV,CVT,4X4,silver,black,5,4,gasoline,34688,8.7,7.4,1.5,4.0,Inline,,
 2018,BMW,4,62592.0,Hatchback,Automatic,4X4,gray,black,5,4,gasoline,36888,11.4,7.8,2.4,6.0,Inline,,
@@ -3238,7 +3302,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,GMC,Sierra,10.0,Truck,Automatic,4X4,white,black,5,4,gasoline,100543,16.7,14.0,6.2,8.0,V-Engine,,
 2018,Honda,Civic,94454.0,Sedan,CVT,FWD,blue,black,5,4,gasoline,23987,7.8,6.0,2.4,4.0,Inline,,
 2021,Honda,Ridgeline,19152.0,Truck,Automatic,4X4,silver,black,5,4,gasoline,52898,12.8,9.9,3.5,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2021,Ford,Transit,77444.0,Van,Automatic,RWD,white,gray,5,3,gasoline,58989,10.8,8.7,2.4,6.0,V-Engine,,
+=======
+2021,Ford,Transit,77444.0,Van,Automatic,RWD,white,gray,5,2,gasoline,58989,10.8,8.7,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2023,Ford,F-150,1.0,Truck,Automatic,4X4,white,black,5,4,gasoline,74450,12.8,10.0,2.7,4.0,Other,,
 2019,Buick,Encore,23286.0,SUV,Automatic,FWD,red,black,5,4,gasoline,22999,9.3,7.2,2.4,4.0,Inline,,
 2022,Jeep,Compass,11866.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,45885,10.8,7.8,2.4,4.0,Other,,
@@ -3365,7 +3433,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Jeep,Grand,8.0,SUV,Automatic,4X4,white,black,8,4,gasoline,133275,10.8,8.7,3.0,6.0,Inline,,
 2012,BMW,Z4,127567.0,Convertible,Automatic,RWD,white,black,2,2,gasoline,29910,9.3,5.8,2.4,4.0,Inline,,
 2021,Honda,CR-V,40317.0,SUV,CVT,4X4,gray,black,5,4,gasoline,37888,8.7,7.4,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2015,Hyundai,Veloster,239000.0,Coupe,Manual,FWD,white,black,5,3,gasoline,7000,10.8,8.7,2.4,4.0,Inline,,
+=======
+2015,Hyundai,Veloster,239000.0,Coupe,Manual,FWD,white,black,5,2,gasoline,7000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2004,BMW,540I,107887.0,Sedan,Automatic,4X4,other,black,5,4,gasoline,7995,10.8,8.7,4.4,4.0,Other,,
 2019,Ford,Explorer,91780.0,SUV,Automatic,4X4,white,black,6,4,gasoline,34995,13.1,9.2,2.4,4.0,Inline,,
 2019,Volkswagen,Jetta,41252.0,Sedan,Manual,FWD,white,black,5,2,gasoline,23215,7.9,5.9,1.4,4.0,Inline,,
@@ -3405,7 +3477,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2013,Hyundai,Tucson,127000.0,SUV,Automatic,FWD,red,gray,5,4,gasoline,13900,9.7,6.5,2.4,4.0,Inline,,
 2022,Porsche,911,1900.0,Coupe,Automatic,4X4,white,red,5,2,gasoline,309999,10.8,8.7,3.6,4.0,V-Engine,,
 2006,Volkswagen,Jetta,350000.0,Sedan,Automatic,FWD,white,black,5,4,gasoline,3200,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2020,GMC,Savana,57735.0,Van,Automatic,RWD,white,black,2,3,gasoline,43495,10.8,8.7,2.4,8.0,Inline,,
+=======
+2020,GMC,Savana,57735.0,Van,Automatic,RWD,white,black,2,2,gasoline,43495,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2021,Volvo,XC60,61824.0,SUV,Automatic,4X4,black,black,5,4,gasoline,49999,10.8,8.7,2.4,4.0,Inline,,
 2017,Porsche,Macan,48983.0,SUV,Automatic,4X4,black,black,5,4,gasoline,64910,10.8,8.7,2.4,6.0,V-Engine,,
 2019,Dodge,Grand,109800.0,Van,Automatic,FWD,gray,black,5,4,gasoline,28800,10.8,8.7,2.4,4.0,Inline,,
@@ -3426,7 +3502,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Audi,A5,57000.0,Hatchback,Automatic,4X4,silver,black,5,4,gasoline,38950,10.0,7.0,2.4,4.0,Inline,,
 2020,Chevrolet,SILVERADO,65423.0,SUV,Automatic,4X4,white,black,5,4,gasoline,69800,10.8,8.7,2.4,4.0,Inline,,
 2020,Porsche,Taycan,9125.0,Sedan,Automatic,4X4,black,black,5,4,electric,205900,0.0,8.7,0.0,0.0,Electric,0.0,0.0
+<<<<<<< Updated upstream
 2017,GMC,Savana,49000.0,Van,Automatic,RWD,white,gray,15,3,gasoline,44900,22.3,14.9,2.4,8.0,Inline,,
+=======
+2017,GMC,Savana,49000.0,Van,Automatic,RWD,white,gray,15,2,gasoline,44900,22.3,14.9,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2019,Mazda,CX-9,52995.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,31989,11.6,9.1,2.4,4.0,Inline,,
 2019,Nissan,Rogue,72000.0,SUV,Automatic,4X4,gray,gray,5,4,gasoline,26555,9.6,7.5,2.5,4.0,Other,,
 2023,Jeep,Grand,18.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,86270,13.0,9.4,3.6,6.0,V-Engine,,
@@ -3654,7 +3734,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Nissan,Pathfinder,150.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,57638,11.6,9.2,2.4,6.0,V-Engine,,
 2023,Ford,F-150,250.0,Truck,Automatic,4X4,white,black,5,4,gasoline,64144,13.5,10.2,3.5,6.0,V-Engine,,
 2021,Jeep,Grand,41300.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,48495,12.7,9.6,3.6,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2020,GMC,Savana,47678.0,Van,Automatic,RWD,white,black,2,3,gasoline,45495,10.8,8.7,2.4,8.0,Inline,,
+=======
+2020,GMC,Savana,47678.0,Van,Automatic,RWD,white,black,2,2,gasoline,45495,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2020,Chevrolet,SILVERADO,11500.0,Truck,Automatic,4X4,white,black,5,2,gasoline,57475,10.8,8.7,6.6,8.0,Inline,,
 2017,Kia,Sportage,230000.0,SUV,Automatic,4X4,red,black,5,4,gasoline,13995,11.3,9.5,2.4,4.0,Inline,,
 2013,BMW,3,110585.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,15395,9.0,6.0,2.4,4.0,Inline,,
@@ -3990,7 +4074,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Mitsubishi,Outlander,10.0,SUV,Automatic,4X4,gray,black,5,4,hybrid,60698,9.2,8.7,2.4,4.0,V-Engine,,
 2014,Audi,RS,144860.0,Coupe,Automatic,4X4,black,black,5,2,gasoline,32950,10.8,8.7,4.2,4.0,Other,,
 2018,Volvo,XC90,69367.0,SUV,Automatic,4X4,gray,black,7,4,gasoline,44988,11.5,8.8,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2020,GMC,Savana,71583.0,Van,Automatic,RWD,white,black,2,3,gasoline,41998,10.8,8.7,6.0,8.0,V-Engine,,
+=======
+2020,GMC,Savana,71583.0,Van,Automatic,RWD,white,black,2,2,gasoline,41998,10.8,8.7,6.0,8.0,V-Engine,,
+>>>>>>> Stashed changes
 2019,Acura,ILX,41116.0,Sedan,Automatic,FWD,white,black,5,4,gasoline,29995,9.9,7.0,2.4,4.0,Inline,,
 2020,Acura,RDX,50702.0,SUV,Automatic,4X4,white,black,5,4,gasoline,44599,11.0,8.6,2.4,4.0,Inline,,
 2013,Mercedes-Benz,E-Class,153619.0,Sedan,Automatic,4X4,gray,black,5,4,gasoline,17888,10.8,8.7,2.4,6.0,V-Engine,,
@@ -4113,7 +4201,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2020,Infiniti,QX60,78220.0,SUV,Automatic,4X4,white,black,5,4,gasoline,38779,12.5,9.0,2.4,6.0,V-Engine,,
 2020,Subaru,Crosstrek,32699.0,SUV,Automatic,4X4,gray,gray,5,2,gasoline,31831,8.5,7.0,2.4,4.0,Boxer,,
 2015,Chevrolet,Corvette,22585.0,Sedan,Automatic,RWD,white,red,2,2,gasoline,101800,14.149999999999999,8.149999999999999,6.2,8.0,Inline,,
+<<<<<<< Updated upstream
 2012,Fiat,500,124000.0,Coupe,Automatic,FWD,green,black,5,3,gasoline,7000,10.8,8.7,2.4,4.0,Inline,,
+=======
+2012,Fiat,500,124000.0,Coupe,Automatic,FWD,green,black,5,2,gasoline,7000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2017,BMW,M4,37897.0,Coupe,Manual,RWD,red,brown,5,2,gasoline,72800,13.7,9.1,2.4,6.0,Inline,,
 2022,Ford,F-250,250.0,Truck,Automatic,4X4,black,black,5,4,diesel,111028,10.8,8.7,6.7,8.0,V-Engine,,
 2019,Honda,Civic,135986.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,20999,7.9,6.1,2.4,4.0,Inline,,
@@ -4138,7 +4230,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,BMW,X3,87043.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,40886,11.7,8.6,3.0,4.0,Inline,,
 2017,Ford,Escape,103000.0,SUV,Automatic,4X4,white,gray,5,4,gasoline,19450,10.7,8.3,2.4,4.0,Inline,,
 1958,Chevrolet,Corvette,19669.0,Convertible,Manual,RWD,white,red,5,2,gasoline,199800,10.8,8.7,2.4,8.0,Inline,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,white,black,5,3,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,white,black,5,2,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2014,Honda,CR-V,162743.0,SUV,Automatic,4X4,white,black,5,4,gasoline,18480,9.2,6.6,2.4,4.0,Other,,
 2022,Tesla,Model,25000.0,SUV,Automatic,4X4,white,black,5,4,electric,76000,0.0,8.7,0.0,0.0,Electric,0.0,0.0
 2019,Volkswagen,Tiguan,114990.0,SUV,Automatic,4X4,black,black,5,4,gasoline,24998,11.1,8.1,2.0,4.0,Other,,
@@ -4194,7 +4290,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Mazda,CX-5,114000.0,SUV,Automatic,4X4,black,black,5,4,gasoline,27950,10.8,8.7,2.4,4.0,Inline,,
 2016,Ford,Mustang,95604.0,Coupe,Manual,RWD,yellow,black,4,2,gasoline,36900,15.350000000000001,9.4,5.0,4.0,Other,,
 2023,Nissan,Kicks,23.0,SUV,CVT,FWD,gray,gray,5,4,gasoline,28152,7.7,6.6,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2020,Ford,Transit,101163.0,Van,Automatic,RWD,white,black,5,3,gasoline,48995,10.8,8.7,2.4,6.0,V-Engine,,
+=======
+2020,Ford,Transit,101163.0,Van,Automatic,RWD,white,black,5,2,gasoline,48995,10.8,8.7,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2019,Jaguar,XF,35777.0,Sedan,Automatic,4X4,white,black,5,4,diesel,43888,7.8,5.8,2.4,4.0,Inline,,
 2020,Porsche,Cayenne,60500.0,SUV,Automatic,4X4,black,black,5,4,gasoline,90999,10.8,8.7,2.9,6.0,V-Engine,,
 2014,Chevrolet,Cruze,178000.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,8000,10.8,8.7,2.4,4.0,Inline,,
@@ -4203,7 +4303,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2020,Chevrolet,Corvette,9534.0,Coupe,Automatic,RWD,white,black,2,4,gasoline,108888,15.4,8.7,2.4,8.0,Inline,,
 2010,Mazda,Mazda3,178000.0,Sedan,Manual,FWD,black,black,5,4,gasoline,6490,9.649999999999999,6.85,2.4,4.0,Inline,,
 2017,Mercedes-Benz,GLE,85000.0,SUV,Automatic,4X4,white,black,5,4,gasoline,42800,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,white,black,5,3,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,white,black,5,2,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2013,Mazda,Mazda3,127330.0,Hatchback,Automatic,FWD,black,black,5,4,gasoline,11500,7.4,5.0,2.0,4.0,Other,,
 2016,Nissan,Rogue,97678.0,SUV,CVT,FWD,white,black,5,4,gasoline,18590,9.1,7.1,2.4,4.0,Inline,,
 2020,Audi,Q3,15669.0,SUV,Automatic,4X4,white,black,5,4,gasoline,39900,12.3,8.6,2.4,4.0,Other,,
@@ -4334,7 +4438,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Volvo,XC60,70500.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,44490,10.8,8.7,2.4,4.0,Inline,,
 2010,Hyundai,Santa,147427.0,SUV,Automatic,4X4,white,black,5,4,gasoline,11999,10.5,7.7,2.4,6.0,V-Engine,,
 2020,Dodge,Grand,67060.0,Van,Automatic,FWD,white,black,5,4,gasoline,29998,10.8,8.7,3.6,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2014,Fiat,500,117185.0,Hatchback,Automatic,FWD,white,black,5,3,gasoline,8500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2014,Fiat,500,117185.0,Hatchback,Automatic,FWD,white,black,5,2,gasoline,8500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2019,Porsche,Cayenne,39000.0,SUV,Automatic,4X4,blue,beige,5,4,gasoline,127777,15.6,11.8,2.4,8.0,Inline,,
 2021,Jeep,Grand,42223.0,SUV,Automatic,4X4,white,black,5,4,gasoline,51998,13.0,9.4,3.6,4.0,Other,,
 2017,BMW,X5,70970.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,66800,16.6,12.1,2.4,8.0,Inline,,
@@ -5034,7 +5142,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2014,Ford,Escape,90.0,SUV,Automatic,FWD,other,black,5,4,gasoline,10900,9.3,6.45,2.4,4.0,Inline,,
 2023,Ford,F-150,10.0,Truck,Automatic,4X4,black,black,5,2,gasoline,67755,13.5,10.2,2.4,6.0,V-Engine,,
 2021,Mazda,CX-5,7000.0,SUV,Automatic,4X4,gray,black,5,2,gasoline,40450,9.8,7.9,2.5,4.0,Inline,,
+<<<<<<< Updated upstream
 2016,Ford,Transit,144000.0,Van,Automatic,RWD,white,gray,2,3,diesel,33900,10.8,8.7,2.4,5.0,Inline,,
+=======
+2016,Ford,Transit,144000.0,Van,Automatic,RWD,white,gray,2,2,diesel,33900,10.8,8.7,2.4,5.0,Inline,,
+>>>>>>> Stashed changes
 2023,Chevrolet,Malibu,35.0,Sedan,Automatic,FWD,white,black,5,4,gasoline,40338,8.6,6.8,1.5,4.0,Inline,,
 2018,Honda,Civic,45852.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,25999,7.8,6.0,2.4,4.0,Inline,,
 2018,Mercedes-Benz,CLA-Class,52741.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,31800,9.9,7.3,2.4,4.0,Inline,,
@@ -5651,7 +5763,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Dodge,Durango,69580.0,SUV,Automatic,4X4,red,black,5,2,gasoline,43995,12.7,9.6,3.6,6.0,Inline,,
 2021,Honda,Passport,22384.0,SUV,Automatic,4X4,black,black,5,4,gasoline,42976,12.5,9.8,2.4,6.0,V-Engine,,
 2010,Chrysler,Town,222000.0,Van,Automatic,FWD,other,black,7,4,gasoline,6995,12.2,7.9,2.4,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2020,Hyundai,Veloster,68139.0,Hatchback,Manual,FWD,gray,black,4,3,gasoline,26390,8.95,6.95,2.4,4.0,Inline,,
+=======
+2020,Hyundai,Veloster,68139.0,Hatchback,Manual,FWD,gray,black,4,2,gasoline,26390,8.95,6.95,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2017,Hyundai,Santa,103000.0,SUV,Automatic,4X4,black,black,5,4,gasoline,21450,12.0,9.1,2.4,4.0,Inline,,
 2019,Lamborghini,Aventador,7313.0,Coupe,Automatic,4X4,gray,black,2,2,gasoline,1050000,10.8,8.7,2.4,4.0,Inline,,
 2023,Audi,A5,90.0,Convertible,Automatic,4X4,black,black,5,2,gasoline,83671,10.8,8.7,2.0,4.0,Inline,,
@@ -5912,7 +6028,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2021,Porsche,Macan,37372.0,SUV,Automatic,4X4,white,black,5,4,gasoline,69294,12.2,10.2,2.4,4.0,Inline,,
 2007,Mercedes-Benz,M-Class,310640.0,SUV,Automatic,4X4,gray,black,5,4,diesel,8888,11.0,8.1,2.4,6.0,V-Engine,,
 2016,Hyundai,Elantra,196000.0,Sedan,Automatic,FWD,silver,gray,5,4,gasoline,12495,8.5,6.3,1.8,4.0,Other,,
+<<<<<<< Updated upstream
 2019,GMC,Savana,63258.0,Van,Automatic,RWD,white,black,2,3,gasoline,40995,10.8,8.7,2.4,8.0,Inline,,
+=======
+2019,GMC,Savana,63258.0,Van,Automatic,RWD,white,black,2,2,gasoline,40995,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2018,BMW,5,85678.0,Sedan,Automatic,4X4,gray,black,5,4,gasoline,48800,14.3,9.4,2.4,8.0,Inline,,
 2019,Volkswagen,Tiguan,56118.0,SUV,Automatic,4X4,silver,black,7,4,gasoline,31999,11.1,8.1,2.4,4.0,Inline,,
 2017,Chrysler,Pacifica,100000.0,Van,Automatic,FWD,gray,black,5,4,gasoline,33250,10.8,8.7,2.4,4.0,Inline,,
@@ -6006,7 +6126,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,Nissan,GT-R,51000.0,Coupe,Automatic,4X4,black,red,4,2,gasoline,119888,14.5,10.7,3.8,4.0,Other,,
 2019,Audi,S3,48806.0,Sedan,Automatic,4X4,black,red,5,4,gasoline,42499,10.7,8.0,2.4,4.0,Inline,,
 2022,Volvo,XC90,14017.0,SUV,Automatic,4X4,black,black,5,4,gasoline,74898,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2019,Chevrolet,Express,106367.0,Van,Automatic,RWD,white,gray,12,3,gasoline,49995,10.8,8.7,2.4,8.0,Inline,,
+=======
+2019,Chevrolet,Express,106367.0,Van,Automatic,RWD,white,gray,12,2,gasoline,49995,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2023,Jeep,Wrangler,18.0,SUV,Automatic,4X4,metallic,black,5,4,gasoline,61820,10.8,8.7,3.6,6.0,V-Engine,,
 2011,Kia,Sorento,111100.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,11995,9.9,7.4,2.4,4.0,Inline,,
 2022,Jeep,Cherokee,18.0,SUV,Automatic,4X4,black,black,5,4,gasoline,51820,12.9,9.7,2.4,6.0,V-Engine,,
@@ -6136,8 +6260,13 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2016,Chevrolet,Corvette,24105.0,Convertible,Automatic,RWD,white,black,2,2,gasoline,72888,14.149999999999999,8.149999999999999,2.4,8.0,Inline,,
 2022,Jeep,Grand,0.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,85275,10.3,9.7,2.0,4.0,V-Engine,,
 2021,Lamborghini,Huracan,1000.0,Coupe,Automatic,RWD,black,black,2,2,gasoline,649899,10.8,8.7,5.2,4.0,Other,,
+<<<<<<< Updated upstream
 2021,Ford,Transit,17896.0,Van,Automatic,RWD,white,black,5,3,gasoline,65888,10.8,8.7,2.4,6.0,V-Engine,,
 2013,Hyundai,Genesis,142100.0,Coupe,Manual,RWD,gray,black,5,3,gasoline,12500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2021,Ford,Transit,17896.0,Van,Automatic,RWD,white,black,5,2,gasoline,65888,10.8,8.7,2.4,6.0,V-Engine,,
+2013,Hyundai,Genesis,142100.0,Coupe,Manual,RWD,gray,black,5,2,gasoline,12500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2018,Honda,Civic,126948.0,Compact,CVT,FWD,silver,black,5,4,gasoline,24488,7.4,5.6,1.5,4.0,Inline,,
 2020,Honda,Civic,20475.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,27490,7.9,6.1,2.0,4.0,Other,,
 2023,Infiniti,QX60,90.0,SUV,Automatic,4X4,blue,gray,7,4,gasoline,72852,11.9,9.3,2.4,6.0,V-Engine,,
@@ -6181,7 +6310,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2021,Volvo,XC60,10545.0,SUV,Automatic,4X4,white,black,5,4,gasoline,54500,10.8,8.7,2.4,4.0,Inline,,
 2017,Porsche,Cayenne,90000.0,SUV,Automatic,4X4,black,black,5,4,hybrid,58000,10.8,8.7,2.4,4.0,Inline,,
 2023,Ford,F-150,27.0,Truck,Automatic,4X4,black,black,5,4,gasoline,74850,13.5,10.2,3.5,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,black,black,5,3,gasoline,70768,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,black,black,5,2,gasoline,70768,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2018,Audi,Q7,88222.0,SUV,Automatic,4X4,white,brown,5,4,gasoline,41800,12.6,9.4,2.4,6.0,Inline,,
 2019,Mercedes-Benz,GLC300,54400.0,SUV,Automatic,4X4,white,black,5,4,gasoline,44955,11.0,8.7,2.4,4.0,Inline,,
 2023,Chrysler,Pacifica,90.0,Van,CVT,FWD,black,black,7,4,hybrid,73495,10.8,8.7,3.6,6.0,Hybrid,,
@@ -6417,7 +6550,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2010,Mazda,CX-9,208438.0,SUV,Automatic,4X4,blue,beige,7,4,gasoline,10999,14.0,9.6,2.4,6.0,V-Engine,,
 2023,Hyundai,Elantra,12.0,SUV,Automatic,4X4,black,black,5,4,gasoline,39000,10.8,8.7,2.4,4.0,Inline,,
 2014,Porsche,Panamera,44797.0,Hatchback,Automatic,4X4,gray,brown,4,4,gasoline,44888,11.7,7.5,2.4,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2017,Ford,Transit,182000.0,Van,Automatic,RWD,white,black,2,3,gasoline,40988,16.7,13.0,2.4,6.0,V-Engine,,
+=======
+2017,Ford,Transit,182000.0,Van,Automatic,RWD,white,black,2,2,gasoline,40988,16.7,13.0,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2023,GMC,Sierra,10.0,Truck,Automatic,4X4,black,black,5,4,gasoline,94528,16.7,14.0,6.2,8.0,V-Engine,,
 2023,Mazda,CX-5,1397.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,49675,10.8,8.7,2.5,4.0,Inline,,
 2023,Chevrolet,Equinox,10.0,SUV,Automatic,4X4,black,black,5,4,gasoline,42173,9.9,7.9,1.5,4.0,Other,,
@@ -6483,7 +6620,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,Ferrari,488,3568.0,SUV,Automatic,RWD,white,black,2,2,gasoline,399900,10.8,8.7,2.4,4.0,Inline,,
 2021,Hyundai,Santa,75200.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,33888,10.6,9.3,2.5,4.0,Other,,
 2022,Volkswagen,Atlas,20864.0,SUV,Automatic,4X4,green,black,6,4,gasoline,57574,13.8,10.2,2.4,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2011,MINI,COOPER,148000.0,Coupe,Manual,FWD,gray,black,5,3,gasoline,9000,10.8,8.7,2.4,4.0,Inline,,
+=======
+2011,MINI,COOPER,148000.0,Coupe,Manual,FWD,gray,black,5,2,gasoline,9000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2018,Jaguar,F-Pace,50113.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,36800,10.7,8.8,2.4,4.0,Inline,,
 2023,BMW,330I,90.0,Sedan,Automatic,4X4,gray,black,5,2,gasoline,64021,9.8,7.0,2.0,4.0,Inline,,
 2013,Chrysler,Town,143537.0,Van,Automatic,FWD,silver,black,7,4,gasoline,14990,10.8,8.7,3.6,4.0,Other,,
@@ -6529,7 +6670,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Ford,F-150,250.0,Truck,Automatic,4X4,blue,black,5,4,hybrid,77814,9.8,9.7,3.5,6.0,V-Engine,,
 2023,Jeep,Compass,90.0,SUV,Automatic,4X4,white,black,5,4,gasoline,52520,10.8,8.7,2.0,4.0,Inline,,
 2016,Mazda,CX-5,91176.0,SUV,Automatic,4X4,black,black,5,4,gasoline,20995,9.8,7.9,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2010,Chevrolet,Express,250000.0,Van,Automatic,RWD,white,gray,12,3,gasoline,18990,10.8,8.7,2.4,8.0,Inline,,
+=======
+2010,Chevrolet,Express,250000.0,Van,Automatic,RWD,white,gray,12,2,gasoline,18990,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2023,Mazda,CX-5,100.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,37000,9.8,7.9,2.5,4.0,Inline,,
 2017,Porsche,Macan,74216.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,42900,13.7,10.3,2.4,6.0,V-Engine,,
 2023,Jeep,Grand,12.0,SUV,Automatic,4X4,black,black,5,4,gasoline,80063,12.3,9.2,3.6,6.0,V-Engine,,
@@ -6776,7 +6921,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Chevrolet,Equinox,25.0,SUV,Automatic,4X4,black,gray,5,4,gasoline,35447,9.9,7.9,1.5,4.0,Inline,,
 2014,Dodge,Journey,121000.0,SUV,Automatic,FWD,black,black,5,4,gasoline,12900,11.2,7.7,2.4,4.0,Inline,,
 2016,Subaru,WRX,69500.0,Sedan,Manual,RWD,blue,black,5,4,gasoline,39000,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2016,Hyundai,Veloster,108655.0,Hatchback,Automatic,FWD,gray,black,5,3,gasoline,14998,8.6,6.6,1.6,4.0,Other,,
+=======
+2016,Hyundai,Veloster,108655.0,Hatchback,Automatic,FWD,gray,black,5,2,gasoline,14998,8.6,6.6,1.6,4.0,Other,,
+>>>>>>> Stashed changes
 2004,Volvo,V40,203000.0,Wagon,Automatic,FWD,gray,black,5,4,gasoline,5000,10.8,8.7,2.4,4.0,Inline,,
 2000,Jaguar,XJ8,102000.0,Sedan,Automatic,RWD,green,black,5,4,gasoline,11999,10.8,8.7,2.4,4.0,Inline,,
 2022,Volkswagen,Tiguan,9378.0,SUV,Automatic,4X4,black,black,7,4,gasoline,44792,10.6,8.0,2.4,4.0,Inline,,
@@ -6832,7 +6981,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,BMW,4,90.0,SUV,Automatic,4X4,white,black,5,4,gasoline,79041,10.8,8.7,2.4,6.0,Inline,,
 2018,Nissan,LEAF,53585.0,Hatchback,Automatic,FWD,white,black,5,4,electric,31987,0.0,8.7,0.0,0.0,Electric,0.0,0.0
 2019,Infiniti,QX50,59133.0,Wagon,CVT,4X4,brown,black,5,4,gasoline,32990,10.0,7.8,2.0,4.0,Inline,,
+<<<<<<< Updated upstream
 2017,Ford,Transit,154000.0,Van,Automatic,RWD,white,gray,2,3,gasoline,29880,10.8,8.7,2.4,6.0,Inline,,
+=======
+2017,Ford,Transit,154000.0,Van,Automatic,RWD,white,gray,2,2,gasoline,29880,10.8,8.7,2.4,6.0,Inline,,
+>>>>>>> Stashed changes
 2021,BMW,X7,23088.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,108800,10.8,8.7,2.4,6.0,Inline,,
 1998,Mercedes-Benz,SL-Class,58213.0,Convertible,Automatic,RWD,black,black,5,2,gasoline,79800,10.8,8.7,2.4,12.0,Inline,,
 2022,Chevrolet,Silverado,14945.0,Truck,Automatic,4X4,black,black,5,4,gasoline,65999,16.05,13.15,2.4,8.0,Inline,,
@@ -6905,7 +7058,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2022,Ford,Bronco,4952.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,49588,11.1,9.0,2.0,4.0,Other,,
 2017,MINI,Cooper,69062.0,Hatchback,Automatic,FWD,gray,black,5,4,gasoline,20333,8.2,6.0,2.4,3.0,Inline,,
 2021,Lamborghini,Urus,8328.0,SUV,Automatic,4X4,black,black,5,4,gasoline,399988,19.6,13.8,2.4,8.0,Inline,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,red,black,5,3,gasoline,73718,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,red,black,5,2,gasoline,73718,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2021,Jeep,Grand,31996.0,SUV,Automatic,4X4,black,black,5,4,gasoline,54990,12.7,9.6,3.6,6.0,V-Engine,,
 2023,BMW,X3,90.0,SUV,Automatic,4X4,white,black,5,4,gasoline,67860,11.0,8.4,2.0,4.0,Inline,,
 2021,Ford,Mustang,10201.0,Coupe,Automatic,RWD,red,black,4,2,gasoline,78995,15.950000000000001,10.3,5.0,8.0,Inline,,
@@ -6968,7 +7125,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Audi,S4,64655.0,Sedan,Automatic,4X4,black,black,5,2,gasoline,49995,11.3,8.0,2.4,6.0,V-Engine,,
 2019,Ford,Escape,126558.0,SUV,Automatic,FWD,black,black,5,4,gasoline,22999,10.2,7.8,2.4,4.0,Inline,,
 2011,Volkswagen,Jetta,185000.0,Sedan,Automatic,FWD,gray,black,5,4,diesel,12495,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2019,GMC,Savana,59322.0,Van,Automatic,RWD,white,black,2,3,gasoline,41495,10.8,8.7,2.4,8.0,Inline,,
+=======
+2019,GMC,Savana,59322.0,Van,Automatic,RWD,white,black,2,2,gasoline,41495,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2020,Ford,Fusion,116742.0,Sedan,CVT,FWD,red,black,5,4,hybrid,28350,5.5,5.8,0.0,0.0,Electric,,
 2019,Honda,Pilot,102392.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,38995,12.4,9.3,3.5,6.0,V-Engine,,
 2022,GMC,Sierra,8.0,Truck,Automatic,4X4,white,black,5,2,gasoline,57448,16.0,13.0,2.7,4.0,Inline,,
@@ -7465,7 +7626,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Honda,Odyssey,94680.0,Van,Automatic,FWD,black,gray,5,4,gasoline,39988,12.2,8.5,3.5,6.0,V-Engine,,
 2012,Mazda,Mazda5,238000.0,Van,Manual,FWD,black,black,6,4,gasoline,5990,9.6,6.75,2.4,4.0,Inline,,
 2011,Infiniti,M37x,174933.0,Sedan,Automatic,4X4,silver,black,5,4,gasoline,13990,12.0,8.3,3.7,6.0,Inline,,
+<<<<<<< Updated upstream
 2017,Hyundai,Veloster,87562.0,Coupe,Automatic,FWD,silver,black,4,3,gasoline,17999,8.55,6.800000000000001,2.4,4.0,Inline,,
+=======
+2017,Hyundai,Veloster,87562.0,Coupe,Automatic,FWD,silver,black,4,2,gasoline,17999,8.55,6.800000000000001,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2023,BMW,330I,35.0,Sedan,Automatic,4X4,blue,black,5,2,gasoline,64021,9.8,7.0,2.0,4.0,Inline,,
 2022,Ford,Edge,59.0,SUV,Automatic,4X4,white,black,5,4,gasoline,48288,11.5,8.4,2.4,4.0,Inline,,
 2020,Honda,Civic,74216.0,Sedan,CVT,4X4,silver,black,5,4,gasoline,26405,7.9,6.1,2.4,4.0,Inline,,
@@ -7567,7 +7732,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Audi,Q5,67175.0,SUV,Automatic,4X4,black,black,5,4,gasoline,34088,10.4,8.6,2.4,4.0,Inline,,
 2023,Infiniti,QX60,90.0,SUV,Automatic,4X4,blue,gray,5,4,gasoline,70232,11.9,9.3,2.4,6.0,V-Engine,,
 2020,Hyundai,Elantra,11300.0,Sedan,Automatic,FWD,blue,black,5,4,gasoline,26995,7.8,5.6,2.0,4.0,Other,,
+<<<<<<< Updated upstream
 2012,Hyundai,Veloster,218000.0,Coupe,Manual,4X4,white,black,5,3,gasoline,7000,10.8,8.7,2.4,4.0,Inline,,
+=======
+2012,Hyundai,Veloster,218000.0,Coupe,Manual,4X4,white,black,5,2,gasoline,7000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2018,Hyundai,Elantra,48903.0,Sedan,Manual,FWD,blue,black,5,4,gasoline,24800,10.7,7.8,1.6,4.0,Other,,
 2019,Audi,S5,35613.0,Hatchback,Automatic,4X4,white,red,5,4,gasoline,50499,11.3,8.0,2.4,6.0,V-Engine,,
 2021,Volkswagen,Atlas,31835.0,SUV,Automatic,4X4,black,black,5,4,gasoline,49279,13.8,10.4,2.4,6.0,V-Engine,,
@@ -7666,7 +7835,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 1994,Nissan,Skyline,180000.0,Coupe,Manual,RWD,silver,black,5,4,gasoline,33500,10.8,8.7,2.4,4.0,Inline,,
 2023,Mazda,Mazda3,100.0,Hatchback,Automatic,FWD,gray,black,5,4,gasoline,26550,8.649999999999999,6.65,2.0,4.0,Inline,,
 2016,BMW,328I,32467.0,Sedan,Automatic,4X4,silver,black,5,4,gasoline,28799,10.7,6.9,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2019,GMC,Savana,59322.0,Van,Automatic,RWD,white,black,2,3,gasoline,41495,10.8,8.7,2.4,8.0,Inline,,
+=======
+2019,GMC,Savana,59322.0,Van,Automatic,RWD,white,black,2,2,gasoline,41495,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2018,Audi,RS,53359.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,62995,12.4,8.3,2.4,5.0,Inline,,
 2019,Mazda,Mazda3,53294.0,Hatchback,Automatic,FWD,black,black,5,4,gasoline,26987,9.1,6.699999999999999,2.5,4.0,Inline,,
 2021,Nissan,Kicks,24751.0,SUV,Automatic,FWD,black,gray,5,4,gasoline,25499,7.7,6.6,1.6,4.0,Inline,,
@@ -7701,7 +7874,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2015,BMW,i8,60306.0,Coupe,Automatic,4X4,gray,black,2,4,hybrid,94950,10.8,8.7,2.4,3.0,Inline,,
 2022,Chevrolet,Silverado,7.0,Truck,Automatic,4X4,white,black,5,2,gasoline,60048,13.9,12.0,2.7,4.0,Inline,,
 2023,Volkswagen,Atlas,90.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,58586,13.1,10.0,2.4,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2017,Ford,Transit,164000.0,Van,Automatic,RWD,white,black,2,3,gasoline,41888,16.7,13.0,2.4,6.0,V-Engine,,
+=======
+2017,Ford,Transit,164000.0,Van,Automatic,RWD,white,black,2,2,gasoline,41888,16.7,13.0,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2016,Nissan,Juke,45986.0,Wagon,Automatic,4X4,white,black,5,4,gasoline,20498,8.8,7.5,2.4,4.0,Inline,,
 2019,Honda,CR-V,45034.0,SUV,CVT,4X4,black,black,5,4,gasoline,35868,8.7,7.2,1.5,4.0,Inline,,
 2015,Honda,Accord,119825.0,Coupe,CVT,FWD,white,black,5,4,gasoline,19999,9.0,6.7,2.4,4.0,Inline,,
@@ -8012,7 +8189,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Audi,Q7,92088.0,SUV,Automatic,4X4,white,brown,7,4,gasoline,56550,12.6,9.4,3.0,6.0,Inline,,
 2019,Volvo,XC90,57720.0,SUV,Automatic,4X4,silver,black,5,2,gasoline,50880,10.8,8.7,2.4,4.0,Inline,,
 2020,GMC,Canyon,77400.0,Truck,Automatic,4X4,white,gray,5,4,diesel,37495,14.0,9.9,3.6,4.0,Other,,
+<<<<<<< Updated upstream
 2013,Hyundai,Genesis,142100.0,Coupe,Manual,RWD,gray,black,5,3,gasoline,12500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2013,Hyundai,Genesis,142100.0,Coupe,Manual,RWD,gray,black,5,2,gasoline,12500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2016,Audi,A3,131959.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,18450,9.8,7.2,2.4,4.0,Inline,,
 2018,Honda,Civic,82526.0,Compact,CVT,FWD,silver,black,5,4,gasoline,23188,7.8,6.0,2.0,4.0,Inline,,
 2008,Honda,Civic,223805.0,Sedan,CVT,FWD,silver,blue,5,4,hybrid,7480,4.7,4.3,1.3,4.0,Other,,
@@ -8276,7 +8457,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,Buick,Envision,44901.0,SUV,Automatic,4X4,brown,beige,5,4,gasoline,32888,11.8,9.2,2.4,4.0,Inline,,
 2022,Kia,Forte,5728.0,Sedan,CVT,FWD,gray,black,5,2,gasoline,28070,7.9,5.9,2.0,4.0,Inline,,
 2012,Mazda,CX-9,181452.0,SUV,Automatic,4X4,white,black,5,4,gasoline,11800,12.8,9.0,3.7,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2023,MINI,COOPER,4651.0,Hatchback,Automatic,FWD,white,black,5,3,gasoline,40995,10.5,7.3,2.0,4.0,Inline,,
+=======
+2023,MINI,COOPER,4651.0,Hatchback,Automatic,FWD,white,black,5,2,gasoline,40995,10.5,7.3,2.0,4.0,Inline,,
+>>>>>>> Stashed changes
 2014,Audi,Q5,132911.0,SUV,Automatic,4X4,white,black,5,4,diesel,21988,9.0,6.4,2.4,6.0,V-Engine,,
 2017,Maserati,Levante,66000.0,SUV,Automatic,4X4,gray,brown,5,4,gasoline,56799,16.8,12.4,2.4,6.0,V-Engine,,
 2023,Jeep,Wrangler,15.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,67880,11.6,11.9,2.0,4.0,V-Engine,,
@@ -8376,7 +8561,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Maserati,Ghibli,90.0,Sedan,Automatic,4X4,black,black,5,2,gasoline,119340,13.8,9.4,3.0,6.0,Inline,,
 1971,Chevrolet,C10,80573.0,SUV,Automatic,FWD,blue,black,5,2,gasoline,58750,10.8,8.7,2.4,8.0,Inline,,
 2015,Hyundai,Accent,97666.0,Hatchback,Automatic,FWD,blue,gray,5,4,gasoline,14799,8.9,6.3,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2017,Ford,Transit,119000.0,Van,Automatic,RWD,white,black,2,3,gasoline,39888,16.7,13.0,2.4,6.0,Inline,,
+=======
+2017,Ford,Transit,119000.0,Van,Automatic,RWD,white,black,2,2,gasoline,39888,16.7,13.0,2.4,6.0,Inline,,
+>>>>>>> Stashed changes
 2019,Mazda,Mazda3,41563.0,Sedan,Automatic,FWD,red,black,5,4,gasoline,28599,8.8,6.6,2.5,4.0,Inline,,
 2016,Honda,Civic,118000.0,Coupe,Automatic,FWD,black,gray,5,2,gasoline,18500,7.8,5.8,2.0,4.0,Other,,
 2023,Volkswagen,Tiguan,90.0,SUV,Automatic,4X4,gray,black,7,4,gasoline,46925,10.6,8.0,2.4,4.0,Inline,,
@@ -8385,7 +8574,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2015,Ford,F-250,200000.0,Truck,Automatic,4X4,white,gray,6,4,diesel,34900,10.8,8.7,2.4,8.0,Inline,,
 2011,Mazda,Mazda3,212000.0,Hatchback,Automatic,FWD,black,black,5,4,gasoline,6490,9.7,6.800000000000001,2.4,4.0,Inline,,
 2020,Audi,A4,37398.0,Sedan,Automatic,4X4,gray,black,5,4,gasoline,39980,10.0,7.3,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2020,Hyundai,Veloster,61300.0,SUV,Automatic,4X4,white,black,5,3,gasoline,28000,10.8,8.7,2.4,4.0,Inline,,
+=======
+2020,Hyundai,Veloster,61300.0,SUV,Automatic,4X4,white,black,5,2,gasoline,28000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2020,Jeep,WRANGLER,58350.0,SUV,Automatic,4X4,white,black,5,4,gasoline,50888,13.350000000000001,10.399999999999999,3.6,4.0,Other,,
 2006,Mercedes-Benz,SL-Class,66240.0,Convertible,Automatic,RWD,gray,black,5,2,gasoline,99800,18.1,11.1,2.4,12.0,Inline,,
 2023,Mercedes-Benz,CLA250,90.0,Coupe,Automatic,4X4,gray,black,5,4,gasoline,55365,9.8,7.0,2.4,4.0,Inline,,
@@ -8429,7 +8622,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,GMC,SIERRA,25.0,Truck,Automatic,4X4,black,black,5,4,diesel,97188,10.8,8.7,6.6,8.0,Inline,,
 2023,Mazda,CX-50,15.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,49477,10.4,8.1,2.5,4.0,Inline,,
 2021,Hyundai,Santa,16537.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,43399,11.0,8.5,2.5,4.0,Inline,,
+<<<<<<< Updated upstream
 2019,Hyundai,Veloster,60975.0,Hatchback,Manual,FWD,white,black,4,3,gasoline,31545,10.6,8.3,2.4,4.0,Inline,,
+=======
+2019,Hyundai,Veloster,60975.0,Hatchback,Manual,FWD,white,black,4,2,gasoline,31545,10.6,8.3,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2023,Hyundai,Santa,11.0,SUV,Automatic,4X4,red,beige,5,4,gasoline,52558,11.0,8.5,2.5,4.0,Inline,,
 2019,Infiniti,QX60,75461.0,SUV,Automatic,4X4,black,gray,5,4,gasoline,30204,12.5,9.0,3.5,6.0,V-Engine,,
 2002,Dodge,Viper,17357.0,Coupe,Manual,RWD,red,black,5,2,gasoline,149800,20.9,10.5,2.4,10.0,Inline,,
@@ -8736,7 +8933,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2021,Hyundai,Santa,74611.0,SUV,Automatic,4X4,white,black,5,4,gasoline,34765,10.6,9.3,2.4,4.0,Inline,,
 2014,BMW,X3,127600.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,18980,9.8,7.1,2.0,4.0,Other,,
 2018,Audi,Q5,63395.0,SUV,Automatic,4X4,white,black,5,4,gasoline,31490,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2020,Ford,Transit,57545.0,Van,Automatic,RWD,white,black,5,3,gasoline,53995,10.8,8.7,2.4,6.0,V-Engine,,
+=======
+2020,Ford,Transit,57545.0,Van,Automatic,RWD,white,black,5,2,gasoline,53995,10.8,8.7,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2023,BMW,330I,90.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,66390,9.8,7.0,2.0,4.0,Inline,,
 2023,Dodge,Durango,0.0,SUV,Automatic,4X4,white,black,5,4,gasoline,101680,18.3,12.2,2.4,8.0,Inline,,
 2023,GMC,Sierra,10.0,Truck,Automatic,4X4,metallic,black,5,4,gasoline,69385,13.1,11.6,2.4,4.0,Inline,,
@@ -8800,7 +9001,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2020,Alfa Romeo,Romeo,24965.0,SUV,Automatic,4X4,red,black,5,2,gasoline,87888,13.8,10.2,2.9,6.0,Inline,,
 2023,Nissan,Sentra,90.0,Sedan,CVT,FWD,other,gray,5,4,gasoline,27970,8.0,6.0,2.4,4.0,Inline,,
 2018,Honda,Civic,55684.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,25290,7.8,6.0,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,white,black,5,3,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,white,black,5,2,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2016,Volkswagen,Golf,156450.0,Sedan,Automatic,FWD,blue,gray,5,4,gasoline,14980,9.3,6.5,1.8,4.0,Other,,
 2022,Hyundai,Kona,32289.0,SUV,CVT,4X4,red,black,5,4,gasoline,28998,8.5,7.2,2.4,4.0,Inline,,
 2019,Volvo,XC60,117000.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,37450,10.8,8.7,2.4,4.0,Inline,,
@@ -9044,7 +9249,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2020,Mazda,Mazda6,77500.0,Sedan,Automatic,FWD,red,black,5,4,gasoline,29588,9.0,6.7,2.5,4.0,Inline,,
 2018,Honda,Civic,120982.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,22400,7.4,5.6,2.4,4.0,Inline,,
 2023,Jeep,Wrangler,13.0,SUV,Automatic,4X4,yellow,black,5,4,gasoline,70665,10.8,8.7,2.0,4.0,Inline,,
+<<<<<<< Updated upstream
 2023,Ford,Transit,0.0,Van,Automatic,4X4,white,black,5,3,gasoline,69842,10.8,8.7,3.5,6.0,V-Engine,,
+=======
+2023,Ford,Transit,0.0,Van,Automatic,4X4,white,black,5,2,gasoline,69842,10.8,8.7,3.5,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2020,BMW,X6,28216.0,SUV,Automatic,4X4,white,brown,5,4,gasoline,89880,11.7,9.1,2.4,6.0,Inline,,
 2015,Chevrolet,Cruze,174272.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,9990,9.05,6.25,1.4,4.0,Inline,,
 2020,Hyundai,Tucson,89721.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,25980,10.8,9.2,2.4,4.0,Inline,,
@@ -9458,7 +9667,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2016,Ford,F-350,139307.0,Truck,Automatic,4X4,white,gray,5,4,gasoline,32999,10.8,8.7,6.2,8.0,V-Engine,,
 2009,Hyundai,Tucson,200585.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,6200,10.8,8.7,2.4,4.0,Inline,,
 2014,Kia,Rondo,150790.0,Wagon,Automatic,FWD,blue,black,5,4,gasoline,9000,9.2,6.3,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2011,Honda,CR-Z,171000.0,Coupe,Automatic,FWD,blue,black,5,3,hybrid,11499,10.8,8.7,2.4,4.0,Inline,,
+=======
+2011,Honda,CR-Z,171000.0,Coupe,Automatic,FWD,blue,black,5,2,hybrid,11499,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2023,Nissan,GT-R,99.0,Coupe,Automatic,4X4,white,black,5,4,gasoline,292998,14.7,10.7,3.8,6.0,V-Engine,,
 2023,GMC,Sierra,10.0,Truck,Automatic,4X4,white,black,5,4,gasoline,98248,16.7,14.0,6.2,8.0,V-Engine,,
 2000,Ford,F-350,326300.0,Truck,Automatic,4X4,black,beige,5,4,diesel,11995,10.8,8.7,7.3,4.0,Other,,
@@ -9749,7 +9962,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,Audi,A5,90000.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,33910,10.8,8.7,2.4,4.0,Inline,,
 2023,Mazda,CX-9,6583.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,55028,11.6,9.1,2.5,4.0,Inline,,
 2019,Audi,SQ5,54509.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,49590,12.7,10.0,3.0,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2016,Kia,Sorento,58000.0,SUV,Automatic,4X4,gray,black,5,3,gasoline,22500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2016,Kia,Sorento,58000.0,SUV,Automatic,4X4,gray,black,5,2,gasoline,22500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2023,MINI,Cooper,6012.0,SUV,Automatic,4X4,black,black,5,4,gasoline,46990,10.4,7.5,2.4,4.0,Inline,,
 2015,BMW,435i,103339.0,Convertible,Automatic,4X4,black,black,4,2,gasoline,34888,12.1,8.1,2.4,6.0,Inline,,
 2021,Acura,TLX,7259.0,Sedan,Automatic,4X4,white,beige,5,2,gasoline,47555,11.2,8.0,2.0,4.0,Inline,,
@@ -9948,7 +10165,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2016,BMW,X4,95011.0,SUV,Automatic,4X4,blue,brown,5,4,gasoline,29950,11.7,8.4,2.4,4.0,Inline,,
 2016,BMW,5,123000.0,Sedan,Automatic,4X4,gray,brown,5,4,diesel,32995,9.2,6.3,2.4,6.0,Inline,,
 2017,Ford,Explorer,68356.0,SUV,Automatic,4X4,white,black,5,4,gasoline,33495,14.4,10.5,2.4,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2021,MINI,COOPER,7849.0,Hatchback,Automatic,FWD,white,black,5,3,electric,36500,0.0,8.7,2.4,0.0,Electric,0.0,0.0
+=======
+2021,MINI,COOPER,7849.0,Hatchback,Automatic,FWD,white,black,5,2,electric,36500,0.0,8.7,2.4,0.0,Electric,0.0,0.0
+>>>>>>> Stashed changes
 2017,Hyundai,Santa,130901.0,SUV,Automatic,4X4,black,black,5,4,gasoline,24888,12.5,9.6,2.0,4.0,Other,,
 2017,Chevrolet,Cruze,157200.0,Sedan,Automatic,FWD,white,black,5,4,hybrid,15000,10.8,8.7,2.4,4.0,Inline,,
 2022,Porsche,911,890.0,Coupe,Automatic,RWD,black,black,2,2,gasoline,404995,10.8,8.7,2.4,4.0,Inline,,
@@ -10069,7 +10290,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2017,Audi,A4,72996.0,Sedan,Automatic,4X4,brown,black,5,4,gasoline,29989,9.8,7.7,2.0,4.0,Inline,,
 2023,Jeep,Wrangler,11.0,SUV,Automatic,4X4,white,black,5,4,gasoline,74998,10.8,8.7,2.0,4.0,Inline,,
 2018,BMW,5,63000.0,Sedan,Automatic,4X4,blue,black,5,4,hybrid,42500,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2017,GMC,Savana,119850.0,Van,Automatic,RWD,white,gray,2,3,gasoline,31888,10.8,8.7,2.4,8.0,Inline,,
+=======
+2017,GMC,Savana,119850.0,Van,Automatic,RWD,white,gray,2,2,gasoline,31888,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2010,Hyundai,Santa,293000.0,SUV,Automatic,FWD,black,black,5,4,gasoline,7880,10.8,8.7,2.4,4.0,Inline,,
 2023,Volvo,S60,50.0,Sedan,Automatic,4X4,black,gray,5,4,gasoline,69424,10.8,8.7,2.0,4.0,Inline,,
 2019,Audi,Q5,97000.0,SUV,Automatic,4X4,white,black,5,4,gasoline,37777,10.9,8.7,2.4,4.0,Inline,,
@@ -10275,7 +10500,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Mercedes-Benz,C-Class,115000.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,34900,11.0,7.3,2.4,4.0,Inline,,
 2014,Hyundai,Elantra,174000.0,Sedan,Automatic,FWD,silver,gray,5,4,gasoline,8995,7.3,5.2,1.8,4.0,Other,,
 2018,GMC,Terrain,73143.0,SUV,Automatic,4X4,black,black,5,4,gasoline,29087,11.2,9.0,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2017,Ford,Transit,182000.0,Van,Automatic,RWD,white,black,2,3,gasoline,40988,16.7,13.0,2.4,6.0,V-Engine,,
+=======
+2017,Ford,Transit,182000.0,Van,Automatic,RWD,white,black,2,2,gasoline,40988,16.7,13.0,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2007,Porsche,911,113357.0,Coupe,Automatic,4X4,white,black,5,4,gasoline,109900,13.3,8.5,2.4,6.0,Inline,,
 2023,Jeep,Wrangler,13.0,SUV,Automatic,4X4,black,black,5,4,gasoline,61425,10.8,8.7,2.0,4.0,Inline,,
 2019,BMW,330I,53895.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,42981,10.8,8.7,2.4,4.0,Inline,,
@@ -10442,7 +10671,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2014,Mazda,Mazda3,266000.0,Sedan,Manual,FWD,black,black,5,4,gasoline,6990,6.75,4.75,2.4,4.0,Inline,,
 2023,Mercedes-Benz,GLE53,90.0,SUV,Automatic,4X4,white,black,5,4,gasoline,128722,10.8,8.7,2.4,6.0,Inline,,
 1990,Mercedes-Benz,300SL,1732.0,Coupe,Automatic,RWD,gray,gray,2,2,gasoline,59998,10.8,8.7,3.0,6.0,Inline,,
+<<<<<<< Updated upstream
 2014,Honda,Civic,140500.0,Sedan,Manual,FWD,blue,black,5,3,gasoline,13000,10.8,8.7,2.4,4.0,Inline,,
+=======
+2014,Honda,Civic,140500.0,Sedan,Manual,FWD,blue,black,5,2,gasoline,13000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2018,Mitsubishi,Mirage,63000.0,Hatchback,Automatic,FWD,gray,black,5,4,gasoline,16000,10.8,8.7,2.4,4.0,Inline,,
 2023,Jeep,Wrangler,14.0,SUV,Automatic,4X4,white,black,5,4,gasoline,70998,10.8,8.7,2.0,4.0,Inline,,
 2017,Honda,Civic,116649.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,20700,7.8,6.0,2.4,4.0,Inline,,
@@ -10455,12 +10688,20 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Chevrolet,Equinox,104000.0,SUV,Automatic,4X4,black,gray,3,4,diesel,21880,8.5,6.1,2.4,4.0,Inline,,
 2016,BMW,X3,129500.0,SUV,Automatic,4X4,gray,brown,5,4,gasoline,26860,12.7,8.8,2.4,6.0,Inline,,
 2022,Rolls-Royce,Cullinan,1200.0,SUV,Automatic,4X4,black,black,4,4,gasoline,698888,10.8,8.7,6.75,4.0,Other,,
+<<<<<<< Updated upstream
 2011,Volvo,C30,171000.0,Hatchback,Automatic,FWD,gray,black,5,3,gasoline,10499,10.8,8.7,2.4,4.0,Inline,,
+=======
+2011,Volvo,C30,171000.0,Hatchback,Automatic,FWD,gray,black,5,2,gasoline,10499,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2015,Chevrolet,SILVERADO,62320.0,Truck,Automatic,4X4,white,black,5,4,diesel,61000,10.8,8.7,2.4,4.0,Inline,,
 2020,Hyundai,Elantra,79200.0,Sedan,CVT,FWD,gray,black,5,4,gasoline,23480,7.8,5.6,2.0,4.0,Other,,
 2020,Honda,CR-V,66574.0,SUV,CVT,4X4,gray,black,5,4,gasoline,36900,8.7,7.2,2.4,4.0,Inline,,
 2018,Kia,Sorento,86000.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,23000,12.3,9.4,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2021,GMC,Savana,97935.0,Van,Automatic,RWD,other,black,5,3,gasoline,41995,10.8,8.7,2.4,6.0,V-Engine,,
+=======
+2021,GMC,Savana,97935.0,Van,Automatic,RWD,other,black,5,2,gasoline,41995,10.8,8.7,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2015,Scion,tC,114823.0,Coupe,Manual,FWD,gray,black,5,2,gasoline,14995,10.2,7.65,2.4,4.0,Inline,,
 2023,Audi,RS,90.0,Sedan,Automatic,4X4,gray,black,5,4,electric,215611,0.0,8.7,2.4,0.0,Electric,0.0,0.0
 2014,Honda,Accord,154404.0,Sedan,Automatic,FWD,white,black,4,4,gasoline,17450,7.8,5.5,2.4,4.0,Inline,,
@@ -10917,7 +11158,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2022,Hyundai,Kona,10151.0,SUV,Automatic,FWD,black,black,5,4,electric,47555,0.0,8.7,0.0,0.0,Electric,0.0,0.0
 2018,Honda,Civic,16068.0,Hatchback,Manual,FWD,red,black,5,4,gasoline,49995,10.6,8.3,2.4,4.0,Inline,,
 2016,Porsche,911,22077.0,Coupe,Automatic,4X4,blue,beige,4,2,gasoline,149995,12.9,9.0,2.4,6.0,Inline,,
+<<<<<<< Updated upstream
 2017,Hyundai,Veloster,87562.0,Coupe,Automatic,FWD,silver,black,4,3,gasoline,17999,8.55,6.800000000000001,2.4,4.0,Inline,,
+=======
+2017,Hyundai,Veloster,87562.0,Coupe,Automatic,FWD,silver,black,4,2,gasoline,17999,8.55,6.800000000000001,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2020,Hyundai,Kona,30560.0,SUV,Automatic,4X4,other,black,5,4,gasoline,31888,9.0,8.0,1.6,4.0,Inline,,
 2019,Audi,A6,49329.0,Sedan,Automatic,4X4,gray,black,5,4,gasoline,49899,10.8,8.7,2.4,6.0,V-Engine,,
 2022,Ferrari,F8,327.0,Coupe,Automatic,RWD,white,black,5,4,gasoline,599987,15.7,13.1,2.4,8.0,Inline,,
@@ -10987,7 +11232,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,BMW,4,51000.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,42888,10.5,7.4,2.0,4.0,Other,,
 2014,Mazda,Mazda3,137285.0,Sedan,Automatic,FWD,gray,black,5,4,gasoline,14990,6.75,4.75,2.4,4.0,Other,,
 2020,Nissan,Qashqai,90511.0,SUV,Automatic,4X4,black,black,5,4,gasoline,24887,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2020,GMC,Savana,50854.0,Van,Automatic,RWD,white,black,2,3,gasoline,44395,10.8,8.7,2.4,8.0,Inline,,
+=======
+2020,GMC,Savana,50854.0,Van,Automatic,RWD,white,black,2,2,gasoline,44395,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2014,Subaru,Outback,171377.0,Wagon,CVT,4X4,gray,black,5,4,gasoline,16995,9.8,7.8,2.4,4.0,Inline,,
 2008,Porsche,911,63938.0,Convertible,Manual,4X4,gray,red,4,2,gasoline,129995,13.6,8.4,2.4,6.0,Inline,,
 2020,Mazda,Mazda3,49073.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,26781,8.8,6.4,2.4,4.0,Inline,,
@@ -11140,7 +11389,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2015,Ford,F-250,231612.0,Truck,Automatic,RWD,white,gray,5,2,gasoline,21999,10.8,8.7,6.2,8.0,V-Engine,,
 2023,Nissan,Pathfinder,50.0,SUV,Automatic,4X4,white,black,8,4,gasoline,56259,11.6,9.2,2.4,6.0,V-Engine,,
 2019,Honda,Civic,103084.0,Sedan,CVT,FWD,black,black,5,4,gasoline,25645,7.9,6.1,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2001,Chevrolet,ASTRO,128000.0,Van,Automatic,RWD,red,gray,7,3,gasoline,13888,15.7,11.4,2.4,6.0,V-Engine,,
+=======
+2001,Chevrolet,ASTRO,128000.0,Van,Automatic,RWD,red,gray,7,2,gasoline,13888,15.7,11.4,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2018,Honda,Accord,101354.0,Sedan,CVT,FWD,silver,black,5,4,gasoline,29448,8.2,6.8,1.5,4.0,Inline,,
 2023,Ford,F-150,1846.0,Truck,Automatic,4X4,black,gray,5,4,electric,108000,0.0,8.7,0.0,0.0,Electric,0.0,0.0
 2021,Nissan,Murano,26239.0,Wagon,Automatic,4X4,white,black,5,4,gasoline,43652,11.7,8.5,2.4,6.0,V-Engine,,
@@ -11548,7 +11801,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,Hyundai,Sonata,103867.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,22888,9.8,6.9,2.4,4.0,Inline,,
 2015,Maserati,GranTurismo,86197.0,Coupe,Automatic,RWD,black,black,4,2,gasoline,64900,10.8,8.7,2.4,4.0,Inline,,
 2014,Mercedes-Benz,CLA-Class,177000.0,Sedan,Automatic,4X4,silver,black,5,4,gasoline,15950,10.8,8.7,2.0,4.0,Other,,
+<<<<<<< Updated upstream
 2008,Ford,F-250,259980.0,Truck,Automatic,4X4,white,brown,5,3,gasoline,19499,10.8,8.7,5.4,8.0,Inline,,
+=======
+2008,Ford,F-250,259980.0,Truck,Automatic,4X4,white,brown,5,2,gasoline,19499,10.8,8.7,5.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2018,Audi,Q5,154997.0,SUV,Automatic,4X4,black,black,5,4,gasoline,29990,10.4,8.6,2.4,4.0,Inline,,
 2019,Mercedes-Benz,GLS-Class,55632.0,SUV,Automatic,4X4,white,black,5,4,gasoline,70800,14.9,11.2,2.4,6.0,Inline,,
 2018,Mazda,Mazda3,92000.0,Hatchback,Automatic,FWD,blue,black,5,4,gasoline,21950,10.8,8.7,2.4,4.0,Inline,,
@@ -11817,7 +12074,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Nissan,Murano,90.0,SUV,CVT,4X4,white,gray,5,4,gasoline,49655,12.0,8.5,2.4,6.0,V-Engine,,
 2019,Nissan,Pathfinder,83468.0,SUV,Automatic,4X4,white,gray,5,4,gasoline,32899,12.25,9.05,2.4,6.0,V-Engine,,
 2022,BMW,X6,12000.0,SUV,Automatic,4X4,white,black,5,4,gasoline,96880,10.8,8.7,3.0,4.0,Other,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,black,black,5,3,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,black,black,5,2,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2019,Volvo,XC90,74595.0,SUV,Automatic,4X4,white,black,7,4,gasoline,48900,10.8,8.7,2.4,4.0,Inline,,
 2022,Jeep,Wagoneer,21.0,SUV,Automatic,4X4,black,black,5,4,gasoline,92920,10.8,8.7,5.7,8.0,V-Engine,,
 2020,Volkswagen,Jetta,11000.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,30000,10.8,8.7,2.4,4.0,Inline,,
@@ -12111,7 +12372,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Kia,Seltos,50.0,SUV,Automatic,4X4,white,black,5,4,gasoline,40652,9.4,7.9,1.6,4.0,Inline,,
 2017,Honda,Civic,87901.0,Sedan,CVT,FWD,white,black,5,4,gasoline,19999,7.8,6.0,2.4,4.0,Inline,,
 2019,Audi,Q7,68208.0,SUV,Automatic,4X4,black,black,5,4,gasoline,48504,12.6,9.4,3.0,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2021,Ford,Transit,77444.0,Van,Automatic,RWD,white,gray,5,3,gasoline,58989,10.8,8.7,2.4,6.0,V-Engine,,
+=======
+2021,Ford,Transit,77444.0,Van,Automatic,RWD,white,gray,5,2,gasoline,58989,10.8,8.7,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2012,Mazda,Mazda3,207000.0,Hatchback,Automatic,FWD,white,black,5,4,gasoline,6500,10.8,8.7,2.4,4.0,Inline,,
 2023,Nissan,Sentra,90.0,Sedan,Automatic,FWD,blue,black,5,4,gasoline,31354,8.8,6.25,2.4,4.0,Inline,,
 2020,BMW,M4,5700.0,Coupe,Automatic,RWD,gray,black,4,2,gasoline,99777,13.4,9.6,2.4,6.0,Inline,,
@@ -12330,7 +12595,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2016,Porsche,Panamera,108100.0,Sedan,Automatic,RWD,white,black,4,4,gasoline,38888,13.0,8.55,3.6,4.0,Other,,
 2013,Dodge,Dart,157000.0,Sedan,Manual,FWD,black,black,5,4,gasoline,9800,8.35,5.6,2.4,4.0,Inline,,
 2017,Subaru,BRZ,86491.0,Coupe,Automatic,RWD,white,black,4,4,gasoline,24888,9.7,7.2,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2003,GMC,Safari,140000.0,Van,Automatic,4X4,gray,gray,7,3,gasoline,14888,17.3,12.6,2.4,6.0,V-Engine,,
+=======
+2003,GMC,Safari,140000.0,Van,Automatic,4X4,gray,gray,7,2,gasoline,14888,17.3,12.6,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2016,Bentley,Flying,38236.0,Sedan,Automatic,4X4,white,black,4,4,gasoline,174998,19.6,11.8,2.4,12.0,Inline,,
 2018,Acura,MDX,118800.0,SUV,Automatic,4X4,black,brown,5,4,gasoline,34488,12.6,9.0,3.5,4.0,Other,,
 2019,Infiniti,QX50,73591.0,SUV,Automatic,4X4,red,gray,5,4,gasoline,32989,10.0,7.8,2.4,4.0,Inline,,
@@ -12523,7 +12792,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Nissan,Frontier,90.0,Truck,Automatic,4X4,white,black,5,4,gasoline,47598,13.5,10.4,2.4,6.0,V-Engine,,
 2018,Nissan,Qashqai,102807.0,SUV,Automatic,4X4,white,black,5,4,gasoline,22998,9.0,7.5,2.0,4.0,Other,,
 2023,Jeep,Compass,10.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,46258,10.8,8.7,2.0,4.0,Inline,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,gray,black,5,3,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,gray,black,5,2,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2021,Kia,Sorento,16200.0,SUV,Automatic,4X4,green,black,6,4,gasoline,44998,11.1,8.4,2.5,3.0,V-Engine,,
 2018,Audi,S5,81800.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,39950,11.5,8.0,3.0,4.0,Other,,
 2012,Chevrolet,Cruze,201869.0,Sedan,Automatic,FWD,white,gray,5,4,gasoline,8499,8.2,5.4,2.4,4.0,Inline,,
@@ -12979,7 +13252,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,Chevrolet,Cruze,107473.0,Compact,Automatic,FWD,red,black,5,4,gasoline,19999,8.1,6.2,2.4,4.0,Inline,,
 2018,Honda,CR-V,95848.0,SUV,CVT,4X4,silver,black,5,4,gasoline,29495,8.7,7.2,2.4,4.0,Inline,,
 2023,Nissan,Pathfinder,23.0,SUV,Automatic,4X4,white,gray,5,4,gasoline,57457,11.6,9.2,2.4,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2009,Mitsubishi,Eclipse,98500.0,Coupe,Manual,FWD,yellow,black,5,3,gasoline,13000,10.8,8.7,2.4,4.0,Inline,,
+=======
+2009,Mitsubishi,Eclipse,98500.0,Coupe,Manual,FWD,yellow,black,5,2,gasoline,13000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2017,Kia,Sorento,100074.0,SUV,Automatic,4X4,red,black,7,4,gasoline,24880,14.0,10.1,2.4,6.0,V-Engine,,
 2023,Infiniti,QX80,25.0,SUV,Automatic,4X4,black,brown,5,4,gasoline,96568,17.5,12.2,5.6,8.0,Inline,,
 2016,Jeep,Grand,122828.0,SUV,Automatic,4X4,black,black,5,4,gasoline,30888,12.8,9.5,2.4,6.0,V-Engine,,
@@ -13321,7 +13598,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,Honda,Civic,119821.0,Hatchback,Manual,FWD,blue,black,5,4,gasoline,23495,8.0,6.2,2.4,4.0,Inline,,
 2017,Ford,F-150,150614.0,Truck,Automatic,4X4,black,black,5,4,gasoline,30978,16.0,11.3,2.4,6.0,V-Engine,,
 2018,Hyundai,Santa,130000.0,SUV,Automatic,4X4,black,black,5,4,gasoline,21000,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2019,GMC,Savana,79000.0,Van,Automatic,RWD,white,black,2,3,gasoline,40888,10.8,8.7,2.4,6.0,Inline,,
+=======
+2019,GMC,Savana,79000.0,Van,Automatic,RWD,white,black,2,2,gasoline,40888,10.8,8.7,2.4,6.0,Inline,,
+>>>>>>> Stashed changes
 2018,Honda,Civic,99000.0,Sedan,Automatic,FWD,gray,black,5,4,gasoline,20000,10.8,8.7,2.4,4.0,Inline,,
 2021,Volkswagen,Passat,62400.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,33688,9.8,6.6,2.0,4.0,Other,,
 2010,Ford,Mustang,25000.0,Coupe,Manual,RWD,gray,black,5,2,gasoline,65000,10.8,8.7,2.4,4.0,Inline,,
@@ -13593,7 +13874,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2016,Hyundai,Sonata,172811.0,Sedan,Automatic,FWD,metallic,black,5,4,gasoline,17998,10.4,7.4,2.0,4.0,Inline,,
 2020,Volkswagen,Passat,70709.0,Sedan,Automatic,FWD,red,brown,4,4,gasoline,31999,10.2,6.9,2.4,4.0,Inline,,
 2018,Chevrolet,Malibu,90119.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,22776,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2020,MINI,3,38841.0,Hatchback,Automatic,FWD,black,black,5,3,gasoline,29987,8.9,6.6,2.0,4.0,Inline,,
+=======
+2020,MINI,3,38841.0,Hatchback,Automatic,FWD,black,black,5,2,gasoline,29987,8.9,6.6,2.0,4.0,Inline,,
+>>>>>>> Stashed changes
 2019,Honda,CR-V,102000.0,SUV,CVT,4X4,black,black,5,4,gasoline,31450,8.7,7.2,2.4,4.0,Inline,,
 2009,Honda,Element,199529.0,SUV,Automatic,FWD,red,black,5,4,gasoline,14900,10.5,8.1,2.4,4.0,Other,,
 2023,Ford,F-150,68.0,Truck,Automatic,4X4,white,black,5,4,gasoline,85080,14.8,10.9,5.0,8.0,V-Engine,,
@@ -13865,7 +14150,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,BMW,M8,90.0,Sedan,Automatic,4X4,green,brown,5,2,gasoline,192731,16.1,10.9,4.4,8.0,Inline,,
 2013,Ford,Escape,230132.0,SUV,Automatic,FWD,white,black,5,4,gasoline,6999,9.1,6.0,2.4,4.0,Inline,,
 2008,Maserati,Quattroporte,70281.0,Sedan,Automatic,RWD,blue,brown,5,4,gasoline,18990,19.6,13.1,4.2,8.0,Inline,,
+<<<<<<< Updated upstream
 2013,Hyundai,Genesis,142100.0,Coupe,Manual,RWD,gray,black,5,3,gasoline,12500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2013,Hyundai,Genesis,142100.0,Coupe,Manual,RWD,gray,black,5,2,gasoline,12500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2017,Chevrolet,Corvette,32074.0,Coupe,Manual,RWD,yellow,black,2,2,gasoline,99999,16.6,10.45,2.4,8.0,Inline,,
 2022,Chevrolet,Silverado,35.0,Truck,Automatic,4X4,white,black,6,4,gasoline,63583,14.3,12.55,2.7,4.0,Inline,,
 2017,Hyundai,Santa,97665.0,SUV,Automatic,4X4,black,black,5,4,gasoline,21500,12.0,9.1,2.4,4.0,Inline,,
@@ -13882,7 +14171,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2008,Mazda,MX-5,84800.0,Convertible,Manual,RWD,green,black,5,2,gasoline,18500,10.8,8.7,2.4,4.0,Inline,,
 2017,Nissan,Pathfinder,152000.0,SUV,CVT,4X4,metallic,black,7,4,gasoline,22995,12.25,9.05,2.4,6.0,V-Engine,,
 2022,Volkswagen,Tiguan,19412.0,SUV,Automatic,4X4,black,black,5,4,gasoline,40589,11.0,8.3,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2002,Chevrolet,S10,220000.0,Truck,Automatic,RWD,blue,black,5,3,gasoline,5500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2002,Chevrolet,S10,220000.0,Truck,Automatic,RWD,blue,black,5,2,gasoline,5500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2019,Mazda,Mazda3,18973.0,Sedan,Automatic,4X4,blue,black,5,4,gasoline,30990,9.2,7.0,2.4,4.0,Other,,
 2023,Nissan,Rogue,0.0,SUV,CVT,4X4,black,gray,5,4,gasoline,36667,9.2,7.2,2.4,4.0,Inline,,
 2016,Hyundai,Sonata,128200.0,Sedan,Automatic,FWD,white,black,5,4,gasoline,23000,10.8,8.7,2.4,4.0,Inline,,
@@ -14046,7 +14339,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2016,BMW,5,129000.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,28995,11.9,8.1,2.4,6.0,Inline,,
 2020,Mazda,CX-5,65596.0,SUV,Automatic,4X4,black,black,5,4,gasoline,36888,10.8,8.7,2.4,4.0,Inline,,
 2023,GMC,Sierra,10.0,Truck,Automatic,4X4,black,black,5,4,gasoline,75745,14.8,11.8,2.4,8.0,Inline,,
+<<<<<<< Updated upstream
 2011,Volvo,C30,235000.0,Hatchback,Manual,FWD,gray,black,5,3,gasoline,15600,10.8,8.7,2.4,4.0,Inline,,
+=======
+2011,Volvo,C30,235000.0,Hatchback,Manual,FWD,gray,black,5,2,gasoline,15600,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2020,BMW,X3,25115.0,SUV,Automatic,4X4,red,black,5,4,gasoline,79999,10.8,8.7,2.4,6.0,Inline,,
 2019,BMW,X5,82978.0,SUV,Automatic,4X4,white,white,5,2,gasoline,54980,10.8,8.7,3.0,6.0,Inline,,
 2020,Hyundai,Tucson,88077.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,27998,10.8,9.2,2.0,4.0,Other,,
@@ -14207,7 +14504,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2011,Dodge,Ram,205000.0,Truck,Automatic,4X4,black,gray,5,4,gasoline,6500,15.8,10.8,2.4,8.0,Inline,,
 2018,BMW,X4,47416.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,46847,12.9,9.5,2.4,6.0,Inline,,
 2023,Mazda,CX-9,100.0,SUV,Automatic,4X4,black,black,6,4,gasoline,55376,11.6,9.1,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2017,Ford,Transit,164000.0,Van,Automatic,RWD,white,black,2,3,gasoline,41888,16.7,13.0,2.4,6.0,V-Engine,,
+=======
+2017,Ford,Transit,164000.0,Van,Automatic,RWD,white,black,2,2,gasoline,41888,16.7,13.0,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2020,Mazda,CX-3,8531.0,Wagon,Automatic,4X4,blue,black,5,4,gasoline,28599,8.6,7.4,2.0,4.0,Inline,,
 2021,Subaru,Crosstrek,20272.0,SUV,CVT,4X4,black,black,5,4,gasoline,31888,10.8,8.7,2.0,4.0,Inline,,
 2021,Nissan,Altima,10515.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,33990,9.3,6.7,2.5,4.0,Other,,
@@ -14599,7 +14900,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2017,BMW,7,45000.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,48998,13.8,9.1,4.4,8.0,V-Engine,,
 2015,Nissan,Altima,189950.0,Sedan,Automatic,4X4,silver,black,5,4,gasoline,10898,10.8,8.7,2.5,4.0,Other,,
 2015,Mazda,Mazda3,206000.0,Hatchback,Manual,FWD,black,black,5,4,gasoline,8490,7.949999999999999,5.9,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2017,Ford,Transit,135000.0,Van,Automatic,RWD,yellow,black,2,3,gasoline,39888,16.7,13.0,2.4,6.0,Inline,,
+=======
+2017,Ford,Transit,135000.0,Van,Automatic,RWD,yellow,black,2,2,gasoline,39888,16.7,13.0,2.4,6.0,Inline,,
+>>>>>>> Stashed changes
 2014,Ford,Fiesta,144600.0,Sedan,Manual,FWD,black,black,5,4,gasoline,8490,7.2,5.1,2.4,3.0,Inline,,
 2016,Mazda,Mazda3,128000.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,16900,7.95,5.75,2.4,4.0,Inline,,
 2017,Mercedes-Benz,CLA,135000.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,22950,9.6,6.4,2.0,4.0,Other,,
@@ -15033,7 +15338,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2009,Suzuki,SX4,203879.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,6600,10.8,8.7,2.4,4.0,Inline,,
 2015,Mercedes-Benz,GLK-Class,118000.0,SUV,Automatic,4X4,black,black,5,4,diesel,23995,10.8,8.7,2.4,4.0,Inline,,
 2021,Ford,Mustang,2867.0,Coupe,Manual,4X4,gray,black,5,4,gasoline,69999,15.950000000000001,10.3,2.4,8.0,V-Engine,,
+<<<<<<< Updated upstream
 2015,GMC,Savana,131000.0,Truck,Automatic,4X4,white,black,5,3,gasoline,24990,10.8,8.7,2.4,4.0,Inline,,
+=======
+2015,GMC,Savana,131000.0,Truck,Automatic,4X4,white,black,5,2,gasoline,24990,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2018,Volkswagen,Tiguan,68395.0,SUV,Automatic,4X4,black,black,5,4,gasoline,28494,11.3,8.8,2.4,4.0,Inline,,
 2023,Hyundai,Elantra,13208.0,Sedan,CVT,FWD,white,black,5,4,gasoline,31195,7.6,5.7,2.4,4.0,Inline,,
 2018,Hyundai,Tucson,39730.0,SUV,Automatic,FWD,black,black,5,4,gasoline,26880,10.1,7.8,2.4,4.0,Inline,,
@@ -15064,7 +15373,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2020,Porsche,Cayenne,23844.0,SUV,Automatic,4X4,gray,black,5,4,hybrid,109900,10.8,8.7,2.4,6.0,V-Engine,,
 2019,Ford,F-150,72209.0,Truck,Automatic,4X4,black,black,5,4,gasoline,53801,13.8,11.2,2.4,6.0,V-Engine,,
 2016,BMW,X6,124514.0,SUV,Automatic,4X4,white,red,5,4,gasoline,39888,13.0,9.7,2.4,6.0,Inline,,
+<<<<<<< Updated upstream
 2017,Hyundai,Veloster,100000.0,Hatchback,Automatic,FWD,black,black,5,3,gasoline,16000,10.8,8.7,2.4,4.0,Inline,,
+=======
+2017,Hyundai,Veloster,100000.0,Hatchback,Automatic,FWD,black,black,5,2,gasoline,16000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2020,Volvo,XC60,30747.0,SUV,Automatic,4X4,white,black,5,4,gasoline,55500,10.8,8.7,2.4,4.0,Inline,,
 2023,Jeep,Wrangler,12.0,SUV,Automatic,4X4,black,black,5,4,hybrid,69998,10.8,8.7,0.0,0.0,Electric,,
 2019,Volkswagen,Atlas,86130.0,SUV,Automatic,4X4,brown,black,6,4,gasoline,33888,13.8,10.2,2.4,6.0,V-Engine,,
@@ -15128,7 +15441,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2017,Audi,A3,70923.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,23980,9.1,6.8,2.4,4.0,Inline,,
 2017,Honda,CR-V,36464.0,SUV,CVT,4X4,metallic,black,5,4,gasoline,37599,8.7,7.2,1.5,4.0,Inline,,
 2018,Ford,F-150,84500.0,Truck,Automatic,4X4,black,black,5,4,gasoline,39500,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2019,GMC,Savana,59322.0,Van,Automatic,RWD,white,black,2,3,gasoline,41495,10.8,8.7,2.4,8.0,Inline,,
+=======
+2019,GMC,Savana,59322.0,Van,Automatic,RWD,white,black,2,2,gasoline,41495,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2022,Ford,Mustang,6889.0,Coupe,Automatic,RWD,gray,black,4,2,gasoline,56999,15.75,9.9,5.0,8.0,Inline,,
 2022,Audi,e-tron,6577.0,SUV,Automatic,4X4,silver,black,5,4,electric,96999,0.0,8.7,0.0,0.0,Electric,0.0,0.0
 2022,Alfa Romeo,Romeo,9015.0,Sedan,Automatic,RWD,green,black,5,2,gasoline,93888,13.5,9.3,2.9,6.0,Inline,,
@@ -15248,7 +15565,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Ford,Explorer,0.0,SUV,Automatic,4X4,black,black,5,4,gasoline,53135,10.8,8.7,2.3,4.0,Inline,,
 2019,Hyundai,Sonata,66700.0,Sedan,Automatic,FWD,white,black,5,4,gasoline,25495,10.8,8.7,2.4,4.0,Inline,,
 2023,GMC,Sierra,35.0,Truck,Automatic,4X4,white,black,5,4,gasoline,60563,14.149999999999999,12.399999999999999,2.7,4.0,Inline,,
+<<<<<<< Updated upstream
 2012,Hyundai,Veloster,218690.0,Coupe,Automatic,FWD,black,black,5,3,gasoline,7600,10.8,8.7,2.4,4.0,Inline,,
+=======
+2012,Hyundai,Veloster,218690.0,Coupe,Automatic,FWD,black,black,5,2,gasoline,7600,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2019,BMW,X2,31040.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,47610,10.8,8.7,2.4,4.0,Inline,,
 2008,Acura,RDX,195.0,SUV,Automatic,4X4,other,black,5,4,gasoline,6700,12.5,9.3,2.4,4.0,Inline,,
 2019,Ford,F-150,53177.0,Truck,Automatic,4X4,white,gray,5,4,gasoline,35995,12.75,10.0,2.4,6.0,V-Engine,,
@@ -15852,7 +16173,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2021,Jeep,Gladiator,1250.0,SUV,Automatic,4X4,white,black,5,4,gasoline,57900,14.0,10.55,3.6,6.0,V-Engine,,
 2018,Volkswagen,Passat,83420.0,Sedan,Automatic,FWD,white,black,5,4,gasoline,23995,9.3,6.5,2.4,4.0,Inline,,
 2023,Mitsubishi,Eclipse,89.0,SUV,Automatic,4X4,black,black,5,4,gasoline,39960,9.6,8.9,1.5,4.0,Inline,,
+<<<<<<< Updated upstream
 2010,GMC,Savana,280000.0,Van,Automatic,RWD,white,black,5,3,gasoline,10900,10.8,8.7,2.4,8.0,Inline,,
+=======
+2010,GMC,Savana,280000.0,Van,Automatic,RWD,white,black,5,2,gasoline,10900,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2015,Cadillac,ATS,141000.0,Sedan,Automatic,RWD,black,black,5,4,gasoline,14800,11.649999999999999,7.9,2.4,4.0,Inline,,
 2020,Nissan,Rogue,34231.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,25999,9.6,7.5,2.4,4.0,Inline,,
 2017,Audi,A4,83536.0,Sedan,Automatic,4X4,black,brown,5,4,gasoline,26980,10.8,8.7,2.4,4.0,Inline,,
@@ -15868,7 +16193,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Chrysler,Pacifica,5.0,Van,CVT,FWD,black,black,5,4,gasoline,63685,8.0,7.9,3.6,6.0,Hybrid,,
 2013,Hyundai,Elantra,246388.0,Sedan,Automatic,FWD,gray,gray,5,4,gasoline,6990,7.15,5.2,2.4,4.0,Inline,,
 2020,Infiniti,QX60,26025.0,SUV,CVT,4X4,white,beige,7,4,gasoline,38995,12.5,9.0,2.4,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2015,Chevrolet,Cruze,228937.0,Sedan,Automatic,FWD,gray,black,5,3,gasoline,6500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2015,Chevrolet,Cruze,228937.0,Sedan,Automatic,FWD,gray,black,5,2,gasoline,6500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2015,Subaru,WRX,147521.0,Sedan,Manual,4X4,white,black,5,4,gasoline,20387,11.1,8.3,2.4,4.0,Inline,,
 2023,Cadillac,CT4,10.0,Sedan,Automatic,RWD,silver,black,5,4,gasoline,52220,10.35,7.3,2.4,4.0,Inline,,
 2017,McLaren,570S,41536.0,SUV,Automatic,4X4,black,black,5,4,gasoline,192900,10.8,8.7,2.4,4.0,Inline,,
@@ -16389,7 +16718,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2015,Porsche,Cayenne,63415.0,SUV,Automatic,4X4,blue,brown,5,4,diesel,47898,10.8,8.7,2.4,6.0,V-Engine,,
 2023,Nissan,Ariya,90.0,SUV,Automatic,FWD,black,black,5,4,electric,64340,0.0,8.7,0.0,0.0,Electric,0.0,0.0
 2019,Honda,Civic,96536.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,24990,7.9,6.1,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2017,Ford,Transit,113000.0,Van,Automatic,RWD,white,black,2,3,gasoline,40888,16.7,13.0,2.4,6.0,Inline,,
+=======
+2017,Ford,Transit,113000.0,Van,Automatic,RWD,white,black,2,2,gasoline,40888,16.7,13.0,2.4,6.0,Inline,,
+>>>>>>> Stashed changes
 2016,Hyundai,Elantra,168000.0,Hatchback,Manual,FWD,blue,black,5,4,gasoline,9888,9.8,7.15,2.4,4.0,Inline,,
 2021,Audi,R8,3999.0,Convertible,Automatic,4X4,gray,red,5,2,gasoline,296800,10.8,8.7,2.4,10.0,Inline,,
 2021,BMW,X3,63501.0,SUV,Automatic,4X4,black,black,5,4,gasoline,45901,10.2,8.2,2.4,4.0,Inline,,
@@ -16511,7 +16844,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,Hyundai,Elantra,100092.0,Sedan,Automatic,FWD,other,black,5,4,gasoline,16975,8.3,6.4,2.4,4.0,Inline,,
 2019,Mercedes-Benz,GLA-Class,52000.0,SUV,Automatic,4X4,black,black,5,4,gasoline,34880,10.8,8.7,2.0,4.0,Other,,
 2020,Honda,Accord,58236.0,Sedan,CVT,FWD,blue,black,5,4,gasoline,35888,8.2,6.8,1.5,4.0,Inline,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,red,black,5,3,gasoline,73718,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,red,black,5,2,gasoline,73718,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2023,Chrysler,300,0.0,Sedan,Automatic,4X4,silver,black,5,4,gasoline,54635,12.8,8.7,2.4,6.0,V-Engine,,
 2015,Volkswagen,Beetle,27922.0,Convertible,Automatic,4X4,red,black,5,2,gasoline,26985,9.8,7.3,2.4,4.0,Inline,,
 2018,Honda,Civic,98362.0,Sedan,CVT,FWD,red,black,5,4,gasoline,25500,7.4,5.6,2.4,4.0,Inline,,
@@ -16997,7 +17334,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Volvo,XC60,50.0,SUV,Automatic,4X4,blue,gray,5,4,gasoline,81272,10.8,8.7,2.0,4.0,Inline,,
 2023,Chrysler,Pacifica,17.0,SUV,Automatic,FWD,gray,black,7,4,gasoline,56750,10.8,8.7,3.6,6.0,V-Engine,,
 2007,Mercedes-Benz,S-Class,230604.0,Sedan,Automatic,4X4,silver,black,5,4,gasoline,8888,15.2,9.6,5.5,4.0,Other,,
+<<<<<<< Updated upstream
 2007,Chevrolet,3500,197200.0,Truck,Automatic,RWD,white,black,5,3,diesel,14000,10.8,8.7,2.4,4.0,Inline,,
+=======
+2007,Chevrolet,3500,197200.0,Truck,Automatic,RWD,white,black,5,2,diesel,14000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2017,Chevrolet,Cruze,199800.0,Sedan,Automatic,FWD,other,black,5,4,gasoline,11995,7.9,5.9,1.4,4.0,Other,,
 1964,Ford,500,75785.0,Convertible,Manual,RWD,black,white,5,4,gasoline,34995,10.8,8.7,2.4,4.0,Inline,,
 2018,BMW,330I,58443.0,Sedan,Automatic,4X4,black,white,5,4,gasoline,30888,10.2,7.2,2.4,4.0,Inline,,
@@ -17089,9 +17430,15 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,Nissan,Pathfinder,78988.0,SUV,Automatic,4X4,blue,black,7,4,gasoline,27850,12.25,9.05,2.4,6.0,V-Engine,,
 2022,Acura,MDX,45339.0,SUV,Automatic,4X4,blue,red,7,4,gasoline,61417,12.6,9.4,3.5,6.0,V-Engine,,
 2020,Honda,CR-V,61509.0,SUV,CVT,4X4,white,black,5,4,gasoline,39200,8.7,7.4,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2014,Hyundai,Veloster,162414.0,Coupe,Automatic,FWD,white,black,5,3,gasoline,12495,8.6,6.3,1.6,4.0,Other,,
 2014,Ford,F-150,142789.0,Truck,Automatic,4X4,gray,black,5,4,gasoline,22999,15.1,10.7,5.0,8.0,V-Engine,,
 2019,Hyundai,Veloster,127613.0,Hatchback,Automatic,FWD,white,black,4,3,gasoline,18895,9.1,7.1,2.4,4.0,Inline,,
+=======
+2014,Hyundai,Veloster,162414.0,Coupe,Automatic,FWD,white,black,5,2,gasoline,12495,8.6,6.3,1.6,4.0,Other,,
+2014,Ford,F-150,142789.0,Truck,Automatic,4X4,gray,black,5,4,gasoline,22999,15.1,10.7,5.0,8.0,V-Engine,,
+2019,Hyundai,Veloster,127613.0,Hatchback,Automatic,FWD,white,black,4,2,gasoline,18895,9.1,7.1,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2019,Ford,Fusion,79184.0,Sedan,Automatic,FWD,metallic,black,5,4,hybrid,27985,5.8,6.5,2.0,4.0,Other,,
 2023,Nissan,Pathfinder,50.0,SUV,Automatic,4X4,green,black,8,4,gasoline,55939,11.6,9.2,2.4,6.0,V-Engine,,
 2023,Jeep,Wrangler,13.0,SUV,Automatic,4X4,yellow,black,5,4,gasoline,61499,10.8,8.7,3.6,6.0,V-Engine,,
@@ -17465,7 +17812,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2020,Kia,Stinger,58151.0,Sedan,Automatic,4X4,gray,black,5,4,gasoline,42644,13.6,9.6,3.3,6.0,V-Engine,,
 2021,Mazda,MX-5,15042.0,Convertible,Automatic,4X4,white,black,5,4,gasoline,44500,9.0,6.8,2.4,4.0,Other,,
 2023,Jeep,Wrangler,90.0,SUV,Automatic,4X4,white,black,5,4,gasoline,58185,13.350000000000001,10.149999999999999,3.6,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2009,MINI,Cooper,156300.0,Coupe,Automatic,FWD,black,black,5,3,gasoline,8500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2009,MINI,Cooper,156300.0,Coupe,Automatic,FWD,black,black,5,2,gasoline,8500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2020,Volkswagen,Golf,23798.0,Hatchback,Automatic,FWD,white,black,5,4,gasoline,27888,8.1,6.6,2.4,4.0,Inline,,
 2008,Chevrolet,Avalanche,294004.0,Truck,Automatic,4X4,white,black,5,4,gasoline,4999,10.8,8.7,2.4,8.0,Inline,,
 2014,Hyundai,Santa,182000.0,SUV,Automatic,4X4,black,black,5,4,gasoline,13995,11.4,8.2,2.4,4.0,Inline,,
@@ -17564,7 +17915,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Cadillac,XT5,35884.0,SUV,Automatic,4X4,black,black,5,4,gasoline,39999,12.8,9.3,3.6,6.0,V-Engine,,
 2019,Honda,Civic,66911.0,Sedan,Automatic,FWD,white,black,5,4,gasoline,23999,7.9,6.1,2.0,4.0,Inline,,
 2020,Mazda,CX-5,44980.0,SUV,Automatic,4X4,black,black,5,4,gasoline,38998,9.8,7.9,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2016,GMC,Savana,221659.0,Truck,Automatic,RWD,white,black,5,3,gasoline,23000,10.8,8.7,2.4,4.0,Inline,,
+=======
+2016,GMC,Savana,221659.0,Truck,Automatic,RWD,white,black,5,2,gasoline,23000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2014,Scion,FR-S,38451.0,Coupe,Manual,RWD,other,black,5,2,gasoline,18888,8.9,6.15,2.0,4.0,Inline,,
 2018,Honda,Accord,82000.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,30999,10.8,8.7,2.4,4.0,Inline,,
 2021,Chevrolet,Corvette,1500.0,Coupe,Automatic,RWD,black,red,2,2,gasoline,128777,15.4,8.7,2.4,8.0,Inline,,
@@ -17950,7 +18305,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Kia,Sorento,93370.0,SUV,Automatic,4X4,black,black,5,4,gasoline,26995,11.2,9.0,2.4,4.0,Inline,,
 2016,Ford,Focus,54042.0,Hatchback,Automatic,FWD,white,gray,5,4,electric,19400,0.0,8.7,0.0,0.0,Electric,0.0,0.0
 2019,Hyundai,Sonata,145396.0,Sedan,Automatic,FWD,white,black,5,4,gasoline,24999,9.3,7.1,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2021,Ford,Transit,77444.0,Van,Automatic,RWD,white,gray,5,3,gasoline,58989,10.8,8.7,2.4,6.0,V-Engine,,
+=======
+2021,Ford,Transit,77444.0,Van,Automatic,RWD,white,gray,5,2,gasoline,58989,10.8,8.7,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2017,Mazda,Mazda3,109517.0,Sedan,Automatic,FWD,gray,black,5,4,gasoline,19998,8.45,6.300000000000001,2.4,4.0,Inline,,
 2012,Kia,Sorento,222000.0,SUV,Automatic,4X4,white,black,5,4,gasoline,9000,10.8,8.7,2.4,4.0,Inline,,
 2017,Nissan,Qashqai,71229.0,SUV,CVT,FWD,metallic,black,5,4,gasoline,21608,9.4,7.699999999999999,2.4,4.0,Inline,,
@@ -18187,7 +18546,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Kia,Soul,8093.0,SUV,Automatic,FWD,white,black,5,4,gasoline,14535,8.5,7.0,2.4,4.0,Inline,,
 2019,Maserati,Levante,26225.0,SUV,Automatic,4X4,white,black,5,4,gasoline,123910,10.8,8.7,2.4,8.0,Inline,,
 2021,Porsche,Macan,23500.0,SUV,Automatic,4X4,blue,red,5,4,gasoline,83995,13.5,10.5,2.9,6.0,Inline,,
+<<<<<<< Updated upstream
 2012,Chevrolet,Express,180000.0,Van,Automatic,RWD,silver,gray,12,3,gasoline,23888,20.3,12.9,2.4,8.0,Inline,,
+=======
+2012,Chevrolet,Express,180000.0,Van,Automatic,RWD,silver,gray,12,2,gasoline,23888,20.3,12.9,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2018,BMW,430i,120000.0,Coupe,Automatic,4X4,red,black,4,2,gasoline,27880,10.5,7.4,2.4,4.0,Inline,,
 2017,Hyundai,Tucson,135000.0,SUV,Automatic,4X4,black,black,5,4,gasoline,20850,9.9,8.5,2.4,4.0,Inline,,
 2013,Honda,CR-V,225000.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,12995,9.2,6.6,2.4,4.0,Other,,
@@ -18314,7 +18677,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Jeep,Gladiator,90.0,SUV,Automatic,4X4,white,black,5,4,gasoline,74495,14.0,10.55,3.6,6.0,V-Engine,,
 2023,Cadillac,XT5,4.0,SUV,Automatic,4X4,black,black,5,2,gasoline,51798,11.6,9.55,2.0,4.0,Inline,,
 2022,Hyundai,Elantra,20500.0,Sedan,Automatic,FWD,white,black,5,4,gasoline,29999,7.6,5.7,2.0,4.0,Other,,
+<<<<<<< Updated upstream
 2013,MINI,Cooper,87000.0,Hatchback,Automatic,FWD,black,black,5,3,gasoline,14500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2013,MINI,Cooper,87000.0,Hatchback,Automatic,FWD,black,black,5,2,gasoline,14500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2012,Audi,R8,40958.0,Convertible,Automatic,4X4,red,black,2,2,gasoline,115910,19.1,11.3,2.4,8.0,V-Engine,,
 2016,Ford,Mustang,88000.0,Coupe,Automatic,RWD,red,black,5,2,gasoline,27000,10.8,8.7,2.4,4.0,Inline,,
 2020,Hyundai,Tucson,19280.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,31995,10.8,9.2,2.0,4.0,Inline,,
@@ -18336,7 +18703,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Audi,Q8,36291.0,SUV,Automatic,4X4,white,black,5,4,hybrid,69498,10.8,8.7,2.4,6.0,V-Engine,,
 2021,Mazda,CX-5,63815.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,33288,9.8,7.9,2.5,4.0,Inline,,
 2015,BMW,X5,120600.0,SUV,Automatic,4X4,white,black,5,4,gasoline,28000,13.1,8.7,2.4,6.0,Inline,,
+<<<<<<< Updated upstream
 2010,Ford,Focus,62000.0,Sedan,Automatic,FWD,gray,black,5,3,gasoline,5900,10.8,8.7,2.4,4.0,Inline,,
+=======
+2010,Ford,Focus,62000.0,Sedan,Automatic,FWD,gray,black,5,2,gasoline,5900,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2013,Honda,Civic,195850.0,Coupe,Manual,FWD,blue,black,5,2,gasoline,12495,10.0,6.4,2.4,4.0,Inline,,
 2019,Volkswagen,Atlas,119247.0,SUV,Automatic,4X4,red,black,7,4,gasoline,35990,13.8,10.2,2.4,6.0,V-Engine,,
 2016,Honda,Accord,108656.0,Sedan,CVT,FWD,white,black,5,4,gasoline,22930,8.7,6.4,2.4,4.0,Inline,,
@@ -18381,7 +18752,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Mazda,CX-9,99202.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,33998,11.6,9.1,2.5,4.0,Inline,,
 2023,Volkswagen,Tiguan,1400.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,39900,10.6,8.0,2.4,4.0,Inline,,
 2022,Ford,Mustang,250.0,Coupe,Automatic,RWD,black,black,4,2,gasoline,66789,15.75,9.9,5.0,8.0,V-Engine,,
+<<<<<<< Updated upstream
 2012,Hyundai,Veloster,241000.0,Hatchback,Automatic,FWD,blue,black,5,3,gasoline,5500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2012,Hyundai,Veloster,241000.0,Hatchback,Automatic,FWD,blue,black,5,2,gasoline,5500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2014,Chevrolet,Cruze,121775.0,Sedan,Automatic,FWD,silver,black,5,4,gasoline,10750,7.8,5.2,2.4,4.0,Inline,,
 2015,Ford,Edge,136000.0,SUV,Automatic,FWD,gray,black,5,4,gasoline,15888,13.2,9.0,2.4,6.0,Inline,,
 2023,Ford,Bronco,10.0,SUV,Automatic,4X4,black,black,5,4,gasoline,44344,9.3,8.4,2.4,3.0,Inline,,
@@ -18630,7 +19005,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2014,Subaru,Impreza,218000.0,Sedan,Manual,4X4,black,black,5,4,gasoline,7999,10.8,8.7,2.0,4.0,Other,,
 2019,Volkswagen,Jetta,74354.0,Sedan,Manual,FWD,black,black,5,4,gasoline,24748,7.9,5.9,2.4,4.0,Inline,,
 2021,Volkswagen,Jetta,47000.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,31490,8.0,6.0,1.4,4.0,Other,,
+<<<<<<< Updated upstream
 2019,MINI,3,20100.0,Hatchback,Automatic,FWD,black,black,5,3,gasoline,49000,10.8,8.7,2.4,4.0,Inline,,
+=======
+2019,MINI,3,20100.0,Hatchback,Automatic,FWD,black,black,5,2,gasoline,49000,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2022,Porsche,911,7700.0,Convertible,Automatic,RWD,blue,black,5,2,gasoline,185000,10.8,8.7,2.4,4.0,Inline,,
 2016,Buick,Enclave,82540.0,SUV,Automatic,4X4,blue,gray,7,4,gasoline,27850,14.6,10.7,3.6,6.0,V-Engine,,
 2023,Mitsubishi,RVR,89.0,SUV,Automatic,FWD,silver,black,5,4,gasoline,26937,9.7,7.8,2.0,4.0,Inline,,
@@ -18871,7 +19250,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2016,Nissan,Sentra,198128.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,10995,8.45,6.35,1.8,4.0,Other,,
 2019,Nissan,Rogue,55610.0,SUV,CVT,4X4,black,black,5,4,gasoline,28498,9.6,7.5,2.4,4.0,Inline,,
 2022,BMW,X5,31000.0,SUV,Automatic,4X4,white,black,5,4,gasoline,79450,10.8,8.7,3.0,4.0,Other,,
+<<<<<<< Updated upstream
 2017,MINI,Cooper,64500.0,Coupe,Automatic,FWD,red,black,5,3,gasoline,20500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2017,MINI,Cooper,64500.0,Coupe,Automatic,FWD,red,black,5,2,gasoline,20500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2023,Jeep,Wrangler,0.0,SUV,Automatic,4X4,green,black,5,4,gasoline,59980,10.8,8.7,2.4,6.0,V-Engine,,
 2022,Jeep,Cherokee,12.0,SUV,Automatic,4X4,metallic,black,5,4,gasoline,47575,12.9,9.7,3.2,6.0,V-Engine,,
 2018,Nissan,Rogue,122743.0,SUV,CVT,4X4,black,black,5,4,gasoline,23888,9.7,7.4,2.5,4.0,Other,,
@@ -18946,7 +19329,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2022,Chevrolet,Silverado,35.0,Truck,Automatic,4X4,black,black,6,4,gasoline,63093,14.3,12.55,2.7,4.0,Inline,,
 2019,Nissan,LEAF,71937.0,Hatchback,Automatic,FWD,metallic,black,5,4,electric,27188,0.0,8.7,0.0,0.0,Electric,0.0,0.0
 2014,Ford,Focus,216333.0,Hatchback,Automatic,FWD,black,black,5,4,gasoline,5695,10.8,8.7,2.0,4.0,Inline,,
+<<<<<<< Updated upstream
 2016,Ford,Transit,243304.0,Van,Automatic,RWD,white,black,2,3,diesel,23695,10.8,8.7,3.2,5.0,Inline,,
+=======
+2016,Ford,Transit,243304.0,Van,Automatic,RWD,white,black,2,2,diesel,23695,10.8,8.7,3.2,5.0,Inline,,
+>>>>>>> Stashed changes
 2017,Nissan,Altima,39415.0,Sedan,CVT,FWD,black,black,5,4,gasoline,19988,8.8,6.25,2.4,4.0,Inline,,
 2019,Mercedes-Benz,GLC-Class,61779.0,SUV,Automatic,4X4,black,black,5,4,gasoline,49800,10.8,9.0,2.4,4.0,Inline,,
 2021,Hyundai,Elantra,82000.0,Sedan,CVT,FWD,black,black,5,4,gasoline,25450,7.5,5.7,2.4,4.0,Inline,,
@@ -19238,7 +19625,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Porsche,911,10013.0,Coupe,Automatic,RWD,white,black,4,2,gasoline,159900,13.2,8.75,2.4,6.0,Inline,,
 2015,Volkswagen,Jetta,160427.0,Sedan,Manual,FWD,red,black,5,4,diesel,15980,7.7,5.2,2.0,4.0,Other,,
 2023,Volvo,XC60,90.0,SUV,Automatic,4X4,black,black,5,4,gasoline,74174,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2011,Volvo,C30,171000.0,Hatchback,Automatic,FWD,gray,black,5,3,gasoline,10499,10.8,8.7,2.4,4.0,Inline,,
+=======
+2011,Volvo,C30,171000.0,Hatchback,Automatic,FWD,gray,black,5,2,gasoline,10499,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2020,BMW,8,58917.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,88900,14.5,9.9,2.4,8.0,Inline,,
 2015,Jeep,WRANGLER,219885.0,SUV,Manual,FWD,other,black,5,4,gasoline,23995,14.9,11.55,3.6,4.0,Other,,
 2019,Honda,Odyssey,136000.0,Van,Automatic,FWD,white,gray,8,4,gasoline,33885,12.6,8.4,2.4,6.0,Inline,,
@@ -19378,7 +19769,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2020,Honda,Civic,40522.0,Sedan,CVT,FWD,red,black,5,4,gasoline,28595,7.9,6.1,2.4,4.0,Inline,,
 2015,Honda,CR-V,69000.0,SUV,Automatic,4X4,white,gray,5,4,gasoline,20950,9.1,7.2,2.0,4.0,Other,,
 2019,Ford,F-150,85814.0,Truck,Automatic,4X4,other,black,5,4,gasoline,27990,12.75,10.0,2.4,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2011,Volvo,C30,235000.0,Hatchback,Manual,FWD,gray,black,5,3,gasoline,15600,10.8,8.7,2.4,4.0,Inline,,
+=======
+2011,Volvo,C30,235000.0,Hatchback,Manual,FWD,gray,black,5,2,gasoline,15600,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2017,Kia,Forte,176317.0,Sedan,Automatic,FWD,gray,black,5,4,gasoline,11990,10.8,8.7,2.0,4.0,Inline,,
 2023,Kia,Rio,20.0,Sedan,Automatic,FWD,gray,black,5,4,gasoline,24845,7.2,6.1,1.6,4.0,V-Engine,,
 2022,Chrysler,Pacifica,1000.0,Van,Automatic,FWD,metallic,black,5,4,gasoline,55988,12.4,8.4,3.6,6.0,V-Engine,,
@@ -19433,12 +19828,20 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2021,Volvo,V60,48279.0,Wagon,Automatic,4X4,white,gray,5,4,gasoline,45980,10.8,8.7,2.4,4.0,Inline,,
 2020,Honda,Civic,52585.0,Sedan,CVT,FWD,black,black,5,4,gasoline,26990,7.9,6.1,2.4,4.0,Inline,,
 2019,BMW,3,56562.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,38889,10.8,8.7,2.0,4.0,Inline,,
+<<<<<<< Updated upstream
 2001,GMC,Safari,212000.0,Van,Automatic,RWD,gray,gray,8,3,gasoline,8900,15.9,11.9,2.4,6.0,V-Engine,,
+=======
+2001,GMC,Safari,212000.0,Van,Automatic,RWD,gray,gray,8,2,gasoline,8900,15.9,11.9,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2009,Ford,F-350,90000.0,Truck,Automatic,4X4,white,gray,3,2,diesel,21900,10.8,8.7,2.4,8.0,Inline,,
 2018,BMW,3,28000.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,31880,10.2,7.2,2.4,4.0,Inline,,
 2009,Infiniti,G37,227524.0,Sedan,Automatic,4X4,black,brown,5,4,gasoline,6995,12.2,8.25,2.4,6.0,V-Engine,,
 2013,Nissan,Juke,130328.0,SUV,Automatic,FWD,yellow,black,5,4,gasoline,10950,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2017,GMC,Savana,126000.0,Van,Automatic,RWD,white,gray,2,3,gasoline,31888,10.8,8.7,2.4,8.0,Inline,,
+=======
+2017,GMC,Savana,126000.0,Van,Automatic,RWD,white,gray,2,2,gasoline,31888,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2017,Honda,Civic,122177.0,Hatchback,Automatic,FWD,blue,black,5,4,gasoline,21995,10.8,8.7,1.5,4.0,Other,,
 2023,GMC,Sierra,181.0,Truck,Automatic,4X4,blue,black,5,2,gasoline,74743,14.8,11.8,5.3,8.0,Inline,,
 2021,Mazda,CX-9,45000.0,SUV,Automatic,4X4,black,brown,6,4,gasoline,46888,11.6,9.1,2.5,4.0,Other,,
@@ -19679,7 +20082,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2022,Hyundai,Kona,154.0,SUV,Automatic,FWD,blue,black,5,4,gasoline,42124,11.8,8.7,2.0,4.0,Other,,
 2000,GMC,Envoy,291000.0,SUV,Automatic,4X4,black,black,5,4,gasoline,1900,10.8,8.7,2.4,4.0,Inline,,
 2020,Jeep,WRANGLER,37949.0,SUV,Automatic,4X4,black,black,5,4,gasoline,48995,12.65,10.5,2.0,4.0,Inline,,
+<<<<<<< Updated upstream
 2017,Ford,Transit,129000.0,Van,Automatic,RWD,yellow,black,2,3,gasoline,39888,16.7,13.0,2.4,6.0,Inline,,
+=======
+2017,Ford,Transit,129000.0,Van,Automatic,RWD,yellow,black,2,2,gasoline,39888,16.7,13.0,2.4,6.0,Inline,,
+>>>>>>> Stashed changes
 2019,Hyundai,Santa,99878.0,SUV,Automatic,4X4,red,beige,5,4,gasoline,29399,12.3,9.8,2.0,4.0,Inline,,
 2017,Porsche,911,27000.0,Coupe,Manual,RWD,white,black,4,2,gasoline,128880,10.8,8.7,2.4,6.0,Inline,,
 2014,Chevrolet,Camaro,37633.0,Coupe,Automatic,RWD,yellow,black,5,2,gasoline,26588,12.149999999999999,7.25,2.4,6.0,V-Engine,,
@@ -19912,7 +20319,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,Ford,F-150,172353.0,Truck,Automatic,4X4,gray,black,5,4,gasoline,34995,14.6,10.9,2.4,8.0,Inline,,
 2014,Hyundai,Accent,62000.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,11300,7.55,5.25,2.4,4.0,Inline,,
 2021,Kia,Sportage,26654.0,SUV,Automatic,4X4,black,black,5,4,gasoline,38950,12.1,9.6,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2019,MINI,3,35364.0,Hatchback,Automatic,FWD,purple,black,5,3,gasoline,24878,8.5,6.2,1.5,3.0,Inline,,
+=======
+2019,MINI,3,35364.0,Hatchback,Automatic,FWD,purple,black,5,2,gasoline,24878,8.5,6.2,1.5,3.0,Inline,,
+>>>>>>> Stashed changes
 2023,Volkswagen,Atlas,90.0,SUV,Automatic,4X4,white,black,6,4,gasoline,60475,13.4,10.1,2.4,6.0,V-Engine,,
 2023,Jeep,Gladiator,18.0,Truck,Automatic,4X4,black,black,5,4,gasoline,74655,14.0,10.55,3.6,6.0,V-Engine,,
 2015,Mazda,CX-9,133088.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,17498,14.3,10.6,3.7,4.0,Other,,
@@ -19922,14 +20333,22 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 1997,Mazda,Miata,230000.0,Convertible,Manual,RWD,blue,black,5,2,gasoline,10000,10.8,8.7,2.4,4.0,Inline,,
 2017,Tesla,Model,212896.0,SUV,Automatic,FWD,white,black,5,4,electric,55555,0.0,8.7,2.4,0.0,Electric,0.0,0.0
 2023,Ford,Bronco,250.0,SUV,Automatic,4X4,black,black,5,4,gasoline,53248,11.1,9.0,2.0,4.0,Inline,,
+<<<<<<< Updated upstream
 2020,GMC,Savana,73701.0,Van,Automatic,RWD,white,gray,5,3,gasoline,46998,10.8,8.7,4.3,4.0,Other,,
+=======
+2020,GMC,Savana,73701.0,Van,Automatic,RWD,white,gray,5,2,gasoline,46998,10.8,8.7,4.3,4.0,Other,,
+>>>>>>> Stashed changes
 2022,Hyundai,Elantra,40000.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,39850,10.8,8.7,2.4,4.0,Inline,,
 2020,Hyundai,Tucson,41846.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,31980,10.8,9.2,2.4,4.0,Inline,,
 2019,Audi,S5,68481.0,Sedan,Automatic,4X4,blue,black,5,4,gasoline,49901,11.3,8.0,2.4,4.0,Other,,
 2019,Audi,S5,43000.0,Hatchback,Automatic,4X4,black,black,5,4,gasoline,52880,11.3,8.0,2.4,6.0,V-Engine,,
 2016,Subaru,WRX,69566.0,Sedan,Manual,4X4,blue,black,5,4,gasoline,37999,10.8,8.7,2.5,4.0,Other,,
 2023,Jeep,Wrangler,15.0,SUV,Automatic,4X4,black,black,5,4,gasoline,51988,11.5,10.05,2.0,4.0,Inline,,
+<<<<<<< Updated upstream
 2006,MINI,COOPER,142000.0,Coupe,Manual,FWD,white,black,5,3,gasoline,14995,10.8,8.7,2.4,4.0,Inline,,
+=======
+2006,MINI,COOPER,142000.0,Coupe,Manual,FWD,white,black,5,2,gasoline,14995,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2018,BMW,M2,54328.0,Coupe,Manual,RWD,white,black,5,2,gasoline,52800,13.1,9.0,2.4,6.0,Inline,,
 2019,Chevrolet,Silverado,75875.0,Truck,Automatic,4X4,black,black,6,4,gasoline,35850,15.8,11.9,4.3,6.0,V-Engine,,
 2016,Jeep,Cherokee,72726.0,SUV,Automatic,FWD,blue,black,5,4,gasoline,17498,10.9,7.7,2.4,4.0,Inline,,
@@ -19956,7 +20375,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Chevrolet,Silverado,10.0,Truck,Automatic,4X4,black,black,6,4,gasoline,60803,12.9,11.5,2.7,4.0,Inline,,
 2022,Nissan,Maxima,11420.0,Sedan,Automatic,FWD,white,gray,5,4,gasoline,43989,11.6,7.9,2.4,6.0,V-Engine,,
 2022,Ford,F-150,0.0,Truck,Automatic,4X4,black,black,5,4,gasoline,64030,13.5,10.2,3.5,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,red,black,5,3,gasoline,71218,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,red,black,5,2,gasoline,71218,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2019,GMC,Sierra,70705.0,Truck,Automatic,4X4,black,black,5,4,gasoline,42999,10.8,8.7,5.3,8.0,Inline,,
 2023,GMC,Acadia,6.0,SUV,Automatic,4X4,black,black,5,2,gasoline,58778,12.6,9.2,3.6,6.0,Inline,,
 2018,Dodge,Charger,284000.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,12900,16.0,10.1,2.4,8.0,Inline,,
@@ -20300,7 +20723,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2010,Nissan,Versa,120567.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,5200,10.8,8.7,2.4,4.0,Inline,,
 2021,Subaru,Crosstrek,19150.0,SUV,CVT,4X4,gray,black,5,4,gasoline,35585,8.8,7.0,2.4,4.0,Inline,,
 2018,Jeep,Compass,66875.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,27099,10.8,7.8,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2012,Hyundai,Veloster,180000.0,Coupe,Manual,FWD,white,black,5,3,gasoline,5500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2012,Hyundai,Veloster,180000.0,Coupe,Manual,FWD,white,black,5,2,gasoline,5500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2019,Audi,S3,26159.0,Sedan,Automatic,4X4,blue,black,5,4,gasoline,43995,10.7,8.0,2.4,4.0,Inline,,
 2018,Audi,RS,57333.0,Coupe,Automatic,4X4,black,black,5,2,gasoline,65800,12.9,8.9,2.4,6.0,Inline,,
 2020,Audi,Q5,80500.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,41777,10.9,8.7,2.4,4.0,Inline,,
@@ -20573,7 +21000,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2019,Audi,Q5,31821.0,SUV,Automatic,4X4,white,black,5,4,gasoline,36990,10.9,8.7,2.4,4.0,Inline,,
 2023,Dodge,Challenger,12.0,Coupe,Automatic,4X4,metallic,black,5,4,gasoline,53756,12.8,8.7,3.6,6.0,V-Engine,,
 2022,Audi,Q3,16145.0,SUV,Automatic,4X4,red,black,5,4,gasoline,42900,10.4,7.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2020,GMC,Savana,50854.0,Van,Automatic,RWD,white,black,2,3,gasoline,44395,10.8,8.7,2.4,8.0,Inline,,
+=======
+2020,GMC,Savana,50854.0,Van,Automatic,RWD,white,black,2,2,gasoline,44395,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2019,Mercedes-Benz,A250,52730.0,Hatchback,Automatic,4X4,gray,black,5,4,gasoline,36988,9.4,6.8,2.4,4.0,Inline,,
 2021,Porsche,911,24515.0,Convertible,Automatic,4X4,black,gray,4,2,gasoline,198888,12.850000000000001,10.2,3.0,4.0,Boxer,,
 2021,Mercedes-Benz,AMG,25878.0,Sedan,Automatic,4X4,gray,black,5,4,gasoline,175800,15.1,11.1,2.4,4.0,Other,,
@@ -20828,7 +21259,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Hyundai,Santa,90.0,SUV,Automatic,4X4,gray,black,5,2,gasoline,50624,11.0,8.5,2.5,4.0,Inline,,
 2019,Porsche,Cayenne,46538.0,SUV,Automatic,4X4,black,red,5,4,gasoline,78995,12.5,10.0,2.9,6.0,V-Engine,,
 2023,GMC,SIERRA,35.0,Truck,Automatic,4X4,white,black,5,4,diesel,97188,10.8,8.7,6.6,8.0,Inline,,
+<<<<<<< Updated upstream
 2020,GMC,Savana,62985.0,Van,Automatic,RWD,white,black,2,3,gasoline,43995,10.8,8.7,2.4,8.0,Inline,,
+=======
+2020,GMC,Savana,62985.0,Van,Automatic,RWD,white,black,2,2,gasoline,43995,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2018,Chevrolet,SILVERADO,137946.0,Truck,Automatic,FWD,white,black,5,4,diesel,69995,10.8,8.7,6.6,4.0,Other,,
 2019,Hyundai,Tucson,61222.0,SUV,Automatic,4X4,black,black,5,4,gasoline,25889,10.8,9.2,2.4,4.0,Inline,,
 2022,Ford,F-150,0.0,Truck,Automatic,4X4,black,black,5,4,gasoline,64030,13.5,10.2,3.5,6.0,V-Engine,,
@@ -20849,7 +21284,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2012,Dodge,Ram,258000.0,Truck,Automatic,4X4,white,black,5,4,gasoline,15995,10.8,8.7,5.7,4.0,Other,,
 2023,GMC,Sierra,10.0,Truck,Automatic,4X4,black,black,5,4,gasoline,93918,16.7,14.0,6.2,8.0,V-Engine,,
 2022,Ford,F-150,20542.0,Truck,Automatic,4X4,gray,black,5,4,hybrid,74998,9.8,9.7,3.5,6.0,Inline,,
+<<<<<<< Updated upstream
 2023,Ford,Transit-350,558.0,Van,Automatic,4X4,white,black,2,3,gasoline,83995,10.8,8.7,3.5,6.0,Inline,,
+=======
+2023,Ford,Transit-350,558.0,Van,Automatic,4X4,white,black,2,2,gasoline,83995,10.8,8.7,3.5,6.0,Inline,,
+>>>>>>> Stashed changes
 2021,Kia,Soul,16650.0,Hatchback,Automatic,FWD,gray,black,5,4,gasoline,23977,8.5,7.0,2.0,4.0,Other,,
 2022,Hyundai,Kona,18125.0,SUV,CVT,4X4,white,black,5,4,gasoline,30251,8.5,7.2,2.4,4.0,Inline,,
 2017,Nissan,Rogue,133800.0,SUV,Automatic,4X4,white,gray,5,4,gasoline,17800,9.6,7.4,2.5,4.0,Other,,
@@ -20860,7 +21299,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2015,BMW,4,116323.0,Convertible,Automatic,4X4,white,red,4,2,gasoline,35910,10.8,8.7,2.4,6.0,Inline,,
 1997,Porsche,911,36118.0,Coupe,Manual,4X4,red,black,5,2,gasoline,469800,10.8,8.7,2.4,6.0,Inline,,
 2019,MINI,5,62112.0,Hatchback,Automatic,FWD,blue,black,5,4,gasoline,24895,8.4,6.3,2.4,3.0,Inline,,
+<<<<<<< Updated upstream
 2017,Ford,Transit,123000.0,Van,Automatic,RWD,yellow,black,2,3,gasoline,39888,16.7,13.0,2.4,6.0,Inline,,
+=======
+2017,Ford,Transit,123000.0,Van,Automatic,RWD,yellow,black,2,2,gasoline,39888,16.7,13.0,2.4,6.0,Inline,,
+>>>>>>> Stashed changes
 2010,BMW,X3,172000.0,SUV,Automatic,4X4,blue,black,5,4,gasoline,8500,10.8,8.7,2.4,4.0,Inline,,
 2014,Fiat,500,42576.0,Hatchback,Manual,FWD,black,black,5,4,gasoline,11499,6.4,4.9,2.4,4.0,Inline,,
 2022,Mazda,CX-9,13700.0,SUV,Automatic,4X4,black,black,7,4,gasoline,44988,11.6,9.0,2.5,4.0,Inline,,
@@ -21030,7 +21473,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2021,Chevrolet,Corvette,220.0,Coupe,Automatic,RWD,white,red,2,2,gasoline,118800,15.4,8.7,2.4,8.0,Inline,,
 2020,Acura,MDX,65684.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,40995,12.3,9.2,3.5,6.0,V-Engine,,
 2023,Audi,A6,90.0,Sedan,Automatic,4X4,black,black,5,4,gasoline,70365,10.8,8.7,2.0,4.0,Inline,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,black,black,5,3,gasoline,70768,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,black,black,5,2,gasoline,70768,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2018,BMW,X2,61382.0,Wagon,Automatic,4X4,blue,black,5,4,gasoline,31900,11.0,7.7,2.4,4.0,Inline,,
 2013,Chevrolet,Silverado,226034.0,Truck,Automatic,4X4,white,black,6,4,gasoline,11950,14.3,9.4,2.4,8.0,Inline,,
 2022,Ford,Mustang,250.0,Coupe,Automatic,RWD,gray,black,4,2,gasoline,67589,15.75,9.9,5.0,8.0,V-Engine,,
@@ -21098,7 +21545,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Jeep,Wrangler,90.0,SUV,Automatic,4X4,silver,black,5,4,gasoline,68995,13.8,10.1,3.6,6.0,V-Engine,,
 2023,Jeep,Grand,18.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,89275,13.0,9.4,3.6,6.0,V-Engine,,
 2015,Hyundai,Tucson,113500.0,SUV,Automatic,4X4,other,black,5,4,gasoline,16888,10.8,8.7,2.4,4.0,Other,,
+<<<<<<< Updated upstream
 2020,GMC,Savana,56555.0,Van,Automatic,RWD,white,black,2,3,gasoline,44494,10.8,8.7,6.0,8.0,V-Engine,,
+=======
+2020,GMC,Savana,56555.0,Van,Automatic,RWD,white,black,2,2,gasoline,44494,10.8,8.7,6.0,8.0,V-Engine,,
+>>>>>>> Stashed changes
 2022,Audi,A7,19866.0,Hatchback,Automatic,4X4,black,black,5,4,hybrid,84598,10.8,8.7,2.4,6.0,V-Engine,,
 2020,Ford,Escape,57971.0,SUV,Automatic,4X4,white,black,5,4,gasoline,29998,9.65,7.55,1.5,4.0,Other,,
 2019,Dodge,Grand,115000.0,Van,Automatic,FWD,red,gray,7,4,gasoline,26590,13.7,9.4,2.4,6.0,V-Engine,,
@@ -21148,7 +21599,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2022,GMC,SIERRA,10.0,Truck,Automatic,4X4,black,black,5,4,diesel,95868,10.8,8.7,6.6,8.0,V-Engine,,
 2018,Porsche,911,10961.0,Coupe,Automatic,4X4,yellow,black,5,4,gasoline,164900,10.8,8.7,2.4,6.0,Inline,,
 2022,Hyundai,TUSCAN,33855.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,34500,9.9,8.0,2.5,4.0,V-Engine,,
+<<<<<<< Updated upstream
 2023,MINI,COOPER,4651.0,Hatchback,Automatic,FWD,white,black,5,3,gasoline,40995,10.5,7.3,2.0,4.0,Inline,,
+=======
+2023,MINI,COOPER,4651.0,Hatchback,Automatic,FWD,white,black,5,2,gasoline,40995,10.5,7.3,2.0,4.0,Inline,,
+>>>>>>> Stashed changes
 2016,Mercedes-Benz,CLA,99000.0,Sedan,Automatic,4X4,black,beige,5,4,gasoline,25995,10.8,8.7,2.4,4.0,Inline,,
 2017,BMW,3,118000.0,Sedan,Automatic,4X4,gray,black,5,4,gasoline,25950,10.2,7.1,2.0,4.0,Other,,
 2016,Hyundai,Sonata,65000.0,Sedan,Automatic,4X4,silver,black,5,4,gasoline,20000,10.8,8.7,2.4,4.0,Inline,,
@@ -21219,7 +21674,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Jeep,Wrangler,20.0,SUV,Automatic,4X4,black,gray,5,4,hybrid,72499,11.6,11.9,0.0,0.0,Electric,,
 2021,Honda,Civic,5725.0,Compact,CVT,FWD,silver,black,5,4,gasoline,31998,7.9,6.1,2.0,4.0,Inline,,
 2021,Volvo,XC60,10545.0,SUV,Automatic,4X4,white,black,5,4,gasoline,54500,10.8,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2017,Ford,Transit,182000.0,Van,Automatic,RWD,white,black,2,3,gasoline,40988,16.7,13.0,2.4,6.0,V-Engine,,
+=======
+2017,Ford,Transit,182000.0,Van,Automatic,RWD,white,black,2,2,gasoline,40988,16.7,13.0,2.4,6.0,V-Engine,,
+>>>>>>> Stashed changes
 2022,Jeep,Grand,90.0,SUV,Automatic,4X4,gray,black,5,4,gasoline,86235,16.7,10.9,5.7,8.0,V-Engine,,
 2023,Hyundai,Santa,10.0,Truck,Automatic,4X4,black,black,5,4,gasoline,49024,12.1,8.7,2.4,4.0,Inline,,
 2022,Ford,Explorer,14000.0,SUV,Automatic,4X4,black,black,7,4,gasoline,58073,11.7,8.6,2.3,4.0,Inline,,
@@ -21355,8 +21814,13 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2017,BMW,3,63000.0,Sedan,Automatic,4X4,white,black,5,4,gasoline,34999,10.8,8.7,2.4,4.0,Inline,,
 2022,Tesla,Model,100.0,SUV,Automatic,4X4,white,black,5,4,electric,164250,0.0,8.7,2.4,0.0,Electric,0.0,0.0
 2019,Mercedes-Benz,GLC300,50784.0,SUV,Automatic,4X4,white,black,5,4,gasoline,43955,11.0,8.7,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2019,MINI,Cooper,50247.0,Hatchback,Automatic,FWD,silver,black,4,3,gasoline,24585,8.5,6.2,2.4,3.0,Inline,,
 2020,GMC,Savana,57735.0,Van,Automatic,RWD,white,black,2,3,gasoline,43495,10.8,8.7,2.4,8.0,Inline,,
+=======
+2019,MINI,Cooper,50247.0,Hatchback,Automatic,FWD,silver,black,4,2,gasoline,24585,8.5,6.2,2.4,3.0,Inline,,
+2020,GMC,Savana,57735.0,Van,Automatic,RWD,white,black,2,2,gasoline,43495,10.8,8.7,2.4,8.0,Inline,,
+>>>>>>> Stashed changes
 2022,Chevrolet,Silverado,35.0,Truck,Automatic,4X4,black,black,6,2,gasoline,62755,14.3,12.55,2.7,4.0,Other,,
 2023,Buick,Encore,10.0,SUV,Automatic,4X4,white,beige,5,2,gasoline,38929,9.0,8.3,1.3,3.0,Inline,,
 2019,Nissan,370Z,15600.0,Coupe,Automatic,RWD,metallic,black,4,2,gasoline,34895,10.8,8.7,2.4,6.0,V-Engine,,
@@ -21423,7 +21887,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2017,Volkswagen,Golf,45050.0,Coupe,Manual,FWD,silver,black,5,2,gasoline,22995,9.7,7.0,2.0,4.0,Other,,
 2023,Volvo,XC60,50.0,SUV,Automatic,4X4,black,gray,5,4,hybrid,85329,8.5,8.5,2.0,4.0,Inline,,
 2004,Dodge,Dakota,79486.0,Truck,Automatic,RWD,silver,gray,6,4,gasoline,11999,14.899999999999999,10.15,2.4,6.0,Inline,,
+<<<<<<< Updated upstream
 2021,MINI,COOPER,7849.0,Hatchback,Automatic,FWD,white,black,5,3,electric,36500,0.0,8.7,2.4,0.0,Electric,0.0,0.0
+=======
+2021,MINI,COOPER,7849.0,Hatchback,Automatic,FWD,white,black,5,2,electric,36500,0.0,8.7,2.4,0.0,Electric,0.0,0.0
+>>>>>>> Stashed changes
 2020,Honda,Passport,64464.0,SUV,Automatic,4X4,black,black,5,2,gasoline,41050,12.5,9.8,3.5,6.0,Inline,,
 2018,Chevrolet,Volt,119765.0,Hatchback,Automatic,FWD,black,black,4,4,hybrid,24995,10.8,8.7,2.4,4.0,Inline,,
 2022,BMW,X5,31000.0,SUV,Automatic,4X4,white,black,5,4,gasoline,79450,10.8,8.7,3.0,4.0,Other,,
@@ -21434,7 +21902,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2017,Acura,MDX,99000.0,SUV,Automatic,4X4,black,black,7,4,gasoline,35950,12.2,9.0,3.5,6.0,V-Engine,,
 2021,Volvo,V60,25817.0,Wagon,Automatic,4X4,silver,black,5,4,gasoline,51980,10.8,8.7,2.4,4.0,Inline,,
 2016,Audi,Q3,123268.0,SUV,Automatic,4X4,black,black,5,4,gasoline,20990,11.9,8.4,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2016,Ford,Transit,243304.0,Van,Automatic,RWD,white,black,2,3,diesel,23695,10.8,8.7,3.2,5.0,Inline,,
+=======
+2016,Ford,Transit,243304.0,Van,Automatic,RWD,white,black,2,2,diesel,23695,10.8,8.7,3.2,5.0,Inline,,
+>>>>>>> Stashed changes
 2016,Volvo,XC90,182281.0,SUV,Automatic,4X4,white,beige,7,4,gasoline,28888,11.5,9.5,2.0,4.0,Other,,
 2023,Jeep,Wrangler,3894.0,SUV,Automatic,4X4,green,black,5,4,gasoline,57799,11.5,10.05,2.0,4.0,Inline,,
 2009,Dodge,Journey,153152.0,SUV,Automatic,FWD,gray,gray,5,4,gasoline,5990,13.5,8.6,3.5,6.0,V-Engine,,
@@ -21525,11 +21997,19 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2023,Ford,F-150,15.0,Truck,Automatic,4X4,black,black,5,4,hybrid,99360,9.8,9.7,3.5,6.0,Hybrid,,
 2017,Volvo,XC90,110689.0,SUV,Automatic,4X4,black,black,7,4,gasoline,33998,11.5,9.6,2.4,4.0,Inline,,
 2009,Acura,RDX,243689.0,SUV,Automatic,4X4,white,gray,5,4,gasoline,7999,12.5,9.3,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2020,Ford,Transit,115034.0,Van,Automatic,RWD,white,black,5,3,gasoline,47995,10.8,8.7,2.4,6.0,V-Engine,,
 2017,Audi,S5,97950.0,Coupe,Automatic,4X4,white,black,5,2,gasoline,33950,13.0,8.5,3.0,4.0,Other,,
 2010,Volkswagen,Passat,197000.0,Wagon,Automatic,FWD,gray,black,5,4,gasoline,6000,10.8,8.7,2.4,4.0,Inline,,
 2023,BMW,M,90.0,SUV,Automatic,4X4,white,black,5,4,gasoline,85945,10.8,8.7,3.0,6.0,Inline,,
 2019,Hyundai,Veloster,81634.0,Hatchback,Automatic,FWD,other,black,4,3,gasoline,26990,8.5,6.9,2.4,4.0,Inline,,
+=======
+2020,Ford,Transit,115034.0,Van,Automatic,RWD,white,black,5,2,gasoline,47995,10.8,8.7,2.4,6.0,V-Engine,,
+2017,Audi,S5,97950.0,Coupe,Automatic,4X4,white,black,5,2,gasoline,33950,13.0,8.5,3.0,4.0,Other,,
+2010,Volkswagen,Passat,197000.0,Wagon,Automatic,FWD,gray,black,5,4,gasoline,6000,10.8,8.7,2.4,4.0,Inline,,
+2023,BMW,M,90.0,SUV,Automatic,4X4,white,black,5,4,gasoline,85945,10.8,8.7,3.0,6.0,Inline,,
+2019,Hyundai,Veloster,81634.0,Hatchback,Automatic,FWD,other,black,4,2,gasoline,26990,8.5,6.9,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2010,Nissan,Sentra,211952.0,Sedan,Automatic,FWD,black,gray,5,4,gasoline,5299,7.95,6.1,2.0,4.0,Inline,,
 2013,BMW,X3,183195.0,SUV,Automatic,4X4,black,beige,5,4,gasoline,16000,9.5,7.0,2.4,4.0,Inline,,
 2019,Mazda,CX-9,74692.0,SUV,Automatic,4X4,black,black,5,4,gasoline,34300,11.6,9.1,2.5,4.0,Inline,,
@@ -22565,7 +23045,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2020,Volkswagen,Jetta,39614.0,Sedan,Automatic,FWD,black,black,5,4,gasoline,28999,7.8,5.9,1.4,4.0,Other,,
 2021,Mercedes-Benz,C-Class,9800.0,Coupe,Automatic,4X4,black,black,4,2,gasoline,56999,10.2,7.4,2.4,4.0,Inline,,
 2014,Dodge,Grand,119000.0,Van,Automatic,FWD,white,black,4,4,gasoline,14000,12.2,7.9,2.4,6.0,V-Engine,,
+<<<<<<< Updated upstream
 2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,gray,black,5,3,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+=======
+2022,Infiniti,Q60,25.0,Coupe,Automatic,4X4,gray,black,5,2,gasoline,73268,12.5,9.2,3.0,6.0,Inline,,
+>>>>>>> Stashed changes
 2017,Porsche,Macan,133000.0,SUV,Automatic,4X4,white,black,5,4,gasoline,41888,13.7,10.3,3.0,4.0,Other,,
 2021,Hyundai,Palisade,19962.0,SUV,Automatic,4X4,black,black,5,2,gasoline,52995,12.3,9.6,2.4,6.0,V-Engine,,
 2020,Jeep,Grand,59521.0,SUV,Automatic,4X4,black,beige,5,4,gasoline,41995,12.7,9.6,3.6,6.0,Inline,,
@@ -22885,7 +23369,11 @@ year_of_manufacture,manufacturer,model,mileage,body_type,transmission,drivetrain
 2018,Nissan,370Z,41573.0,Coupe,Manual,RWD,gray,orange,2,2,gasoline,34888,10.8,8.7,2.4,6.0,V-Engine,,
 2023,Ford,F-150,15.0,Truck,Automatic,4X4,black,black,5,4,gasoline,65496,14.8,10.9,5.0,8.0,V-Engine,,
 2020,Nissan,Rogue,77792.0,SUV,CVT,4X4,black,black,5,4,gasoline,26395,9.6,7.5,2.4,4.0,Inline,,
+<<<<<<< Updated upstream
 2006,MINI,3,160000.0,Coupe,Automatic,FWD,silver,black,5,3,gasoline,7500,10.8,8.7,2.4,4.0,Inline,,
+=======
+2006,MINI,3,160000.0,Coupe,Automatic,FWD,silver,black,5,2,gasoline,7500,10.8,8.7,2.4,4.0,Inline,,
+>>>>>>> Stashed changes
 2022,Hyundai,Elantra,32500.0,Sedan,Automatic,FWD,gray,black,5,4,gasoline,32880,7.6,5.7,2.4,4.0,Inline,,
 2021,Mercedes-Benz,CLA250,12962.0,Coupe,Automatic,4X4,blue,black,5,4,gasoline,48995,9.8,7.1,2.4,4.0,Inline,,
 2019,Volkswagen,Arteon,76131.0,Sedan,Automatic,4X4,black,black,5,2,gasoline,34997,12.0,8.6,2.0,4.0,Inline,,

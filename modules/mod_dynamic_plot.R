@@ -125,13 +125,7 @@ mod_dynamic_plot_server <- function(id, shared_data) {
                   type = 'scatter', mode = 'markers',
                   marker = list(color = '#007bff', size = 8))
         },
-        "Line Plot" = {
-          df_sorted <- df %>% arrange(!!sym(current_x_col))
-          plot_ly(df_sorted, x = ~get(current_x_col), y = ~get(current_y_col),
-                  type = 'scatter', mode = 'lines+markers',
-                  line = list(color = '#007bff'),
-                  marker = list(color = '#007bff', size = 8))
-        },
+        
         "Bar Chart" = {
           df_agg <- df %>%
             group_by(!!sym(current_x_col)) %>%
