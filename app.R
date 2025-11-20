@@ -15,7 +15,10 @@ library(xgboost)
 library(Matrix)
 library(caret)
 library(jsonlite)
+library(rstudioapi)
 
+setwd(dirname(getActiveDocumentContext()$path))
+getwd()
 
 # --- Source Modules ---
 source("modules/mod_dynamic_plot.R")

@@ -91,7 +91,7 @@ trained_models <- foreach(
     quantreg = TRUE,
     num.trees = 2000,        # A good starting point
     mtry = floor(sqrt(ncol(train_data) - 1)), # A standard default for mtry
-    min.node.size = 25,      # Tuned for better quantile precision
+    min.node.size = 30,      # Tuned for better quantile precision
     seed = 42,
     importance = 'impurity',
     verbose = FALSE         # Set to FALSE for cleaner parallel output
