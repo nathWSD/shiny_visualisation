@@ -16,6 +16,7 @@ library(Matrix)
 library(caret)
 library(jsonlite)
 library(rstudioapi)
+library(shinyBS)
 
 setwd(dirname(getActiveDocumentContext()$path))
 getwd()

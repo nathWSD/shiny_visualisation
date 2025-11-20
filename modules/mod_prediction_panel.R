@@ -1,3 +1,4 @@
+# Helper function for UI tooltips (no changes)
 labelWithTooltip <- function(labelText, tooltipText) {
   tags$label(
     labelText,
@@ -10,6 +11,9 @@ labelWithTooltip <- function(labelText, tooltipText) {
 }
 
 
+
+
+# --- mod_prediction_panel_ui Function (Corrected for Uniform Width) ---
 
 mod_prediction_panel_ui <- function(id) {
   ns <- NS(id)
@@ -65,65 +69,126 @@ mod_prediction_panel_ui <- function(id) {
         id = ns("sidebar"),
         h3("Input Car Specifications"),
         
-        fluidRow(
-          column(6, selectInput(ns("manufacturer"), label = labelWithTooltip("Manufacturer:", "Select car manufacturer."), choices = names(ui_config$manufacturer_models), width = "100%")),
-          column(6, uiOutput(ns("model_ui")))
-        ),
-        fluidRow(
-          column(6, sliderInput(ns("year_of_manufacture"), label = labelWithTooltip("Year:", "Year manufactured."), min = 1940, max = 2025, value = 2018, step = 1, sep = "", width = "100%")),
-          column(6, sliderInput(ns("mileage"), label = labelWithTooltip("Mileage (km):", "Total distance traveled."), min = 0, max = 800000, value = 80000, step = 500, width = "100%"))
-        ),
-        fluidRow(
-          column(6, selectInput(ns("body_type"), label = labelWithTooltip("Body Type:", "Select car's body style."), choices = ui_config$body_type, width = "100%")),
-          column(6, selectInput(ns("transmission"), label = labelWithTooltip("Transmission:", "Select transmission type."), choices = ui_config$transmission, width = "100%"))
-        ),
-        fluidRow(
-          column(6, selectInput(ns("drivetrain"), label = labelWithTooltip("Drivetrain:", "Select drivetrain type."), choices = ui_config$drivetrain, width = "100%")),
-          column(6, selectInput(ns("fuel_type"), label = labelWithTooltip("Fuel Type:", "Select fuel type."), choices = ui_config$fuel_type, width = "100%"))
-        ),
-        fluidRow(
-          column(6, selectizeInput(ns("exterior_colour"), label = labelWithTooltip("Exterior Colour:", "Select exterior colour."), choices = ui_config$exterior_colour, width = "100%", options = list(options = exterior_color_data, valueField = 'value', labelField = 'label', searchField = 'label', render = render_js))),
-          column(6, selectizeInput(ns("interior_colour"), label = labelWithTooltip("Interior Colour:", "Select interior colour."), choices = ui_config$interior_colour, width = "100%", options = list(options = interior_color_data, valueField = 'value', labelField = 'label', searchField = 'label', render = render_js)))
-        ),
-        fluidRow(
-          column(6, sliderInput(ns("passengers"), label = labelWithTooltip("Passengers:", "Number of seats."), min = 2, max = 14, value = 5, step = 1, width = "100%")),
-          column(6, sliderInput(ns("doors"), label = labelWithTooltip("Doors:", "Number of doors."), min = 2, max = 5, value = 4, step = 1, width = "100%"))
-        ),
-        fluidRow(
-          column(6, sliderInput(ns("engine_displacement_L"), label = labelWithTooltip("Displacement (L):", "Engine displacement."), min = 0.6, max = 8.0, value = 2.0, step = 0.1, width = "100%")),
-          column(6, sliderInput(ns("engine_cylinders"), label = labelWithTooltip("Cylinders:", "Number of cylinders."), min = 0, max = 16, value = 4, step = 1, width = "100%"))
-        ),
-        fluidRow(
-          column(6, sliderInput(ns("city_consumption"), label = labelWithTooltip("City L/100km:", "Fuel consumption in the city."), min = 0, max = 25, value = 11.0, step = 0.1, width = "100%")),
-          column(6, sliderInput(ns("highway_consumption"), label = labelWithTooltip("Highway L/100km:", "Fuel consumption on highway."), min = 0, max = 20, value = 8.5, step = 0.1, width = "100%"))
-        ),
-        fluidRow(
-          column(6, selectInput(ns("engine_type"), label = labelWithTooltip("Engine Type:", "Select engine configuration."), choices = ui_config$engine_type, width = "100%")),
-          column(6,
-                 h4("Physical Condition assessment"), # A smaller header works better here
-                 fileInput(
-                   ns("car_images"),
-                   label = labelWithTooltip(HTML("Upload Images <strong style='color:red;'>*</strong>"), "Upload one or more photos. This is required."),
-                   multiple = TRUE, 
-                   accept = c("image/jpeg", "image/png", "image/jpg")
-                 )
+        # --- Einklappbare Kategorien mit bsCollapse ---
+        bsCollapse(
+          id = ns("collapse_inputs"),
+          multiple = TRUE,                # mehrere Abschnitte gleichzeitig offen
+          open = "General Information",  # optional: Startpanel
+          
+          # Hier hab ich verändert
+          # Kategorie 1
+          bsCollapsePanel(
+            "General Information",
+            fluidRow(
+              column(6, selectInput(ns("manufacturer"),
+                                    label = labelWithTooltip("Manufacturer:", "Select car manufacturer."),
+                                    choices = names(ui_config$manufacturer_models), width = "100%")),
+              column(6, uiOutput(ns("model_ui")))
+            ),
+            fluidRow(
+              column(6, sliderInput(ns("year_of_manufacture"),
+                                    label = labelWithTooltip("Year:", "Year manufactured."),
+                                    min = 1940, max = 2025, value = 2018, step = 1, sep = "", width = "100%")),
+              column(6, selectInput(ns("body_type"),
+                                    label = labelWithTooltip("Body Type:", "Select car's body style."),
+                                    choices = ui_config$body_type, width = "100%"))
+            )
+          ),
+          
+          # Kategorie 2
+          bsCollapsePanel(
+            "Drive & Engine",
+            fluidRow(
+              column(6, selectInput(ns("engine_type"),
+                                    label = labelWithTooltip("Engine Type:", "Select engine configuration."),
+                                    choices = ui_config$engine_type, width = "100%")),
+              column(6, sliderInput(ns("engine_displacement_L"),
+                                    label = labelWithTooltip("Displacement (L):", "Engine displacement."),
+                                    min = 0.6, max = 8.0, value = 2.0, step = 0.1, width = "100%"))
+            ),
+            fluidRow(
+              column(6, sliderInput(ns("engine_cylinders"),
+                                    label = labelWithTooltip("Cylinders:", "Number of cylinders."),
+                                    min = 0, max = 16, value = 4, step = 1, width = "100%")),
+              column(6, selectInput(ns("drivetrain"),
+                                    label = labelWithTooltip("Drivetrain:", "Select drivetrain type."),
+                                    choices = ui_config$drivetrain, width = "100%"))
+            ),
+            fluidRow(
+              column(6, selectInput(ns("transmission"),
+                                    label = labelWithTooltip("Transmission:", "Select transmission type."),
+                                    choices = ui_config$transmission, width = "100%")),
+              column(6, selectInput(ns("fuel_type"),
+                                    label = labelWithTooltip("Fuel Type:", "Select fuel type."),
+                                    choices = ui_config$fuel_type, width = "100%"))
+            )
+          ),
+          
+          # Kategorie 3
+          bsCollapsePanel(
+            "Consumption & Performance",
+            fluidRow(
+              column(6, sliderInput(ns("city_consumption"),
+                                    label = labelWithTooltip("City L/100km:", "Fuel consumption in the city."),
+                                    min = 2, max = 25, value = 11.0, step = 0.1, width = "100%")),
+              column(6, sliderInput(ns("highway_consumption"),
+                                    label = labelWithTooltip("Highway L/100km:", "Fuel consumption on highway."),
+                                    min = 0, max = 20, value = 8.5, step = 0.1, width = "100%"))
+            ),
+            fluidRow(
+              column(12, sliderInput(ns("mileage"),
+                                     label = labelWithTooltip("Mileage (km):", "Total distance traveled."),
+                                     min = 0, max = 800000, value = 80000, step = 500, width = "100%"))
+            )
+          ),
+          
+          # Kategorie 4
+          bsCollapsePanel(
+            "Equipment & Design",
+            fluidRow(
+              column(6, selectizeInput(ns("exterior_colour"),
+                                       label = labelWithTooltip("Exterior Colour:", "Select exterior colour."),
+                                       choices = ui_config$exterior_colour, width = "100%",
+                                       options = list(options = exterior_color_data, valueField = 'value',
+                                                      labelField = 'label', searchField = 'label', render = render_js))),
+              column(6, selectizeInput(ns("interior_colour"),
+                                       label = labelWithTooltip("Interior Colour:", "Select interior colour."),
+                                       choices = ui_config$interior_colour, width = "100%",
+                                       options = list(options = interior_color_data, valueField = 'value',
+                                                      labelField = 'label', searchField = 'label', render = render_js)))
+            ),
+            fluidRow(
+              column(6, sliderInput(ns("passengers"),
+                                    label = labelWithTooltip("Passengers:", "Number of seats."),
+                                    min = 2, max = 14, value = 5, step = 1, width = "100%")),
+              column(6, sliderInput(ns("doors"),
+                                    label = labelWithTooltip("Doors:", "Number of doors."),
+                                    min = 2, max = 5, value = 4, step = 1, width = "100%")),
+              column(6,
+                     h4("Physical Condition assessment"), # A smaller header works better here
+                     fileInput(
+                       ns("car_images"),
+                       label = labelWithTooltip(HTML("Upload Images <strong style='color:red;'>*</strong>"), "Upload one or more photos. This is required."),
+                       multiple = TRUE, 
+                       accept = c("image/jpeg", "image/png", "image/jpg")
+                     ))
+            )
           )
         ),
         
-        
         tags$br(),
+        # ActionButton löst Vorhersage aus
         actionButton(ns("submitbutton"), "Predict Price", class = "btn btn-primary btn-lg btn-block")
-        
       ),
       
+      # Ergbenisanzeige
       div(
         id = ns("main_panel"),
         h3('Prediction Output'),
-        div(style = "padding: 10px; border-radius: 8px; background-color: rgba(230, 240, 255, 0.9); margin-bottom: 15px;", 
-            uiOutput(ns("image_analysis_output"))
-        ),
+        # UI Output zeigt Preistabelle
         div(style = "flex: 0 0 auto; padding: 10px; border-radius: 8px; background-color: rgba(245, 245, 245, 0.9);", uiOutput(ns("contents"))),
         hr(),
+        # Zeigt Balkendiagram
         div(style = "flex: 1 1 auto; position: relative;", h4("Model Feature Importance", style = "text-align: center;"), plotlyOutput(ns("importance_plot"), height = "95%"))
       )
     )
@@ -136,6 +201,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
     
+    # --- STARTUP AND REACTIVE LOGIC ---
     
     shinyjs::disable("submitbutton")
     
@@ -148,21 +214,32 @@ mod_prediction_panel_server <- function(id, shared_data) {
     }, ignoreNULL = FALSE)
     
     config_data <- reactiveVal(NULL)
+    # Hier geändert
     observe({
-      req(file.exists("ui_config.json"))
-      config_data(fromJSON("ui_config.json"))
+      config_path <- "ui_config.json"
+      if (file.exists(config_path)) {
+        config_data(fromJSON(config_path))
+      } else {
+        # Gleicher Fallback wie in der UI, damit renderUI nicht abstürzt
+        config_data(list(manufacturer_models = list("ERROR" = c("ui_config.json not found"))))
+      }
     })
-    
+    # Bis hier
     output$model_ui <- renderUI({
-      req(input$manufacturer, config_data(), cancelOutput = TRUE)
+      # req(input$manufacturer, config_data(), cancelOutput = TRUE)
+      req(input$manufacturer, config_data())
       models <- config_data()$manufacturer_models[[input$manufacturer]]
+      # Das If Statement neu hinzugefügt.
+      if (is.null(models)) return(NULL)
       selectInput(ns("model"), label = labelWithTooltip("Model:", "Select the car model."), choices = models, width = "100%")
     })
     
     trained_model_bundle <- reactiveVal(NULL)
     importance_plot_obj <- reactiveVal(NULL)
     
+    # --- Main Prediction Event ---
     observeEvent(input$submitbutton, {
+      # Final check that all required inputs are present
       req(input$model, input$car_images, cancelOutput = TRUE)
       
       withProgress(message = 'Processing Request', style = "old", value = 0, {
@@ -190,6 +267,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
         
         current_bundle <- trained_model_bundle()
         
+        # --- 2. IMAGE ANALYSIS ---
         setProgress(value = 0.3, detail = "Analyzing car images...")
         
         state_description_map <- c(
@@ -225,7 +303,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
           )
         })
         
-        #  TABULAR DATA PREPARATION ---
+        # --- 3. TABULAR DATA PREPARATION ---
         setProgress(value = 0.5, detail = "Preparing final data...")
         
         newdata <- data.frame(
@@ -256,6 +334,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
           }
         }
         
+        # --- 4. RANGER PRICE PREDICTION ---
         setProgress(value = 0.9, detail = "Generating price prediction...")
         predictions <- list(
           lower = predict(current_bundle$models$lower, data = newdata, type = "quantiles", quantiles = 0.05)$predictions[,1],
@@ -263,6 +342,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
           upper = predict(current_bundle$models$upper, data = newdata, type = "quantiles", quantiles = 0.95)$predictions[,1]
         )
         
+        # --- 5. RENDER OUTPUTS ---
         imp_raw <- ranger::importance(current_bundle$models$median)
         
         if (length(imp_raw) > 0) {
@@ -271,12 +351,13 @@ mod_prediction_panel_server <- function(id, shared_data) {
             Importance = imp_raw,
             row.names = NULL
           ) %>%
+            # Arrange by importance so the plot is ordered from least to most important
             arrange(Importance)
           
           p <- plot_ly(
-            data = imp_df, 
+            data = imp_df, # Use the full imp_df data frame
             x = ~Importance, 
-            y = ~factor(Feature, levels = Feature),
+            y = ~factor(Feature, levels = Feature), # Use the sorted factor levels
             type = 'bar', 
             orientation = 'h'
           ) %>%
@@ -292,6 +373,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
           importance_plot_obj(NULL)
         }
         
+        # Detailed prediction output table
         output$contents <- renderUI({
           
           pred_median <- round(predictions$median)
