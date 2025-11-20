@@ -1,5 +1,4 @@
-# --- 0. Load Required Libraries ---
-# Make sure these are installed: install.packages(c("tidyverse", "caret", "ranger", "jsonlite", "doParallel", "foreach"))
+
 library(tidyverse)
 library(caret)
 library(ranger)
@@ -7,13 +6,11 @@ library(jsonlite)
 library(doParallel)
 library(foreach)
 
-# --- 1. Define File Paths and Configuration ---
 cat("Setting up file paths...\n")
-# Create the 'models' directory if it doesn't exist
 dir.create("models", showWarnings = FALSE)
 
 MODEL_PATHS <- list(
-  lower = "models/ranger_lower.rds",    # Switched to .rds format for R objects
+  lower = "models/ranger_lower.rds",    
   median = "models/ranger_median.rds",
   upper = "models/ranger_upper.rds",
   preproc = "models/ranger_preproc_info.rds"
@@ -21,50 +18,39 @@ MODEL_PATHS <- list(
 DATA_FILE <- "detailed_car_sales_data_train.csv"
 CONFIG_FILE <- "ui_config.json"
 
-# --- 2. Load Data and Configuration ---
-cat("Loading data and config...\n")
 if (!file.exists(CONFIG_FILE) || !file.exists(DATA_FILE)) {
   stop("Configuration or Data file not found. Please check paths.")
 }
 config_data <- fromJSON(CONFIG_FILE)
-df <- read.csv(DATA_FILE, stringsAsFactors = TRUE) # Read strings as factors by default
+df <- read.csv(DATA_FILE, stringsAsFactors = TRUE) 
 
-# --- 3. Prepare Data Based on UI Configuration ---
-# This is a critical step for consistency. It ensures that the factors created
-# during training have the exact same levels as the dropdowns in the Shiny UI.
+
 cat("Preparing data preprocessing info from UI config...\n")
 preproc_config <- config_data
 all_factor_levels <- preproc_config
-all_factor_levels$manufacturer_models <- NULL # Remove nested list
-all_factor_levels$color_map <- NULL          # Remove color map
+all_factor_levels$manufacturer_models <- NULL 
+all_factor_levels$color_map <- NULL         
 all_factor_levels$manufacturer <- names(preproc_config$manufacturer_models)
 all_factor_levels$model <- unique(unlist(preproc_config$manufacturer_models))
 
-cat("Preprocessing data (ensuring factor level consistency)...\n")
-# Loop through the columns defined in the config and apply the levels
 df_processed <- df
 for (col in names(all_factor_levels)) {
   if (col %in% names(df_processed)) {
-    # Ensure all levels from the config are present in the factor
     df_processed[[col]] <- factor(df_processed[[col]], levels = all_factor_levels[[col]])
   }
 }
 
-# Final safety check to remove any rows that might have NAs after processing
 df_processed <- na.omit(df_processed)
 
-# --- 4. Split Data into Training and Validation Sets ---
 cat("Splitting into train/validation sets...\n")
 set.seed(42) 
 train_indices <- createDataPartition(df_processed$price, p = 0.8, list = FALSE)
 train_data <- df_processed[train_indices, ]
 validation_data <- df_processed[-train_indices, ]
 
-# --- 5. Train Models IN PARALLEL with Ranger ---
 cat("Starting parallel model training...\n")
 
-# Set up the parallel backend
-# Use one less than the total number of cores to keep the system responsive
+
 num_cores <- max(1, detectCores() - 1)
 cat(paste("Using", num_cores, "cores for training.\n"))
 cl <- makeCluster(num_cores)
@@ -72,8 +58,6 @@ registerDoParallel(cl)
 
 quantiles_to_train <- c(lower = 0.05, median = 0.50, upper = 0.95)
 
-# Use foreach to run the training loop in parallel
-# .packages = 'ranger' ensures each parallel worker has the ranger library loaded
 trained_models <- foreach(
   q_val = quantiles_to_train, 
   q_name = names(quantiles_to_train),
@@ -81,34 +65,27 @@ trained_models <- foreach(
 ) %dopar% {
   
   cat(paste("Worker", Sys.getpid(), "is training the", q_name, "model (quantile:", q_val, ")...\n"))
-  
-  # Ranger's key advantage: it handles factors directly and efficiently.
-  # The formula `price ~ .` tells ranger to predict 'price' using all other columns.
-  # `quantreg = TRUE` activates quantile regression mode.
+
   model <- ranger(
     formula = price ~ ., 
     data = train_data,
     quantreg = TRUE,
-    num.trees = 2000,        # A good starting point
-    mtry = floor(sqrt(ncol(train_data) - 1)), # A standard default for mtry
-    min.node.size = 30,      # Tuned for better quantile precision
+    num.trees = 2000,       
+    mtry = floor(sqrt(ncol(train_data) - 1)), 
+    min.node.size = 30,  
     seed = 42,
     importance = 'impurity',
-    verbose = FALSE         # Set to FALSE for cleaner parallel output
+    verbose = FALSE       
   )
   
-  # The loop returns the trained model object
   return(model)
 }
 
-# Stop the parallel cluster
 stopCluster(cl)
 cat("\nParallel training complete.\n")
 
-# Assign names to the list of models returned by foreach
 names(trained_models) <- names(quantiles_to_train)
 
-# --- 6. Save the Trained Models ---
 cat("Saving trained models...\n")
 for (q_name in names(trained_models)) {
   model_path <- MODEL_PATHS[[q_name]]
@@ -116,9 +93,6 @@ for (q_name in names(trained_models)) {
   cat(paste("  - Saved", q_name, "model to", model_path, "\n"))
 }
 
-# --- 7. Save Preprocessing Information ---
-# This is now much simpler. The Shiny app only needs to know the factor levels
-# to prepare the new data for prediction.
 cat("Saving preprocessing information...\n")
 preproc_info_to_save <- list(
   all_levels = all_factor_levels 

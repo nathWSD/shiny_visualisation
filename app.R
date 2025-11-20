@@ -20,18 +20,16 @@ library(rstudioapi)
 setwd(dirname(getActiveDocumentContext()$path))
 getwd()
 
-# --- Source Modules ---
 source("modules/mod_dynamic_plot.R")
 source("modules/mod_prediction_panel.R")
 
-# --- CORRECTED: Resource path now correctly points to your image folder ---
 shiny::addResourcePath(prefix = 'detailed_images', directoryPath = 'detailed_images')
 
 
 ui <- fluidPage(
   theme = shinytheme("cerulean"),
   navbarPage("Auto Market",
-             selected = "Prediction Panel", # Start on the prediction panel for easier testing
+             selected = "Prediction Panel", 
              tabPanel("Dynamic Plot", mod_dynamic_plot_ui("plot")),
              tabPanel("Prediction Panel", mod_prediction_panel_ui("predict"))
   )

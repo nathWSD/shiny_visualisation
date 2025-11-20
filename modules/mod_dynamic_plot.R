@@ -17,7 +17,6 @@ mod_dynamic_plot_ui <- function(id) {
   tagList(
     tags$head(
       tags$style(HTML(paste0("
-        /* --- General Layout & Panel Styling (Unchanged) --- */
         #", ns("plot_container"), " {
           height: calc(100vh - 80px); display: flex; flex-direction: row;
           align-items: stretch; padding: 20px; gap: 20px;
@@ -28,7 +27,6 @@ mod_dynamic_plot_ui <- function(id) {
         }
         #", ns("generate_plot"), " { margin-top: 20px; width: 100%; }
 
-        /* --- 2. ADD THE CSS FOR THE CUSTOM TOOLTIPS --- */
         .tooltip-container {
           position: relative;
           display: inline-block;
@@ -83,7 +81,6 @@ mod_dynamic_plot_ui <- function(id) {
 mod_dynamic_plot_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     
-    # This observer for updating dropdowns is correct and does not cause the issue.
     observe({
       df <- shared_data()
       req(df, input$plot_type)
@@ -100,24 +97,17 @@ mod_dynamic_plot_server <- function(id, shared_data) {
       }
     })
     
-    # 1. This reactiveVal will store our final plot. It starts NULL.
     plot_to_render <- reactiveVal(NULL)
     
-    # 2. This observeEvent listens ONLY to the button click. This is the sole trigger.
     observeEvent(input$generate_plot, {
-      
-      # 3. Immediately isolate all required input values into local variables.
-      # This is the most crucial step. The rest of the code will only use
-      # these non-reactive variables, completely breaking the reactive link.
+
       current_plot_type <- isolate(input$plot_type)
       current_x_col <- isolate(input$x_col)
       current_y_col <- isolate(input$y_col)
       df <- isolate(shared_data())
       
-      # Ensure we actually have valid values before proceeding.
       req(df, current_x_col, current_y_col, current_plot_type)
       
-      # 4. Perform all plotting logic using ONLY the local variables.
       p <- switch(
         current_plot_type,
         "Scatter Plot" = {
@@ -143,7 +133,6 @@ mod_dynamic_plot_server <- function(id, shared_data) {
         }
       )
       
-      # Also use the local, non-reactive variables for the layout.
       p <- p %>% layout(
         paper_bgcolor = 'rgba(0,0,0,0)',
         plot_bgcolor = 'rgba(0,0,0,0)',
@@ -152,17 +141,12 @@ mod_dynamic_plot_server <- function(id, shared_data) {
         font = list(color = '#333333')
       )
       
-      # 5. Store the resulting "sanitized" plot in our reactiveVal.
       plot_to_render(p)
       
-    }, ignoreInit = TRUE) # End of observeEvent
-    
-    
-    # 6. The output rendering logic ONLY depends on our reactiveVal.
-    # It has no knowledge of the input dropdowns or the button.
+    }, ignoreInit = TRUE) 
+
     output$dynamic_plot <- renderPlotly({
       
-      # If the reactiveVal is NULL (button never clicked), show the placeholder.
       if (is.null(plot_to_render())) {
         return(
           plot_ly() %>%
@@ -180,7 +164,6 @@ mod_dynamic_plot_server <- function(id, shared_data) {
         )
       }
       
-      # Otherwise, render the plot that is stored inside the reactiveVal.
       plot_to_render()
     })
     

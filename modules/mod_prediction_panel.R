@@ -1,4 +1,3 @@
-# Helper function for UI tooltips (no changes)
 labelWithTooltip <- function(labelText, tooltipText) {
   tags$label(
     labelText,
@@ -11,7 +10,6 @@ labelWithTooltip <- function(labelText, tooltipText) {
 }
 
 
-# --- mod_prediction_panel_ui Function (Corrected for Uniform Width) ---
 
 mod_prediction_panel_ui <- function(id) {
   ns <- NS(id)
@@ -112,7 +110,6 @@ mod_prediction_panel_ui <- function(id) {
           )
         ),
         
-        # --- END OF NEW SEGMENT ---
         
         tags$br(),
         actionButton(ns("submitbutton"), "Predict Price", class = "btn btn-primary btn-lg btn-block")
@@ -139,7 +136,6 @@ mod_prediction_panel_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
     
-    # --- STARTUP AND REACTIVE LOGIC ---
     
     shinyjs::disable("submitbutton")
     
@@ -166,9 +162,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
     trained_model_bundle <- reactiveVal(NULL)
     importance_plot_obj <- reactiveVal(NULL)
     
-    # --- Main Prediction Event ---
     observeEvent(input$submitbutton, {
-      # Final check that all required inputs are present
       req(input$model, input$car_images, cancelOutput = TRUE)
       
       withProgress(message = 'Processing Request', style = "old", value = 0, {
@@ -196,7 +190,6 @@ mod_prediction_panel_server <- function(id, shared_data) {
         
         current_bundle <- trained_model_bundle()
         
-        # --- 2. IMAGE ANALYSIS ---
         setProgress(value = 0.3, detail = "Analyzing car images...")
         
         state_description_map <- c(
@@ -232,7 +225,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
           )
         })
         
-        # --- 3. TABULAR DATA PREPARATION ---
+        #  TABULAR DATA PREPARATION ---
         setProgress(value = 0.5, detail = "Preparing final data...")
         
         newdata <- data.frame(
@@ -263,7 +256,6 @@ mod_prediction_panel_server <- function(id, shared_data) {
           }
         }
         
-        # --- 4. RANGER PRICE PREDICTION ---
         setProgress(value = 0.9, detail = "Generating price prediction...")
         predictions <- list(
           lower = predict(current_bundle$models$lower, data = newdata, type = "quantiles", quantiles = 0.05)$predictions[,1],
@@ -271,7 +263,6 @@ mod_prediction_panel_server <- function(id, shared_data) {
           upper = predict(current_bundle$models$upper, data = newdata, type = "quantiles", quantiles = 0.95)$predictions[,1]
         )
         
-        # --- 5. RENDER OUTPUTS ---
         imp_raw <- ranger::importance(current_bundle$models$median)
         
         if (length(imp_raw) > 0) {
@@ -280,13 +271,12 @@ mod_prediction_panel_server <- function(id, shared_data) {
             Importance = imp_raw,
             row.names = NULL
           ) %>%
-            # Arrange by importance so the plot is ordered from least to most important
             arrange(Importance)
           
           p <- plot_ly(
-            data = imp_df, # Use the full imp_df data frame
+            data = imp_df, 
             x = ~Importance, 
-            y = ~factor(Feature, levels = Feature), # Use the sorted factor levels
+            y = ~factor(Feature, levels = Feature),
             type = 'bar', 
             orientation = 'h'
           ) %>%
@@ -302,7 +292,6 @@ mod_prediction_panel_server <- function(id, shared_data) {
           importance_plot_obj(NULL)
         }
         
-        # Detailed prediction output table
         output$contents <- renderUI({
           
           pred_median <- round(predictions$median)
