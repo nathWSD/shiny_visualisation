@@ -1,29 +1,36 @@
-# Helper function for UI tooltips (no changes)
+library(shiny)
+library(jsonlite)
+library(shinyjs)
+library(bslib)
+library(plotly)
+
+
+# --- Helper: Tooltip ---
 labelWithTooltip <- function(labelText, tooltipText) {
-  tags$label(
-    labelText,
-    tags$span(
-      class = "tooltip-container",
-      shiny::icon("info-circle", style = "margin-left: 5px; color: #007bff; cursor: help;"),
-      tags$span(class = "tooltip-text", tooltipText)
+  tags$div(
+    class = "d-flex align-items-center gap-1 mb-1",
+    tags$span(labelText, style = "font-weight: 500;"),
+    tooltip(
+      trigger = tryCatch(bsicons::bs_icon("info-circle-fill", class = "text-primary", size = "0.9rem"), error = function(e) icon("info-circle")),
+      tooltipText
     )
   )
 }
 
-
-
-
-# --- mod_prediction_panel_ui Function (Corrected for Uniform Width) ---
-
+# --- UI MODULE ---
 mod_prediction_panel_ui <- function(id) {
   ns <- NS(id)
   
+  # --- Config Loading ---
   config_path <- "ui_config.json"
   if (file.exists(config_path)) {
     ui_config <- fromJSON(config_path)
     color_css_map <- ui_config$color_map
   } else {
-    ui_config <- list(manufacturer_models = list("ERROR" = c("ui_config.json not found")), body_type = "SUV", transmission = "Automatic", drivetrain = "AWD", exterior_colour = "black", interior_colour = "black", fuel_type = "gasoline", engine_type = "Inline")
+    ui_config <- list(manufacturer_models = list("ERROR" = c("ui_config.json not found")), 
+                      body_type = "SUV", transmission = "Automatic", drivetrain = "AWD", 
+                      exterior_colour = "black", interior_colour = "black", fuel_type = "gasoline", 
+                      engine_type = "Inline")
     color_css_map <- list("black" = "#000000")
   }
   
@@ -40,163 +47,154 @@ mod_prediction_panel_ui <- function(id) {
   exterior_color_data <- prepare_color_data(ui_config$exterior_colour)
   interior_color_data <- prepare_color_data(ui_config$interior_colour)
   
-  render_js <- I(
-    "{
+  render_js <- I("{
       item: function(item, escape) { return '<div><span class=\"color-swatch\" style=\"background-color: ' + item.color_code + ';\"></span>' + escape(item.label) + '</div>'; },
       option: function(item, escape) { return '<div><span class=\"color-swatch\" style=\"background-color: ' + item.color_code + ';\"></span>' + escape(item.label) + '</div>'; }
-    }"
-  )
+    }")
   
   tagList(
     shinyjs::useShinyjs(),
     tags$head(
       tags$style(HTML(paste0("
-        #", ns("main_container"), " { display: flex; flex-direction: row; height: calc(100vh - 80px); padding: 20px; gap: 20px; }
-        #", ns("sidebar"), " { width: 50%; flex: 0 0 50%; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 25px; overflow-y: auto; }
-        #", ns("main_panel"), " { width: 50%; flex: 1 1 50%; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 25px; overflow-y: auto; }
-        #", ns("sidebar"), " .form-group { margin-bottom: 20px; }
-        .color-swatch { display: inline-block; width: 15px; height: 15px; border-radius: 3px; margin-right: 8px; vertical-align: middle; border: 1px solid #ccc; }
-        .tooltip-container { position: relative; display: inline-block; }
-        .tooltip-text { visibility: hidden; width: 200px; background-color: #333; color: #fff; text-align: center; border-radius: 6px; padding: 5px 10px; position: absolute; z-index: 10; bottom: 110%; left: 50%; margin-left: -100px; opacity: 0; transition: opacity 0.3s; }
-        .tooltip-container:hover .tooltip-text { visibility: visible; opacity: 1; }
+        /* --- 1. BIGGER HEADERS --- */
+        .card-header { font-size: 1.6rem !important; font-weight: 700 !important; padding-top: 15px !important; padding-bottom: 15px !important; }
+        .accordion-button { font-size: 1.25rem !important; font-weight: 600 !important; color: #2c3e50; }
+        
+        /* --- 2. SLIDER LABEL CLEANUP (Show Every 3rd) --- */
+        /* Step 1: Hide all grid numbers by default */
+        .irs-grid-text {
+            visibility: hidden !important;
+        }
+        /* Step 2: Show every 3rd number (1, 4, 7, etc.) */
+        .irs-grid-text:nth-of-type(3n+1) {
+            visibility: visible !important;
+        }
+        /* Step 3: Always show the very last number so users know the max limit */
+        .irs-grid-text:last-of-type {
+            visibility: visible !important;
+        }
+        /* Optional: Make slider bar blue to match theme */
+        .irs--shiny .irs-bar { border-top: 1px solid #0d6efd; border-bottom: 1px solid #0d6efd; background: #0d6efd; }
+        .irs--shiny .irs-from, .irs--shiny .irs-to, .irs--shiny .irs-single { background-color: #0d6efd; }
+
+        /* --- 3. OTHER STYLES --- */
+        .color-swatch { display: inline-block; width: 15px; height: 15px; border-radius: 50%; margin-right: 8px; vertical-align: middle; border: 1px solid #ddd; }
+        .price-hero-container { text-align: center; padding: 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 12px; border: 1px solid #dee2e6; }
+        .price-main { font-size: 3rem; font-weight: 800; color: #2c3e50; line-height: 1.2; }
+        .price-sub { font-size: 1.1rem; color: #6c757d; font-weight: 500; margin-top: 5px; }
+        .price-range-badge { background-color: #e7f1ff; color: #0d6efd; padding: 5px 15px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; display: inline-block; margin-top: 10px;}
+        .scrollable-card-body { overflow-y: auto; max-height: calc(100vh - 180px); }
       ")))
     ),
     
-    div(
-      id = ns("main_container"),
+    # --- MAIN LAYOUT ---
+    page_fillable(
+      padding = 20,
+      gap = 20,
       
-      div(
-        id = ns("sidebar"),
-        h3("Input Car Specifications"),
+      layout_columns(
+        col_widths = c(6, 6),
+        fill = TRUE,
         
-        # --- Einklappbare Kategorien mit bsCollapse ---
-        bsCollapse(
-          id = ns("collapse_inputs"),
-          multiple = TRUE,                # mehrere Abschnitte gleichzeitig offen
-          open = "General Information",  # optional: Startpanel
-          
-          # Hier hab ich verändert
-          # Kategorie 1
-          bsCollapsePanel(
-            "General Information",
-            fluidRow(
-              column(6, selectInput(ns("manufacturer"),
-                                    label = labelWithTooltip("Manufacturer:", "Select car manufacturer."),
-                                    choices = names(ui_config$manufacturer_models), width = "100%")),
-              column(6, uiOutput(ns("model_ui")))
-            ),
-            fluidRow(
-              column(6, sliderInput(ns("year_of_manufacture"),
-                                    label = labelWithTooltip("Year:", "Year manufactured."),
-                                    min = 1940, max = 2025, value = 2018, step = 1, sep = "", width = "100%")),
-              column(6, selectInput(ns("body_type"),
-                                    label = labelWithTooltip("Body Type:", "Select car's body style."),
-                                    choices = ui_config$body_type, width = "100%"))
+        # --- LEFT CARD: INPUTS ---
+        card(
+          full_screen = TRUE,
+          card_header(class = "bg-primary text-white", "Vehicle Configuration"),
+          card_body(
+            class = "scrollable-card-body",
+            accordion(
+              id = ns("collapse_inputs"),
+              multiple = TRUE, 
+              open = "General Information",
+              
+              accordion_panel(
+                "General Information",
+                icon = icon("car"),
+                layout_columns(
+                  col_widths = c(6, 6),
+                  selectInput(ns("manufacturer"), labelWithTooltip("Manufacturer", "Select brand."), choices = names(ui_config$manufacturer_models), width = "100%"),
+                  uiOutput(ns("model_ui"))
+                ),
+                layout_columns(
+                  col_widths = c(6, 6),
+                  sliderInput(ns("year_of_manufacture"), labelWithTooltip("Year", "Year of production."), min = 1940, max = 2025, value = 2018, step = 1, sep = "", width = "100%"),
+                  selectInput(ns("body_type"), labelWithTooltip("Body Type", "Chassis style."), choices = ui_config$body_type, width = "100%")
+                )
+              ),
+              
+              accordion_panel(
+                "Drive & Engine",
+                icon = icon("cogs"),
+                layout_columns(
+                  col_widths = c(6, 6),
+                  selectInput(ns("engine_type"), labelWithTooltip("Engine Type", "Configuration."), choices = ui_config$engine_type, width = "100%"),
+                  sliderInput(ns("engine_displacement_L"), labelWithTooltip("Displacement (L)", "Size in Liters."), min = 0.6, max = 8.0, value = 2.0, step = 0.1, width = "100%")
+                ),
+                layout_columns(
+                  col_widths = c(6, 6),
+                  sliderInput(ns("engine_cylinders"), labelWithTooltip("Cylinders", "Count."), min = 0, max = 16, value = 4, step = 1, width = "100%"),
+                  selectInput(ns("drivetrain"), labelWithTooltip("Drivetrain", "Wheel drive system."), choices = ui_config$drivetrain, width = "100%")
+                ),
+                layout_columns(
+                  col_widths = c(6, 6),
+                  selectInput(ns("transmission"), labelWithTooltip("Transmission", "Gearbox type."), choices = ui_config$transmission, width = "100%"),
+                  selectInput(ns("fuel_type"), labelWithTooltip("Fuel Type", "Fuel source."), choices = ui_config$fuel_type, width = "100%")
+                )
+              ),
+              
+              accordion_panel(
+                "Consumption & Performance",
+                icon = icon("tachometer-alt"),
+                layout_columns(
+                  col_widths = c(6, 6),
+                  sliderInput(ns("city_consumption"), labelWithTooltip("City (L/100km)", "Urban consumption."), min = 2, max = 25, value = 11.0, step = 0.1, width = "100%"),
+                  sliderInput(ns("highway_consumption"), labelWithTooltip("Highway (L/100km)", "Extra-urban consumption."), min = 0, max = 20, value = 8.5, step = 0.1, width = "100%")
+                ),
+                sliderInput(ns("mileage"), labelWithTooltip("Mileage (km)", "Total distance."), min = 0, max = 800000, value = 80000, step = 500, width = "100%")
+              ),
+              
+              accordion_panel(
+                "Equipment & Design",
+                icon = icon("paint-brush"),
+                layout_columns(
+                  col_widths = c(6, 6),
+                  selectizeInput(ns("exterior_colour"), labelWithTooltip("Exterior Colour", "Paint."), choices = ui_config$exterior_colour, width = "100%", options = list(options = exterior_color_data, valueField = 'value', labelField = 'label', searchField = 'label', render = render_js)),
+                  selectizeInput(ns("interior_colour"), labelWithTooltip("Interior Colour", "Upholstery."), choices = ui_config$interior_colour, width = "100%", options = list(options = interior_color_data, valueField = 'value', labelField = 'label', searchField = 'label', render = render_js))
+                ),
+                layout_columns(
+                  col_widths = c(6, 6),
+                  sliderInput(ns("passengers"), labelWithTooltip("Passengers", "Seats."), min = 2, max = 14, value = 5, step = 1, width = "100%"),
+                  sliderInput(ns("doors"), labelWithTooltip("Doors", "Door count."), min = 2, max = 5, value = 4, step = 1, width = "100%")
+                )
+              )
             )
           ),
           
-          # Kategorie 2
-          bsCollapsePanel(
-            "Drive & Engine",
-            fluidRow(
-              column(6, selectInput(ns("engine_type"),
-                                    label = labelWithTooltip("Engine Type:", "Select engine configuration."),
-                                    choices = ui_config$engine_type, width = "100%")),
-              column(6, sliderInput(ns("engine_displacement_L"),
-                                    label = labelWithTooltip("Displacement (L):", "Engine displacement."),
-                                    min = 0.6, max = 8.0, value = 2.0, step = 0.1, width = "100%"))
-            ),
-            fluidRow(
-              column(6, sliderInput(ns("engine_cylinders"),
-                                    label = labelWithTooltip("Cylinders:", "Number of cylinders."),
-                                    min = 0, max = 16, value = 4, step = 1, width = "100%")),
-              column(6, selectInput(ns("drivetrain"),
-                                    label = labelWithTooltip("Drivetrain:", "Select drivetrain type."),
-                                    choices = ui_config$drivetrain, width = "100%"))
-            ),
-            fluidRow(
-              column(6, selectInput(ns("transmission"),
-                                    label = labelWithTooltip("Transmission:", "Select transmission type."),
-                                    choices = ui_config$transmission, width = "100%")),
-              column(6, selectInput(ns("fuel_type"),
-                                    label = labelWithTooltip("Fuel Type:", "Select fuel type."),
-                                    choices = ui_config$fuel_type, width = "100%"))
-            )
-          ),
-          
-          # Kategorie 3
-          bsCollapsePanel(
-            "Consumption & Performance",
-            fluidRow(
-              column(6, sliderInput(ns("city_consumption"),
-                                    label = labelWithTooltip("City L/100km:", "Fuel consumption in the city."),
-                                    min = 2, max = 25, value = 11.0, step = 0.1, width = "100%")),
-              column(6, sliderInput(ns("highway_consumption"),
-                                    label = labelWithTooltip("Highway L/100km:", "Fuel consumption on highway."),
-                                    min = 0, max = 20, value = 8.5, step = 0.1, width = "100%"))
-            ),
-            fluidRow(
-              column(12, sliderInput(ns("mileage"),
-                                     label = labelWithTooltip("Mileage (km):", "Total distance traveled."),
-                                     min = 0, max = 800000, value = 80000, step = 500, width = "100%"))
-            )
-          ),
-          
-          # Kategorie 4
-          bsCollapsePanel(
-            "Equipment & Design",
-            fluidRow(
-              column(6, selectizeInput(ns("exterior_colour"),
-                                       label = labelWithTooltip("Exterior Colour:", "Select exterior colour."),
-                                       choices = ui_config$exterior_colour, width = "100%",
-                                       options = list(options = exterior_color_data, valueField = 'value',
-                                                      labelField = 'label', searchField = 'label', render = render_js))),
-              column(6, selectizeInput(ns("interior_colour"),
-                                       label = labelWithTooltip("Interior Colour:", "Select interior colour."),
-                                       choices = ui_config$interior_colour, width = "100%",
-                                       options = list(options = interior_color_data, valueField = 'value',
-                                                      labelField = 'label', searchField = 'label', render = render_js)))
-            ),
-            fluidRow(
-              column(6, sliderInput(ns("passengers"),
-                                    label = labelWithTooltip("Passengers:", "Number of seats."),
-                                    min = 2, max = 14, value = 5, step = 1, width = "100%")),
-              column(6, sliderInput(ns("doors"),
-                                    label = labelWithTooltip("Doors:", "Number of doors."),
-                                    min = 2, max = 5, value = 4, step = 1, width = "100%")),
-              column(6,
-                     h4("Physical Condition assessment"), # A smaller header works better here
-                     fileInput(
-                       ns("car_images"),
-                       label = labelWithTooltip(HTML("Upload Images <strong style='color:red;'>*</strong>"), "Upload one or more photos. This is required."),
-                       multiple = TRUE, 
-                       accept = c("image/jpeg", "image/png", "image/jpg")
-                     ))
+          card_footer(
+            class = "bg-light",
+            tags$div(
+              class = "d-grid gap-2",
+              fileInput(ns("car_images"), label = NULL, buttonLabel = "Upload Photos...", placeholder = "Required for AI Analysis", multiple = TRUE, accept = c("image/jpeg", "image/png", "image/jpg"), width = "100%"),
+              actionButton(ns("submitbutton"), "Predict Price", icon = icon("calculator"), class = "btn-primary btn-lg")
             )
           )
         ),
         
-        tags$br(),
-        # ActionButton löst Vorhersage aus
-        actionButton(ns("submitbutton"), "Predict Price", class = "btn btn-primary btn-lg btn-block")
-      ),
-      
-      # Ergbenisanzeige
-      div(
-        id = ns("main_panel"),
-        h3('Prediction Output'),
-        # UI Output zeigt Preistabelle
-        div(style = "flex: 0 0 auto; padding: 10px; border-radius: 8px; background-color: rgba(245, 245, 245, 0.9);", uiOutput(ns("contents"))),
-        hr(),
-        # Zeigt Balkendiagram
-        div(style = "flex: 1 1 auto; position: relative;", h4("Model Feature Importance", style = "text-align: center;"), plotlyOutput(ns("importance_plot"), height = "95%"))
+        # --- RIGHT CARD: RESULTS ---
+        card(
+          full_screen = TRUE,
+          card_header(class = "bg-primary text-white", "Market Valuation"),
+          card_body(
+            uiOutput(ns("contents")),
+            hr(),
+            div(style = "height: 400px;", plotlyOutput(ns("importance_plot"), height = "100%"))
+          )
+        )
       )
     )
   )
 }
 
-
-# --- Server Function ---
 mod_prediction_panel_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
@@ -426,5 +424,3 @@ mod_prediction_panel_server <- function(id, shared_data) {
     })
   })
 }
-
-
