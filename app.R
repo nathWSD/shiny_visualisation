@@ -20,6 +20,7 @@ library(shinyBS)
 
 setwd(dirname(getActiveDocumentContext()$path))
 getwd()
+#4.5.2 -> R version
 
 source("modules/mod_dynamic_plot.R")
 source("modules/mod_prediction_panel.R")
