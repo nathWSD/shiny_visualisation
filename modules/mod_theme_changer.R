@@ -21,7 +21,7 @@ mod_theme_changer_ui <- function(id) {
     "Warm Ubuntu Style (United)"       = "united",
     "Clean Flat Blue (Yeti)"           = "yeti",
     
-    # --- Dark Themes (Explicitly Marked) ---
+    # --- Dark Themes ---
     "⚫ Midnight Black (Cyborg)"       = "cyborg",
     "⚫ Standard Dark Mode (Darkly)"   = "darkly",
     "⚫ Muted Grey (Slate)"            = "slate",
@@ -50,7 +50,6 @@ mod_theme_changer_ui <- function(id) {
         ),
         
         # Column 2: Visual Preview
-        # These elements exist solely to show what the theme looks like
         column(
           width = 6,
           style = "border-left: 1px solid #ddd; padding-left: 15px;",
