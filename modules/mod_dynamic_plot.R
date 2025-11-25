@@ -24,9 +24,7 @@ mod_dynamic_plot_ui <- function(id) {
           padding: 20px; 
           gap: 20px;
         }
-        /* Use Bootstrap CSS variables (var(--bs-...)) 
-           This allows the box to automatically turn black/grey in Dark Mode 
-        */
+        
         #", ns("plot_sidebar"), ", #", ns("plot_main_panel"), " {
           background-color: var(--bs-card-bg, #ffffff); 
           color: var(--bs-body-color, #333333);
@@ -95,7 +93,7 @@ mod_dynamic_plot_ui <- function(id) {
 mod_dynamic_plot_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     
-    # 1. Update Dropdowns based on data
+    
     observe({
       df <- shared_data()
       req(df, input$plot_type)
@@ -112,10 +110,10 @@ mod_dynamic_plot_server <- function(id, shared_data) {
       }
     })
     
-    # 2. Reactive trigger for plot generation
+    
     # We separate the "calculation" from the "rendering" to handle themes better
     plot_geometry <- reactive({
-      input$generate_plot # Trigger on button click
+      input$generate_plot 
       
       isolate({
         req(shared_data(), input$x_col, input$y_col, input$plot_type)
@@ -129,34 +127,27 @@ mod_dynamic_plot_server <- function(id, shared_data) {
       })
     })
     
-    # 3. Render Plotly
-    # This runs when data changes OR when the THEME changes
+    # Render Plotly
     output$dynamic_plot <- renderPlotly({
       
-      # A. Theme Extraction Logic
-      # We ask bslib for the current colors so we can paint the plot correctly
       theme <- bslib::bs_current_theme()
       
-      # Defaults (Light mode)
       fg_col <- "#333333"
-      bg_col <- "rgba(0,0,0,0)" # Transparent
+      bg_col <- "rgba(0,0,0,0)" 
       primary_col <- "#007bff"
       grid_col <- "rgba(128, 128, 128, 0.2)"
       
-      # Overwrite defaults if a bslib theme is active
       if (bslib::is_bs_theme(theme)) {
         vars <- bslib::bs_get_variables(theme, c("body-color", "card-bg", "primary", "border-color"))
         fg_col <- vars[["body-color"]]
-        # We use transparent for plot background so it blends with the card
         bg_col <- "rgba(0,0,0,0)" 
         primary_col <- vars[["primary"]]
         grid_col <- vars[["border-color"]] # Use the theme's border color for grid lines
       }
       
-      # B. Get Data (from the reactive above)
+      # Get Data (from the reactive above)
       geom <- plot_geometry()
       
-      # Handle "Not generated yet" state
       if (is.null(geom)) {
         return(
           plot_ly() %>%
@@ -175,7 +166,7 @@ mod_dynamic_plot_server <- function(id, shared_data) {
         )
       }
       
-      # C. Build the Plot
+      # Build the Plot
       df <- geom$df
       p <- NULL
       
@@ -196,7 +187,7 @@ mod_dynamic_plot_server <- function(id, shared_data) {
                      marker = list(color = primary_col))
       }
       
-      # D. Apply Theme Layout
+      # Apply Theme Layout
       p %>% layout(
         paper_bgcolor = bg_col,
         plot_bgcolor = bg_col,
