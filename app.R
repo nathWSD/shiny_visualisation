@@ -27,7 +27,7 @@ if (rstudioapi::isAvailable()) {
 }
 
 # --- Source Modules ---
-# Ensure these files actually exist in your folder structure
+
 source("modules/mod_dynamic_plot.R")
 source("modules/mod_prediction_panel.R")
 source("modules/mod_theme_changer.R") 
