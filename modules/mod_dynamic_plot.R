@@ -1,4 +1,3 @@
-# modules/mod_dynamic_plot.R
 
 labelWithTooltip <- function(labelText, tooltipText) {
   tags$label(
@@ -109,9 +108,7 @@ mod_dynamic_plot_server <- function(id, shared_data) {
         updateSelectInput(session, "y_col", choices = numeric_cols)
       }
     })
-    
-    
-    # We separate the "calculation" from the "rendering" to handle themes better
+        
     plot_geometry <- reactive({
       input$generate_plot 
       
@@ -142,10 +139,10 @@ mod_dynamic_plot_server <- function(id, shared_data) {
         fg_col <- vars[["body-color"]]
         bg_col <- "rgba(0,0,0,0)" 
         primary_col <- vars[["primary"]]
-        grid_col <- vars[["border-color"]] # Use the theme's border color for grid lines
+        grid_col <- vars[["border-color"]] 
       }
       
-      # Get Data (from the reactive above)
+      # Get Data
       geom <- plot_geometry()
       
       if (is.null(geom)) {
