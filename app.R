@@ -1,7 +1,6 @@
 # reticulate::py_install("h5py")
 
 library(shiny)
-# library(shinythemes) 
 library(data.table)
 library(RCurl)
 library(randomForest)
@@ -13,7 +12,6 @@ library(rlang)
 library(dplyr)
 library(keras)
 library(tensorflow)
-#library(xgboost)
 library(Matrix)
 library(caret)
 library(jsonlite)
@@ -40,15 +38,13 @@ source("modules/mod_dynamic_plot.R")
 source("modules/mod_prediction_panel.R")
 source("modules/mod_theme_changer.R") 
 
-shiny::addResourcePath(prefix = 'detailed_images', directoryPath = 'detailed_images')
+
 
 # --- UI ---
-# Fix: navbarPage should be the top-level function. 
-# The theme argument goes here.
 ui <- navbarPage(
   title = "Auto Market",
   
-  # 1. Initialize with Bootstrap 5 (CRITICAL for your module to work)
+  
   theme = bslib::bs_theme(bootswatch = "cerulean", version = 5),
   
   selected = "Prediction Panel", 
@@ -61,10 +57,10 @@ ui <- navbarPage(
 # --- SERVER ---
 server <- function(input, output, session) {
   
-  # Automatically style plots to match the chosen theme
+  
   thematic::thematic_shiny()
   
-  data_file_path <- "detailed_car_sales_data_train.csv"
+  data_file_path <- "detailed_car_sales_data_all.csv"
   
   if (!file.exists(data_file_path)) {
     stop(paste("Error: The data file was not found.",

@@ -17,7 +17,7 @@ labelWithTooltip <- function(labelText, tooltipText) {
 mod_prediction_panel_ui <- function(id) {
   ns <- NS(id)
   
-  # --- Config Loading (Same as before) ---
+  # --- Config Loading ---
   config_path <- "ui_config.json"
   if (file.exists(config_path)) {
     ui_config <- fromJSON(config_path)
@@ -90,8 +90,6 @@ mod_prediction_panel_ui <- function(id) {
       padding = 20,
       gap = 20,
       
-      # We define the height of the columns here (e.g., 85% of Viewport Height)
-      # This ensures the browser window doesn't scroll, but the cards fill this space.
       layout_columns(
         col_widths = c(6, 6),
         height = "85vh", 
@@ -99,12 +97,12 @@ mod_prediction_panel_ui <- function(id) {
         
         # --- LEFT CARD: INPUTS ---
         card(
-          class = "fixed-height-card", # <--- APPLIED FIX HERE
+          class = "fixed-height-card",
           full_screen = TRUE,
           card_header(class = "bg-primary text-white", "Vehicle Configuration"),
           
           card_body(
-            class = "scrollable-card-body", # <--- APPLIED FIX HERE
+            class = "scrollable-card-body",
             accordion(
               id = ns("collapse_inputs"),
               multiple = TRUE, 
@@ -185,12 +183,12 @@ mod_prediction_panel_ui <- function(id) {
         
         # --- RIGHT CARD: RESULTS ---
         card(
-          class = "fixed-height-card", # <--- APPLIED FIX HERE
+          class = "fixed-height-card",
           full_screen = TRUE,
           card_header(class = "bg-primary text-white", "Market Valuation"),
           
           card_body(
-            class = "scrollable-card-body", # <--- APPLIED FIX HERE
+            class = "scrollable-card-body",
             uiOutput(ns("image_analysis_output")),
             uiOutput(ns("contents")),
             hr(),
@@ -296,17 +294,17 @@ mod_prediction_panel_server <- function(id, shared_data) {
           "Determined average condition: '", descriptive_name, "'."
         )
         
-        # This renders the output, which we just added to the UI
+      
         output$image_analysis_output <- renderUI({
           tags$div(
-            class = "alert alert-info", # Added some bootstrap styling for visibility
+            class = "alert alert-info",
             style = "margin-top: 10px;",
             tags$h5(style = "font-weight: bold; margin-bottom: 5px;", icon("camera"), " Image Analysis Result"),
             tags$p(style = "margin-bottom: 0;", image_feedback_message)
           )
         })
         
-        # --- 3. TABULAR DATA PREPARATION ---
+        # ---  TABULAR DATA PREPARATION ---
         setProgress(value = 0.5, detail = "Preparing final data...")
         
         newdata <- data.frame(
@@ -337,10 +335,9 @@ mod_prediction_panel_server <- function(id, shared_data) {
           }
         }
         
-        # --- 4. RANGER PRICE PREDICTION ---
+        # ---  RANGER PRICE PREDICTION ---
         setProgress(value = 0.9, detail = "Generating price prediction...")
         
-        # Ensure model is ranger object
         if (!inherits(current_bundle$models$median, "ranger")) {
           showNotification("Error: Loaded model is not a ranger object.", type = "error")
           return(NULL)
@@ -352,7 +349,7 @@ mod_prediction_panel_server <- function(id, shared_data) {
           upper = predict(current_bundle$models$upper, data = newdata, type = "quantiles", quantiles = 0.95)$predictions[,1]
         )
         
-        # --- 5. RENDER OUTPUTS ---
+        # ---  RENDER OUTPUTS ---
         imp_raw <- ranger::importance(current_bundle$models$median)
         
         if (length(imp_raw) > 0) {

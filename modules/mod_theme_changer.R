@@ -1,8 +1,7 @@
 mod_theme_changer_ui <- function(id) {
   ns <- NS(id)
   
-  # Defining the choices with meaningful labels
-  # Format: "User Friendly Name" = "bootswatch_id"
+  
   theme_choices <- c(
     # --- Light / Standard Themes ---
     "Standard Professional (Cerulean)" = "cerulean",
@@ -38,9 +37,8 @@ mod_theme_changer_ui <- function(id) {
       p("Select a new look to update the dashboard style."),
       hr(),
       
-      # Create a 2-column layout
       fluidRow(
-        # Column 1: The Selector
+        # Column 1: Selector
         column(
           width = 6,
           selectInput(
@@ -72,16 +70,12 @@ mod_theme_changer_ui <- function(id) {
 mod_theme_changer_server <- function(id) {
   moduleServer(id, function(input, output, session) {
     
-    # Observe changes in the dropdown
     observeEvent(input$theme_selector, {
       
-      # Create a bslib theme object based on the selection
       new_theme <- bslib::bs_theme(bootswatch = input$theme_selector, version = 5)
       
-      # Dynamically update the current theme
       session$setCurrentTheme(new_theme)
       
-      # Notify user
       showNotification(
         paste("Theme updated to:", input$theme_selector), 
         duration = 2, 
