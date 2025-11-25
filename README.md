@@ -33,14 +33,25 @@ reticulate::py_install(c("pillow", "h5py"), envname = "r-tensorflow")
 remotes::install_version("shinyBS", version = "0.61.1", upgrade = "never")
 remotes::install_version("thematic", version = "0.1.8", upgrade = "never")
 remotes::install_version("ranger", version = "0.17.0", upgrade = "never")
+remotes::install_version("tfdatasets", version = "2.18.0", upgrade = "never")
 
 # --- STEP 6: Install Standard Dependencies ---
-install.packages(c(
-  "shiny", "bslib", "shinyjs", "plotly", "data.table", 
-  "readr", "bsicons", "jsonlite", "rstudioapi", "rlang",
-  "caret", "Matrix", "dplyr", "RCurl", "randomForest"
-))
+install.packages("shiny")
+install.packages("bslib")
+install.packages("shinyjs")
+install.packages("plotly")
+install.packages("data.table")
+install.packages("readr")
+install.packages("bsicons")
+install.packages("jsonlite")
+install.packages("rstudioapi")
+install.packages("rlang")
+install.packages("caret")
+install.packages("Matrix")
+install.packages("dplyr")
+install.packages("RCurl")
+install.packages("randomForest")
 
 # --- STEP 7: Launch App ---
-# Note: It is recommended to restart your R Session (Ctrl+Shift+F10) before running
+# Note: restart your R Session (Ctrl+Shift+F10) before running
 shiny::runApp()
