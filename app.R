@@ -21,11 +21,7 @@ library(bsicons)
 
 setwd(dirname(getActiveDocumentContext()$path))
 getwd()
-#4.5.2 -> R version
-#tfdatasets 
-#tensorflow = 2.15
-# Note: setwd() works locally but will break if you deploy to shinyapps.io.
-# Ideally, rely on the .Rproj file to set the directory.
+
 if (rstudioapi::isAvailable()) {
   setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 }
