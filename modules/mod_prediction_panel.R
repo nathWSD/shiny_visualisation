@@ -1,6 +1,3 @@
-
-
-
 # --- Helper: Tooltip ---
 labelWithTooltip <- function(labelText, tooltipText) {
   tags$div(
@@ -52,8 +49,6 @@ mod_prediction_panel_ui <- function(id) {
     shinyjs::useShinyjs(),
     tags$head(
       tags$style(HTML(paste0("
-        /* --- 1. FIXED HEIGHT & SCROLLING LOGIC --- */
-        /* This forces the card to stay within the viewport height */
         .fixed-height-card {
             height: 100% !important; 
             display: flex;
@@ -61,7 +56,6 @@ mod_prediction_panel_ui <- function(id) {
             overflow: hidden; /* Prevent the card itself from scrolling */
         }
 
-        /* This allows the body to take up remaining space and scroll internally */
         .scrollable-card-body { 
             flex: 1 1 auto;
             overflow-y: auto; 
@@ -69,18 +63,15 @@ mod_prediction_panel_ui <- function(id) {
             padding-right: 5px; /* Prevent scrollbar from hiding content */
         }
         
-        /* --- 2. BIGGER HEADERS --- */
         .card-header { font-size: 1.6rem !important; font-weight: 700 !important; padding-top: 15px !important; padding-bottom: 15px !important; flex: 0 0 auto; }
         .card-footer { flex: 0 0 auto; } /* Ensure footer doesn't shrink */
         
-        /* --- 3. SLIDER LABEL CLEANUP --- */
         .irs-grid-text { visibility: hidden !important; }
         .irs-grid-text:nth-of-type(3n+1) { visibility: visible !important; }
         .irs-grid-text:last-of-type { visibility: visible !important; }
         .irs--shiny .irs-bar { border-top: 1px solid #0d6efd; border-bottom: 1px solid #0d6efd; background: #0d6efd; }
         .irs--shiny .irs-from, .irs--shiny .irs-to, .irs--shiny .irs-single { background-color: #0d6efd; }
 
-        /* --- 4. OTHER STYLES --- */
         .color-swatch { display: inline-block; width: 15px; height: 15px; border-radius: 50%; margin-right: 8px; vertical-align: middle; border: 1px solid #ddd; }
       ")))
     ),
@@ -203,9 +194,7 @@ mod_prediction_panel_ui <- function(id) {
 mod_prediction_panel_server <- function(id, shared_data) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-    
-    # --- STARTUP AND REACTIVE LOGIC ---
-    
+        
     shinyjs::disable("submitbutton")
     
     observeEvent(input$car_images, {
