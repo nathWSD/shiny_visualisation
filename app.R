@@ -1,5 +1,3 @@
-# reticulate::py_install("h5py")
-
 library(shiny)
 library(data.table)
 library(RCurl)
