@@ -3,6 +3,13 @@
 To run this application, please copy and paste the following commands sequentially into your **R Console**.
 
 ```r
+
+# System Structure 
+
+<img width="2122" height="1505" alt="shiny_app" src="https://github.com/user-attachments/assets/531806be-147c-4827-8cfa-8babd98cf070" />
+<img width="2122" height="1505" alt="shiny_app" src="https://github.com/user-attachments/assets/531806be-147c-4827-8cfa-8babd98cf070" />
+
+
 # --- STEP 1: Install Infrastructure ---
 install.packages("remotes")
 remotes::install_version("remotes", version = "2.5.0", upgrade = "never")
@@ -27,7 +34,9 @@ remotes::install_version("keras", version = "2.13.0", upgrade = "never")
 
 # Install required Python libraries into the environment
 reticulate::use_virtualenv("r-tensorflow", required = TRUE)
-reticulate::py_install(c("pillow", "h5py"), envname = "r-tensorflow")
+reticulate::py_install(c("pillow", "h5py"), envname = "r-tensorf<img width="2122" height="1505" alt="shiny_app" src="https://github.com/user-attachments/assets/b640c7a7-389d-4a2f-b08b-e9e9c1a49d94" />
+<img width="2122" height="1505" alt="shiny_app" src="https://github.com/user-attachments/assets/b640c7a7-389d-4a2f-b08b-e9e9c1a49d94" />
+low")
 
 # --- STEP 5: Install Specific R Packages ---
 remotes::install_version("shinyBS", version = "0.61.1", upgrade = "never")
@@ -55,3 +64,6 @@ install.packages("randomForest")
 # --- STEP 7: Launch App ---
 # Note: restart your R Session (Ctrl+Shift+F10) before running
 shiny::runApp()
+
+
+
