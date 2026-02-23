@@ -6,8 +6,8 @@ To run this application, please copy and paste the following commands sequential
 
 # System Structure 
 
-<img width="2122" height="1505" alt="shiny_app" src="https://github.com/user-attachments/assets/531806be-147c-4827-8cfa-8babd98cf070" />
-<img width="2122" height="1505" alt="shiny_app" src="https://github.com/user-attachments/assets/531806be-147c-4827-8cfa-8babd98cf070" />
+<img width="2122" height="1505" alt="shiny_app" src="https://github.com/user-attachments/assets/0602b5a9-8130-47dc-92c7-8cba4894da28" />
+<img width="2122" height="1505" alt="shiny_app" src="https://github.com/user-attachments/assets/0602b5a9-8130-47dc-92c7-8cba4894da28" />
 
 
 # --- STEP 1: Install Infrastructure ---
